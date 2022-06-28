@@ -8,8 +8,8 @@ Usually we do this weekly pocketts in japanese to cover all sorts of information
 related to front and development.
 This time we are doing a special episode in english to talk about the article.
 Title
-a baseline for web development in 2022.
-This article was recently published on the line
+a baseLINE for web development in 2022.
+This article was recently published on the LINE
 @AlanGDavalos 00:46
 engineering block and went viral around the front and community worldwide.
 Here we have the author allen how are you doing helen?
@@ -20,15 +20,15 @@ Thank you.
 A good. Good. So tell us a little bit about yourself.
 @huangtzulin 01:04
 Yeah sure. So I'm alan davalos.
-I'm a front and developer in line's tokyo office.
+I'm a front and developer in LINE's tokyo office.
 And
 I mainly on on my day to day shop.
-I mainly work on the line design system.
+I mainly work on the LINE design system.
 But I also have some like
 @huangtzulin 01:22
 the side projects in the company related to this kind of data analysis which is what kind of drove me to write this kind of article in the first place.
 @AlanGDavalos 01:30
-I see this article the baseline for web development in 2002.
+I see this article the baseLINE for web development in 2002.
 I think many of our audiences have already.
 already
 But for those who have could you give us a brief summary?
@@ -38,13 +38,13 @@ R of sorts would be basically that
 I did this analysis that now that with ie ending the support and everything and most
 @huangtzulin 01:59
 like big applications like dropping supports from my e.
-So it's like well what should we use a sort of baseline now? So I did this analysis and the conclusion was basically that
+So it's like well what should we use a sort of baseLINE now? So I did this analysis and the conclusion was basically that
 @huangtzulin 02:12
-in terms of like web standards a suffery from two years ago should be our baseline.
+in terms of like web standards a suffery from two years ago should be our baseLINE.
 In terms of
-networks the baseline should be 4g networks.
+networks the baseLINE should be 4g networks.
 And in terms of performance we should treat like
-the cheaper android phones as our baseline.
+the cheaper android phones as our baseLINE.
 参加者 3 02:32
 And
 @huangtzulin 02:33
@@ -52,7 +52,7 @@ I then did an analysis about
 参加者 3 02:37
 well
 @huangtzulin 02:38
-how we as the front and community are actually responding to this kind of baseline.
+how we as the front and community are actually responding to this kind of baseLINE.
 And
 the result was mostly that in terms of performance and accessibility especially we're not doing really well.
 @huangtzulin 02:53
@@ -77,13 +77,13 @@ So yeah well basically this is something it think
 参加者 3 03:34
 no
 @huangtzulin 03:34
-it's a bit of a personal experience I went through when I just joined line three years ago
+it's a bit of a personal experience I went through when I just joined LINE three years ago
 I came from this background of developing mostly like test top websites in in a small company and then coming
 it to almost mobile only developer.
 It was a really huge change for me.
 And
 @huangtzulin 03:56
-basically all the things that I put in the baseline are the kind of stuff I had to learn through these years.
+basically all the things that I put in the baseLINE are the kind of stuff I had to learn through these years.
 参加者 3 04:02
 I am.
 @huangtzulin 04:04
@@ -136,7 +136,7 @@ for angular it's like one megabyte or something like that.
 Now
 @huangtzulin 06:37
 but even when you look at that graph in the like the 10 percent tile which is basically the top 10 percent of sites created with each technology.
-Like you see that even then the react and angular sites lie barely even meet the performance like baseline metrix
+Like you see that even then the react and angular sites lie barely even meet the performance like baseLINE metrix
 and that if they even need it.
 So
 @huangtzulin 06:59
@@ -173,7 +173,7 @@ you can always use like preactor solid gas which basically have the same basic i
 way better performance since they were made like with different constraints in mind in the beginning.
 Us this
 @AlanGDavalos 09:01
-that's true. Okay. No you mentioned about the baseline is 4g networks and
+that's true. Okay. No you mentioned about the baseLINE is 4g networks and
 the two years old ios device iphone.
 But I readers say that they're from a third third word country.
 And
@@ -193,12 +193,12 @@ So what I would say for people like that I
 you can redo the analysis in a sethe same way.
 Like most of the data points I pointed to have like the individual country's data step counter that I used for the browser stuff
 @huangtzulin 10:23
-Like you can look like for example in makes like for mexico or like for line like for thailand or for some of the other countries we we target.
+Like you can look like for example in makes like for mexico or like for LINE like for thailand or for some of the other countries we we target.
 And you can see like what the market looks in those kinds of places.
 And that will give you a better idea of how much does this apply as is
 @huangtzulin 10:41
 to your specific case.
-Like there might be cases where you might need to make the baseline maybe a no.
+Like there might be cases where you might need to make the baseLINE maybe a no.
 3g and like
 three years of iphone devices.
 I don't know. It will depend a lot on how each market
@@ -209,7 +209,7 @@ I agree totally. So basically it depends on where your users are.
 @huangtzulin 11:05
 Exactly.
 @AlanGDavalos 11:06
-Maybe. So people might want to do their own research on their users so they can adjust their baseline guess.
+Maybe. So people might want to do their own research on their users so they can adjust their baseLINE guess.
 @huangtzulin 11:15
 Yeah. But if anything like I think the best part of this stuff is that
 they can compare it to this global one I made and see like so we just have to adjust this part.
@@ -271,11 +271,11 @@ Yeah but yeah that's the reason
 I see one one of the biggest event that let's late is that a lot of website a lot of services that job support
 of high internet explore 11.
 So that kind of trigger I mean makes you want to write this article.
-So whn when should this baseline will be updated again?
+So whn when should this baseLINE will be updated again?
 @huangtzulin 14:52
 Yeah I think that's a really interesting question because I like you said this time there was this big event that triggered this.
 And I think like
-orfor this baseline to change drastically something like of an equal like amount of influence has to happen.
+orfor this baseLINE to change drastically something like of an equal like amount of influence has to happen.
 So
 @huangtzulin 15:12
 basically I think there's four possible things that could make us have to change this.
@@ -290,7 +290,7 @@ a lot either from internal pressure or maybe from some external pressure.
 I think that's a
 @huangtzulin 15:58
 that's basically the only reason why why they would do that I guess.
-And so as long as those don't happen I think the baseline for suffering will stay mostly the same.
+And so as long as those don't happen I think the baseLINE for suffering will stay mostly the same.
 @huangtzulin 16:09
 And like for the android devices they don't seem really to be pushing that much.
 Like having better cpu.
@@ -313,13 +313,13 @@ pretty much stayed the same for at least some years.
 I think
 @AlanGDavalos 17:10
 That's like a good news because I mean as a foren developers we I keep changing.
-Baseline
+BaseLINE
 just bring us a lot of unnecessary works sometimes.
 参加者 3 17:23
 Yeah
 @huangtzulin 17:24
 yes. Yeah exactly. Just just adapting to this
-new baseline change is going to probably take a lot of work for many people.
+new baseLINE change is going to probably take a lot of work for many people.
 So we probably in that sense ye
 @AlanGDavalos 17:36
 we have to update a lot of things.
@@ -328,10 +328,10 @@ Update a lot of libraries perhaps.
 Yeah exactly.
 @AlanGDavalos 17:52
 Yeah. So thank thanks aden.
-Today we talk about the baseline for web development in 2022.
+Today we talk about the baseLINE for web development in 2022.
 As mentioned before we usually do this weekly broadcasting japanese but if you like our english version we might release some new episode english in the future.
 @AlanGDavalos 18:12
-As the last note line corporation and life goka is currently hiding and we have office in tokyo goto and koka.
+As the last note LINE corporation and life goka is currently hiding and we have office in tokyo goto and koka.
 You can find our open position in the links in this episode's shore notes.
 Thanks for listening.
 We hope you'll see you again.
