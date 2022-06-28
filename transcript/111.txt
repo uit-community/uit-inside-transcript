@@ -1,45 +1,45 @@
-参加者 1 00:12
+@AlanGDavalos 00:12
 Hello there. This is len one from life goka.
 Welcome to UIT insight.
 Uit insight is and packets for developers who we love
 user interface technologies.
 Usually we do this weekly pocketts in japanese to cover all sorts of information
-参加者 1 00:29
+@AlanGDavalos 00:29
 related to front and development.
 This time we are doing a special episode in english to talk about the article.
 Title
 a baseline for web development in 2022.
 This article was recently published on the line
-参加者 1 00:46
+@AlanGDavalos 00:46
 engineering block and went viral around the front and community worldwide.
 Here we have the author allen how are you doing helen?
-参加者 2 00:54
+@huangtzulin 00:54
 Hey there. I'm doing pretty fine.
 Thank you.
-参加者 1 00:59
+@AlanGDavalos 00:59
 A good. Good. So tell us a little bit about yourself.
-参加者 2 01:04
+@huangtzulin 01:04
 Yeah sure. So I'm alan davalos.
 I'm a front and developer in line's tokyo office.
 And
 I mainly on on my day to day shop.
 I mainly work on the line design system.
 But I also have some like
-参加者 2 01:22
+@huangtzulin 01:22
 the side projects in the company related to this kind of data analysis which is what kind of drove me to write this kind of article in the first place.
-参加者 1 01:30
+@AlanGDavalos 01:30
 I see this article the baseline for web development in 2002.
 I think many of our audiences have already.
 already
 But for those who have could you give us a brief summary?
-参加者 2 01:44
+@huangtzulin 01:44
 Yeah sure. So well the tld.
 R of sorts would be basically that
 I did this analysis that now that with ie ending the support and everything and most
-参加者 2 01:59
+@huangtzulin 01:59
 like big applications like dropping supports from my e.
 So it's like well what should we use a sort of baseline now? So I did this analysis and the conclusion was basically that
-参加者 2 02:12
+@huangtzulin 02:12
 in terms of like web standards a suffery from two years ago should be our baseline.
 In terms of
 networks the baseline should be 4g networks.
@@ -47,293 +47,293 @@ And in terms of performance we should treat like
 the cheaper android phones as our baseline.
 参加者 3 02:32
 And
-参加者 2 02:33
+@huangtzulin 02:33
 I then did an analysis about
 参加者 3 02:37
 well
-参加者 2 02:38
+@huangtzulin 02:38
 how we as the front and community are actually responding to this kind of baseline.
 And
 the result was mostly that in terms of performance and accessibility especially we're not doing really well.
-参加者 2 02:53
+@huangtzulin 02:53
 We are over using js among other stuffs and our accessibility like even some of the main points of accessibility we are not doing it really well.
 So
 参加者 3 03:02
 yeah
-参加者 2 03:03
+@huangtzulin 03:03
 yeah it's a really I don't know it has a lot of data in the article.
 So hopefully if you haven't read it this will bring you to
 well it soon.
 It's really I do that.
 A really good effort on that.
 Yeah
-参加者 1 03:18
+@AlanGDavalos 03:18
 definitely. There's a lot of information.
 We definitely need to everybody should have a read.
 Yeah.
 The first question is why did you write this article?
-参加者 2 03:30
+@huangtzulin 03:30
 So yeah well basically this is something it think
 参加者 3 03:34
 no
-参加者 2 03:34
+@huangtzulin 03:34
 it's a bit of a personal experience I went through when I just joined line three years ago
 I came from this background of developing mostly like test top websites in in a small company and then coming
 it to almost mobile only developer.
 It was a really huge change for me.
 And
-参加者 2 03:56
+@huangtzulin 03:56
 basically all the things that I put in the baseline are the kind of stuff I had to learn through these years.
 参加者 3 04:02
 I am.
-参加者 2 04:04
+@huangtzulin 04:04
 And yeah it's basically
 I mean the article itself I think took me about two months to prepare.
 But I guess it's actually the last three years of my own experience.
 Like just summarizing in a big article.
-参加者 1 04:17
+@AlanGDavalos 04:17
 Ah okay. Yeah. It seems like you put a lot of effort into it.
 So
 a prentis article received a lot of responses and it's being shared widely on the internet.
 How do you feel about that?
-参加者 2 04:31
+@huangtzulin 04:31
 Yeah. I think it went really over my biggest expectations.
 I mean
 I hope it will be like viral and it will have some coverage around the world like
 at least the english and japanese communities which is where we published it that
-参加者 2 04:47
+@huangtzulin 04:47
 I'm actually overwhelmed by the positive and the great response it's been having.
 Like
 it's been shared around many communities.
 Di don't even participate in.
 So it was it was really fun.
 Like just learning. How many people appreciated this
-参加者 1 05:02
+@AlanGDavalos 05:02
 yeah that must feels petty.
 Good. And actually we see a lot of interesting question response
 on the internet.
 And I think we let's take a look at them so we can take this chance as a good opportunity to response those questions.
-参加者 2 05:20
+@huangtzulin 05:20
 Yeah sure. Let's got
-参加者 1 05:22
+@AlanGDavalos 05:22
 a yeah. The first one is I think a lot of people care about this is the performance.
 In the article you list the performance of
 several popular framework and actually add angular.
 Their numbers are not a good.
 Instead
 really that bad I mean for performance of angle and react.
-参加者 2 05:46
+@huangtzulin 05:46
 Yeah. So like you said we saw a couple of people like asking around both for angular and both would react.
 And
 and some people were even saying like well this might be due to relaxed popularity or due to like the size of the applications that you make with these kind of frameworks then
-参加者 2 06:05
+@huangtzulin 06:05
 you could arguably say that yeahsome of the data might be somewhat biased in that sense which is why I actually try to include many data points from different perspectives.
 Like for example I think most of the people who wonder about this saw the the
-参加者 2 06:25
+@huangtzulin 06:25
 a graph from the team callic article that just mentions that the median size for react is like 700 kilobytes.
 And like for
 for angular it's like one megabyte or something like that.
 Now
-参加者 2 06:37
+@huangtzulin 06:37
 but even when you look at that graph in the like the 10 percent tile which is basically the top 10 percent of sites created with each technology.
 Like you see that even then the react and angular sites lie barely even meet the performance like baseline metrix
 and that if they even need it.
 So
-参加者 2 06:59
+@huangtzulin 06:59
 That's basically saying yeah even like these top ten percent of sites that like really have the best performance you can have with that kind of frameworks in
-参加者 2 07:09
+@huangtzulin 07:09
 barely even met the metric.
 And some other when you say the the be one and the jaquery one and the like overall ones they are a lot smaller.
 So
 I think it as it's one data point that helps in that side.
 And I think the other one is like the lab metric a
-参加者 2 07:28
+@huangtzulin 07:28
 like there you can see like all very very every framework tested in like the same conditions.
 And then you can see that in those
 well comparisons they also lie react tends to be the poorest performer together with an angular compared to
-参加者 2 07:46
+@huangtzulin 07:46
 some of the more modern stuff.
 Which is what what I also mentioned in the article.
 Like
 most of the things mate catering to tie in the beginning still have some performance problems that modern modern stuff don't seem to have.
-参加者 1 08:01
+@AlanGDavalos 08:01
 Yeah I agree with that.
-参加者 1 08:06
+@AlanGDavalos 08:06
 But just my personal opinion I think there's many way to evaluate
 these things.
 And I guess a lot of people choose reacties probably because that self saves a lot of work to mean
-参加者 1 08:25
+@AlanGDavalos 08:25
 to create something from scratch.
 And so I think sometimes kind of like a trade off but if you're really looking for a performance maybe
 the I think this data provides a really good guidance I guess.
-参加者 2 08:41
+@huangtzulin 08:41
 Yeah. I think like for example for people who who like the way of doing stuff with react like
 you can always use like preactor solid gas which basically have the same basic idea of creating apps but just
-参加者 2 08:55
+@huangtzulin 08:55
 way better performance since they were made like with different constraints in mind in the beginning.
 Us this
-参加者 1 09:01
+@AlanGDavalos 09:01
 that's true. Okay. No you mentioned about the baseline is 4g networks and
 the two years old ios device iphone.
 But I readers say that they're from a third third word country.
 And
 many people in their country still used iphone 5 or 7 which is many years ago and fourg planes have to started roll out
-参加者 1 09:27
+@AlanGDavalos 09:27
 but now many devices can actually connect to 4g networks like not iphone five or ii phone 7.
 So what do you think about this?
-参加者 2 09:37
+@huangtzulin 09:37
 So yeah like
 in myself like I'm mexican so I know what living in a third world world country is about.
 And I can actually relate really deeply with this.
 And in this time I wanted to make like an overall one lie a global one.
 So when you look at global data yeah like things sometimes tend to
-参加者 2 10:01
+@huangtzulin 10:01
 to be like more centralized to the more like urban areas and and stuff like that.
 So what I would say for people like that I
 you can redo the analysis in a sethe same way.
 Like most of the data points I pointed to have like the individual country's data step counter that I used for the browser stuff
-参加者 2 10:23
+@huangtzulin 10:23
 Like you can look like for example in makes like for mexico or like for line like for thailand or for some of the other countries we we target.
 And you can see like what the market looks in those kinds of places.
 And that will give you a better idea of how much does this apply as is
-参加者 2 10:41
+@huangtzulin 10:41
 to your specific case.
 Like there might be cases where you might need to make the baseline maybe a no.
 3g and like
 three years of iphone devices.
 I don't know. It will depend a lot on how each market
-参加者 2 10:57
+@huangtzulin 10:57
 works. Basically
-参加者 1 10:58
+@AlanGDavalos 10:58
 I agree totally. So basically it depends on where your users are.
-参加者 2 11:05
+@huangtzulin 11:05
 Exactly.
-参加者 1 11:06
+@AlanGDavalos 11:06
 Maybe. So people might want to do their own research on their users so they can adjust their baseline guess.
-参加者 2 11:15
+@huangtzulin 11:15
 Yeah. But if anything like I think the best part of this stuff is that
 they can compare it to this global one I made and see like so we just have to adjust this part.
 Or some like
 you can do like more lie minimum adjustments instead of doing all this work by by yourself.
-参加者 1 11:33
+@AlanGDavalos 11:33
 Yoh yeah indeed you do both of heavy life thing.
-参加者 1 11:38
+@AlanGDavalos 11:38
 Okay. Yeah. I in this article there's a performance comparison of jos scree
 libraries and frameworks.
 And some people might want to how about some the performance of
 some libraries or from war that are not listed in this article for example are merges or micro chml.
-参加者 1 12:04
+@AlanGDavalos 12:04
 That's I think they claim they are really fast.
-参加者 2 12:07
+@huangtzulin 12:07
 Yeah. So basically the answer for this would be thai.
 Had to like trim
 though some of of the more popular frameworks.
 And some of the frameworks that I've seen like more
 参加者 3 12:20
 hah
-参加者 2 12:21
+@huangtzulin 12:21
 have more momentum around the internet.
 But like each of those charts have like a source link where you can actually see that.
 I think one has like 50 something different libraries compared and the others should have like more than 60.
 And like for example those that you mentioned like ember and
-参加者 2 12:39
+@huangtzulin 12:39
 my great cml and like it has like a lot tot of other libraries compared some of those even might perform better than the ones I put.
 I think most of them are kind of experimental still but maybe I'm brunk.
 So
-参加者 2 12:54
+@huangtzulin 12:54
 I mean if you want to pursue a performance even further you can go to the source there and see what there kind of stuff is.
 There
-参加者 1 13:03
+@AlanGDavalos 13:03
 I see. Yeah. I think it's just a start that this kind of benchmark whenever ends there are always new frameworks.
-参加者 2 13:11
+@huangtzulin 13:11
 Yeah yeah exactly.
-参加者 1 13:15
+@AlanGDavalos 13:15
 Okay. There's another comparison table that this one I'm
 curious about it.
 Why does any framework score 1.0 in the starr column? And I take a look at it even for the adress
 it's sat out score is one point zero.
-参加者 2 13:36
+@huangtzulin 13:36
 Yeah. So basically the short answer for that would be like panila jas is not the fastest
 in every single matric.
 Like what I did in that table
 I basically took what the benchmark calls the geometric mean of each of the sub categories.
 But each category actually has several metrics inside.
-参加者 2 14:01
+@huangtzulin 14:01
 And for the start up one like when comparing these specific frameworks I think
 abanilla geas actually lost both metrics.
 I think it lost one to lit and one to spelt.
-参加者 2 14:16
+@huangtzulin 14:16
 It seems not a single framework like one every single metric.
 So they don't have like the 1.0 average which is why I every single thing there has like
 one point zero six or one point one or something like that.
 Yeah but yeah that's the reason
-参加者 1 14:32
+@AlanGDavalos 14:32
 I see one one of the biggest event that let's late is that a lot of website a lot of services that job support
 of high internet explore 11.
 So that kind of trigger I mean makes you want to write this article.
 So whn when should this baseline will be updated again?
-参加者 2 14:52
+@huangtzulin 14:52
 Yeah I think that's a really interesting question because I like you said this time there was this big event that triggered this.
 And I think like
 orfor this baseline to change drastically something like of an equal like amount of influence has to happen.
 So
-参加者 2 15:12
+@huangtzulin 15:12
 basically I think there's four possible things that could make us have to change this.
 One is that
-参加者 2 15:20
+@huangtzulin 15:20
 either ios has to like allow different browsers into ios
 like really really different browsers not just web kitting under these guys or or that they have to
 like allow for sufferi to be updated separately from the always.
-参加者 2 15:43
+@huangtzulin 15:43
 But I think for those to happen like either like some apple inside policy has to change really like
 a lot either from internal pressure or maybe from some external pressure.
 I think that's a
-参加者 2 15:58
+@huangtzulin 15:58
 that's basically the only reason why why they would do that I guess.
 And so as long as those don't happen I think the baseline for suffering will stay mostly the same.
-参加者 2 16:09
+@huangtzulin 16:09
 And like for the android devices they don't seem really to be pushing that much.
 Like having better cpu.
 So I don't think that will change a
 a lot more.
 And same for 4g like what the commends just say like
-参加者 2 16:25
+@huangtzulin 16:25
 there are some countries that the fourg penetration just started so like 5g is like a long long way before it comes.
 So I think
 for the time being the should they should stay for at least two or three years like basically the same
-参加者 2 16:41
+@huangtzulin 16:41
 or that. Unless like we have like a new type of device that becomes really popular and can brow the internet like I don't know maybe
 something like br actually has as a nice resurgence or something like that which as
-参加者 1 16:55
+@AlanGDavalos 16:55
 as long as for everybody yoused medaverse I guess.
-参加者 2 16:58
+@huangtzulin 16:58
 Yeah like something like that.
 Unless the way we browse the internet doesn't change like drastically I think it's going to
 pretty much stayed the same for at least some years.
 I think
-参加者 1 17:10
+@AlanGDavalos 17:10
 That's like a good news because I mean as a foren developers we I keep changing.
 Baseline
 just bring us a lot of unnecessary works sometimes.
 参加者 3 17:23
 Yeah
-参加者 2 17:24
+@huangtzulin 17:24
 yes. Yeah exactly. Just just adapting to this
 new baseline change is going to probably take a lot of work for many people.
 So we probably in that sense ye
-参加者 1 17:36
+@AlanGDavalos 17:36
 we have to update a lot of things.
 Update a lot of libraries perhaps.
-参加者 2 17:40
+@huangtzulin 17:40
 Yeah exactly.
-参加者 1 17:52
+@AlanGDavalos 17:52
 Yeah. So thank thanks aden.
 Today we talk about the baseline for web development in 2022.
 As mentioned before we usually do this weekly broadcasting japanese but if you like our english version we might release some new episode english in the future.
-参加者 1 18:12
+@AlanGDavalos 18:12
 As the last note line corporation and life goka is currently hiding and we have office in tokyo goto and koka.
 You can find our open position in the links in this episode's shore notes.
 Thanks for listening.
 We hope you'll see you again.
-参加者 2 18:29
+@huangtzulin 18:29
 See you
