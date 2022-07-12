@@ -1,0 +1,653 @@
+@AlanGDavalos 00:06
+Hello there. I'm Alan Davalos from LINE's front and development center also known as UIT. 
+Welcome to UIT INSIDE.
+UIT INSIDE is a podcast for developers who love user interface technologies.
+@AlanGDavalos 00:19
+We usually do a weekly podcast in Japanese to cover all sorts of information related to front and development. 
+However, from now on we'll be doing episodes in English every now and then too.
+This time we'll be talking about overcoming language barriers when working as a front-end developer.
+@AlanGDavalos 00:37
+But first let's briefly introduce ourselves.
+I'll go first. 
+So my name is Alan Davalos. 
+I'm a Mexican front-end developer and I work for LINE's Tokyo office.
+And I've been usually going in the Japanese podcast and my main job is usually doing design systems.
+@AlanGDavalos 00:57
+And today with me I have
+@cipto.hartanto 01:01
+oh well okay so I think I'm supposed to introduce myself now. 
+All right so my name is Cipto Hartanto. I am from Indonesia.
+I have been with LINE Taiwan for four and a half years.
+@cipto.hartanto 01:17
+And
+@cipto.hartanto 01:18
+I thing the same with Alan I work with UIT.
+@AlanGDavalos 01:21
+Great. It's nice to have you here. 
+So today
+As mentioned before we will be talking about overcoming language barriers. 
+Because as you can hear, like, we're both like foreigners working in different countries speaking different languages. 
+So, we have both have a pretty interesting context there.
+@AlanGDavalos 01:47
+So first of all I think one thing I think we should address first is that
+what do you think like is the hardest part when you're working in a language that's not your native one because in your case what's your language situation Cipto?
+@cipto.hartanto 02:04
+Um
+@cipto.hartanto 02:05
+I think the hardest part will be adapting with the cultures. 
+I think the first time I came to Taiwan
+I was pretty shocked
+@cipto.hartanto 02:17
+by different ways of people expressing their ideas. 
+But with time I've learned a lot of
+or I would say like I've been adapting. 
+Pretty well and enabling myself to see
+the differences as something that I can work with. 
+And in Taiwan I think
+@cipto.hartanto 02:43
+this is actually my third job. 
+So, I have experienced, like different positions.
+So, when I got to this job things actually got a lot easier especially when I deal with
+different departments when I have to work with them. 
+And I think the differences than I used to think really
+@cipto.hartanto 03:07
+are interesting now have become something that I know of that they are not really intimidating at all.
+@AlanGDavalos 03:15
+That's actually pretty interesting. 
+So, you think like when working in line as a front-end dev you're having less troubles than you're having your previous jobs.
+@cipto.hartanto 03:25
+Yeah, I would say so.
+@cipto.hartanto 03:28
+And also
+@cipto.hartanto 03:30
+a lot of my coworkers especially in Taiwan
+they are Taiwanese but I think they have great exposure to friends or foreign languages. 
+So
+@cipto.hartanto 03:44
+I don't think there are actually a lot of difficulties for me to talk with them.
+@cipto.hartanto 03:51
+And
+@cipto.hartanto 03:52
+They like to make friends with foreigners. 
+That's what I see.
+@AlanGDavalos 03:57
+Yeah. I mean yeah I think that's actually a pretty a pretty interesting point you make. 
+Because yeah
+yeah it's kind of a difference. 
+When you are
+sometimes like speaking with someone that's like used to people who are not like native speakers and
+@AlanGDavalos 04:15
+like not people from the same countries. 
+Than when you're not because I think they sometimes have like a different kind of attitude I guess on that.
+@cipto.hartanto 04:25
+Oh well actually Alan I'd like to share something that was asked when I was being interviewed by the HR
+of LINE Taiwan 
+So, she said this question if you talk to your coworkers
+and you find they sound funny will you laugh at them at them? And I said no
+@cipto.hartanto 04:49
+well I'm from indonesia and English is not my native language. 
+I also struggle. I also invest my time and maybe I still have like words that I don't know how to pronounce well. 
+So, I didn't think
+@cipto.hartanto 05:08
+Um
+@cipto.hartanto 05:10
+well when she asked me that question that really kind of like hit me like hey like you're not
+even though you speak English but it's just like a communication medium where you want to express your expression so that they understand. 
+So I'm not
+@cipto.hartanto 05:27
+expecting anybody on my team to be like a native speaker. 
+So maybe from that attitude like you said
+I never really think like hey your song really weird are like I can't really get you.
+So I think from there like everything just goes very, very smoothly. 
+Like I never really care about like
+@cipto.hartanto 05:50
+of wrong tenses or wrong grammar or something like that. 
+To me everything it's fine. 
+Yeah. So I can enjoy talking with them. 
+And most of my colleagues
+they are pretty good at English I think well not like I said I'm not an English native speaker but I feel
+@cipto.hartanto 06:09
+they are brave enough to talk with me. 
+That they know. Doesn't really, you know, speak Mandarin that well. 
+But yeah
+You've got to try
+@AlanGDavalos 06:21
+that's actually something I was wondering because like this is something I don't even know myself like in the Taiwan office. 
+What language do you normally speak in? Is it Mandarin or English? Or what is it?
+@cipto.hartanto 06:32
+Alright that that is actually good point to me. 
+Or the first I would say like three to four years
+@cipto.hartanto 06:44
+I prefered to speak in English. 
+I kind of switched to my approach to this. 
+Recently I've been really trying
+to practice more Mandarin in my new projects I speak I tried to speak Mandarin more. 
+I used to have
+@cipto.hartanto 07:05
+like probably like something that was not really glassense. 
+When I was
+you know trying to talk to my coworkers. 
+And I ended up being upset
+because I took their maybe like the way they talked was not just like how I would expect them to reply. 
+My
+@cipto.hartanto 07:28
+You know my ideas. So I kind of felt like well maybe I'll try to speak in English because
+well I think I feel it's just like a lot more clear for me to speak in that language. 
+So
+I will not make them confused and I will not have like unexpected replies from them.
+@cipto.hartanto 07:52
+Like I said I've switched to speak more in Mandarin now. 
+And I feel like as long as
+@cipto.hartanto 08:02
+I have something to say and I know what I'm going to say I think things are going to be fine.
+@AlanGDavalos 08:09
+Yeah. That's actually a pretty interesting point you make there because I'm not sure because I know in Indonesia you have a lot of languages like what would be your native language?
+Would you say
+@cipto.hartanto 08:21
+My native language as still Bahasa Indonesia, Indonesian language we speak it every day. 
+Yeah
+@AlanGDavalos 08:29
+okay.
+Yeah. Because I know that you have like a lot of languages you're speak in Indonesia. 
+So I just wanted to make sure. 
+So I think it's really interesting in your case because you're working and I think it's really similar to mine because I
+@AlanGDavalos 08:43
+like your native language is Bahasa Indonesia and then you're speaking either Mandarin or English at work. 
+And in my case my native language is Spanish and I mostly speak Japanese and sometimes English at work.
+So it's actually kind of interesting like how we both have to like work with like
+@AlanGDavalos 09:02
+different languages that are not our native one. 
+And I think the approach you have is pretty interesting too because
+one thing I've noticed a lot is that
+@AlanGDavalos 09:14
+when you speak your native language the way you express emotions is different than when you speak one that's not your native one. 
+I don't know if you feel the same
+@cipto.hartanto 09:23
+yeah absolutely certainly different. 
+Like if I were to talk to my Indonesian friends like we got a lot of slangs
+like words for maybe like young people.
+But when I speak in English like it's mostly just like for professional purposes. 
+So I can tell there are a lot of differences.
+@cipto.hartanto 09:46
+But I always try to engage my audience when I talk
+so they don't get bored by like hey I don't really get what you just say. 
+So
+@AlanGDavalos 09:59
+yeah I think that's pretty interesting because I don't know like in my case I think it's been a
+ bit of a process. 
+Because before coming to work in LINE I
+I pretty much never spoke Japanese like 
+I knew how to speak it but I almost didn't use it. 
+So I had to like learn a lot of like
+@AlanGDavalos 10:22
+domain specific language like a lot of the programming related words I had to learn while working basically. 
+So it was pretty hard to be honest at first. 
+Like I hear I sometimes heard a lot of words and I was like what is this word?
+@cipto.hartanto 10:38
+You actually spent your time on learning Japanese
+@AlanGDavalos 10:42
+I mean I think in my case I spent like three years like learning in school and then I spent another seven like learning by myself. 
+Seven years?
+And yeah so it will just be like a total ten-ish I guess. 
+But still even then like
+@AlanGDavalos 11:01
+when I came here and I started working in Japanese like I had to learn a lot of words. 
+Because when you learn like a language you know how
+they don't really teach you a lot of like work stuff. 
+It's more like daily life stuff
+@cipto.hartanto 11:13
+I can.
+@AlanGDavalos 11:14
+So I think in my case I had to learn a lot of that kind of vocabulary.
+@cipto.hartanto 11:19
+I think from my experience here I don't have any problems talking to people on the streets. 
+I can make conversations going with them.
+But when it comes to explaining my let's say I have a PR and I have to explain why there are changes there and that
+@cipto.hartanto 11:39
+will be the time when I feel like I'm not sure.
+@AlanGDavalos 11:46
+Yeah exactly. exactly, I think that's exactly the same process I went through. 
+And I think you probably have it with
+with Mandarin especially right now. 
+And I had it a lot with Japanese like I don't know like it's just getting used to like how to
+@AlanGDavalos 12:02
+I don't know how to express those ideas in a way that's easy to understand. 
+Yeah.
+@cipto.hartanto 12:08
+Well it definitely it takes practice. 
+So the more we I guess
+we put ourselves in the situations where we have to try I guess at one point we will just nail it right?
+@AlanGDavalos 12:25
+yeah.
+@cipto.hartanto 12:26
+Yeah. Cool.
+@AlanGDavalos 12:28
+What would you say are some like tips you would have because I think a lot of people who are going to listen to this are not going to be like super
+like native English speakers just like more people who want to learn more English for example.
+@AlanGDavalos 12:44
+So what would you say like are some good strategies that help you with this process of explaining ideas and stuff like that that we're just mentioning?
+@cipto.hartanto 12:54
+So I think first of all I would suggest everybody that is interested in
+advancing their language skills first have the confidence. 
+Because when you feel confidence
+then you will have the cards to go further and try. 
+Even native speakers like
+@cipto.hartanto 13:19
+like in my language I make mistakes. 
+So mistakes are inevitable like. 
+You will run into mistakes.
+But when you really try and get up when you fail I guess you will eventually come to
+@cipto.hartanto 13:34
+a point where you feel like wow like I have gone that far and now and I now like can talk to you a Japanese for example if I'm learning Japanese
+or I can talk to you a
+@cipto.hartanto 13:47
+like an American because I've been speaking English like I've been trying or practicing like maybe more frequently
+@cipto.hartanto 13:57
+ah now I'm
+@cipto.hartanto 13:58
+I'm pretty confident to talk with them. 
+And when you want to express your ideas start small because
+When you talk sometimes people really have no idea what you're going to talk about even though it's probably about something in common like common sense.
+But talk about something simple first
+@cipto.hartanto 14:22
+and when they are engaged then you can try to put like somewhere maybe ideas. 
+So start small and see how it goes.
+And I think that will make you feel more comfortable talking to them.
+@AlanGDavalos 14:35
+Yeah. I mean I think you may like two awesome points that I actually completely agree with you on both of them because
+I think for example and I see this a lot like especially with Japanese people like like
+@AlanGDavalos 14:50
+I think they all have like a very good understanding of reading English but they don't feel confident on speaking English.
+And I see this happening a lot with and it's not even not only Japanese people ve seen this in Mexico and I've seen this in everywhere. 
+I've been. Like
+@AlanGDavalos 15:09
+I think the way we are taught languages like
+like what the way we are said like this has to be perfect. 
+It's not right. Like the grammar is not proper the spelling is imperfect. 
+Like usually that on a day to day basis like you say
+@AlanGDavalos 15:23
+everyone makes mistakes. 
+Like especially native speakers in a lot of mistakes. 
+And like you can't be expected to be completely perfect just because it's not your native language. 
+Actually you should be cut some more slack because of that.
+@cipto.hartanto 15:36
+Yeah I don't know. I feel like we just need more cards from people like instead of like being judged
+or sometimes I don't know maybe because like you said we were taught since really were kids like your friends
+@cipto.hartanto 15:55
+like he speaks better and or something like that. 
+And then now we feel like I don't know like I don't feel
+you're not only like real confidence like you didn't even feel like you are willing to speak a word in like a foreign language. 
+So put it aside just try it's fine.
+@AlanGDavalos 16:17
+Yeah. Because usually and I've had this happen a lot when talking to my colleagues in different like
+projects like sometimes I forget a word or something that happens to me a lot is that when I write
+@AlanGDavalos 16:32
+quickly in Japanese I make a lot of spelling mistakes. 
+Like for example instead of saying like a word for this happened to me yesterday instead of using a word that means a
+issue like to issue something to really create something. 
+Yeah. And I use the word that means like
+@AlanGDavalos 16:50
+and I think it was something like what was it?
+@AlanGDavalos 16:54
+Let me remember it was something like like curating something like in how you like curate like
+like like you cure like yogurt like you make it like bacteria get there.
+@cipto.hartanto 17:08
+Okay. Cute
+@AlanGDavalos 17:10
+Because they are written the same like well they sound the same. 
+So when I wrote it I just wrote it and I put that but they still understood what I wanted to say.
+@cipto.hartanto 17:20
+well
+@AlanGDavalos 17:21
+and they didn't like correct me because it was like yeah I know what you are saying. 
+Like what? No one would say like you are going to put bacteria in some code right?
+@cipto.hartanto 17:31
+I guess. Oh yeah one more thing of
+ideally when you realize your audience or the one that you are speaking to probably is
+@cipto.hartanto 17:43
+Um
+@cipto.hartanto 17:44
+not as advanced as you are. 
+And we can try to a little go a little bit lower and try to be at the same level and try to get engaged with the conversation. 
+So
+we know we've built up like some kind of confidence into the person you are talking to. 
+So
+@cipto.hartanto 18:03
+he feels or that person feels like a lot more excited when
+when the next time this person sees you or meets you and they'll be just like he what's up Alan? And hey what's up? Cipto I mean because they feel comfortable talking to you no offense no judgements just being friends.
+@AlanGDavalos 18:22
+Yeah. Yeah. Like you say making a safe space where they feel like they won't be judged because they were speaking a bit weirdly or they used that wrong word right?
+@cipto.hartanto 18:34
+It's understandable. 
+Everybody makes mistakes. 
+Happy.
+@AlanGDavalos 18:39
+A think that's great. 
+And do you have any other like tips you want to mention about this topic?
+@cipto.hartanto 18:49
+I would say go and give it a try.
+@cipto.hartanto 18:55
+You'll never know. I mean I often started as a like a person that really had low
+confidence level but at one point I just got to that point and I felt like I can do this
+and just prove it to yourself as long as you feel like you are fine with all of the maybe
+@cipto.hartanto 19:23
+uncomfortness. When you're talking I guess you will go through those times and like time will refine your skills. 
+So
+yeah not only just speaking in different languages. 
+Like if you want to learn something new like it takes time it takes ups and downs you know so
+just go ahead and give it a go.
+@AlanGDavalos 19:45
+Yeah that's a great great tip. 
+To be honest
+I want to touch a bit on a bit of a different subject because I think we sometimes are both involved in these kind of meetings. 
+And this is something that happens too
+quite frequently sometimes in LINE. 
+So
+@AlanGDavalos 20:03
+I want to know how you feel about it. 
+Like you know how there's sometimes like when you have meetings with people from different countries right? For example we do sometimes have meetings with some people from the Korean office too. 
+And we have like this triple like
+@AlanGDavalos 20:17
+an interpreting system like Korean-English English-Japanese Japanese-Korean something like that.
+So how do you feel when we are in those kind of meetings? Like what do you are careful with when you are in that kind of situation?
+@cipto.hartanto 20:33
+I think in my experiences like some interpreters they have really different ways of interpreting the context of the communications.
+But what I can see they will always try to just
+say whatever they hear during the conversation especially if for example Korean counterparts are talking
+@cipto.hartanto 20:58
+or saying something. 
+They will just like well like this like translate it literally to us
+@cipto.hartanto 21:06
+but perhaps it's still something new to me. 
+So there are also times when I really
+can't really get the whole picture of the context. 
+But I guess
+during this kind of these kind of meetings I guess it's pretty tricky to completely have the same understanding.
+@AlanGDavalos 21:32
+Yeah.
+@cipto.hartanto 21:33
+I would probably ask questions if I really feel like I have questions regarding something but mostly if the context or what
+of the interpreter is saying during the meeting of
+like okay I kind of get it like I will just like to skip it but if I completely have no idea then I will ask questions.
+@AlanGDavalos 21:53
+I think like you mentioned like I think especially in that kind of situation sometimes like
+asking the questions is even more important than where you were speaking in the same language. 
+Because like there's a lot of like
+possible mistranslations. 
+So like just making sure like you like
+@AlanGDavalos 22:14
+ask it again in a different way so that like they are like it comes back and you can double confirm. 
+I think it's even more necessary in that kind of situation.
+@cipto.hartanto 22:24
+That's pretty true. I agree with that. 
+Like I said different interpreters well usually when we have these online meetings with like different offices
+like we don't even know like who are talking to and who the intrepreters will be.
+@cipto.hartanto 22:40
+So
+@cipto.hartanto 22:41
+it's like we don't we can't actually choose which interpreter we want to work with today right? So like
+all of a sudden we have the
+@cipto.hartanto 22:54
+they interpreters with us and they help us. 
+Fortunately for sure well
+we have different backgrounds like the way we speak the way we understand contexts
+it can be different to how they actually will deliver the message when they are
+@cipto.hartanto 23:12
+interpret the context of the meaning. 
+So yeah asking questions if possible. 
+And I also noticed during these meetings usually
+noisy because there are different voices in the background. 
+And you really have to focus
+because at the same time there might be people in the background speaking
+@cipto.hartanto 23:36
+besides the interpreter. 
+And you might also want to take a look at the visuals. 
+So yeah there
+a lot of things that we need to really adapt too. 
+But I guess as long as you feel ready
+for the meetings and I guess
+@cipto.hartanto 23:57
+you can try to ask questions first. 
+And if you really don't get the answers and the time is up you can always come back to
+I may be like the moderator or whoever that hosted the meeting and ask for clarifications. 
+I guess
+@AlanGDavalos 24:15
+Yeah, that sounds like a great advice to be honest like if I had to add anything. 
+And this is not only for these kind of meetings but also like when you
+in our case we also have like this situation where we have like automatic translators for the chat tools and stuff like that.
+@AlanGDavalos 24:32
+Oh yeah. And I think and this is something I even wrote the guide
+about that for actually for the rest of the UIT members. 
+And it's like some tips too.
+Make sure the things you are saying are going to be more like less easily mistranslated.
+@AlanGDavalos 24:53
+For example a couple of things. 
+I remember I wrote this that for example like avoid using
+things that are not super literal like idioms and stuff like that. 
+Because like when you use those kind of things it's easy. 
+For the
+@AlanGDavalos 25:09
+like you said like the translators tend to be pretty literal. 
+And that is even more true for automatic translations. 
+So if you say something like
+like a piece of cake like even something like that can be like
+@AlanGDavalos 25:23
+it just literally is translated like as a piece of cake instead of like something being easy. 
+So yeah avoiding and I think that also applies when you're speaking with someone that that's not like super
+@AlanGDavalos 25:38
+advanced in a language. 
+Like if you avoid using that kind of like complicated language I guess
+it would make it easier for the other people to understand you.
+@cipto.hartanto 25:50
+So I guess from me still what I would say just make it simple and try to not over complicate stuff.
+@AlanGDavalos 25:59
+Yeah I think
+I think that it all ends up being like that. 
+Like sometimes when all you're learning something you tend to create this super complicated sentences.
+@cipto.hartanto 26:15
+But just to show off a little bit
+@AlanGDavalos 26:17
+yeah yeah exactly. 
+But sometimes all you need is like just subject very predicate. 
+I mean if you were speaking in English obviously just like simple
+short phrase and then stop
+@AlanGDavalos 26:31
+and then put another phrase and then stop I think you continue like them and they will understand you. 
+You won't have to be super fancy.
+@cipto.hartanto 26:39
+Yeah
+I mean for I guess for beginners when they really feel like hey I really want to give it a try just go simple first. 
+And the more you speak the more you practice
+@cipto.hartanto 26:51
+not only languages you will feel more comfortable doing something more fancy I guess right? But in the case of communicating with different people we can
+really say like oh this person speaks good English or like oh this person is a native Japanese speaker. 
+So if I make mistakes
+@cipto.hartanto 27:10
+they will understand. 
+So we just I don't know I guess jet's assume everybody
+well I'm not saying like everybody's learning but just make sure if we thing very easy to understand like you said maybe we can avoid like using
+like phrases that are
+@cipto.hartanto 27:29
+probably used in
+@cipto.hartanto 27:32
+Like specific areas or idioms that we maybe don't really use or just use I don't know like something that is not
+very simple I guess just make it simple.
+@AlanGDavalos 27:47
+Yeah. Things that have like all this like cultural background like slang as you mentioned before these kind of stuff. 
+With sometimes for this kind of especially in a job world
+communicating efficiently is key. 
+Or at least like that's how you avoid like problems later on. 
+So it's better to just
+@AlanGDavalos 28:08
+try to keep it as simple and as tight as possible
+@cipto.hartanto 28:13
+right? Especially when you're talking in business settings. 
+Maybe you make it simple. 
+If you're doing it for casual stuff maybe have in
+@AlanGDavalos 28:23
+maybe then you can do some fancier stuff.
+@cipto.hartanto 28:27
+Exactly man
+@AlanGDavalos 28:31
+Yeah I think we have talked a lot of stuff. 
+So let's just finish up with one extra topic.
+In every part of life there's going to be a point where you're in a tough situation right? Like you're in a really complicated situation and
+@AlanGDavalos 28:49
+like maybe you are in a deadline or something like that. 
+Or like there's like a super urgent meeting you have to have. 
+So
+how do you keep your cool when you're in that kind of situation? Like what do you do?
+@cipto.hartanto 29:01
+Oh okay. I think the best way to handle those kind of situations is to be prepared and be ready.
+@cipto.hartanto 29:12
+I've been trying to wake up a lot early recently because seriously I feel like
+when we have extra hours before we start our day it will just make a big
+obvious difference and how we actually handle our day. 
+Like we get to set
+@cipto.hartanto 29:36
+the mood of the day if you will
+because you have extra hours before you start your work. 
+You get to exercise maybe you get to
+@cipto.hartanto 29:49
+if you like meditation or you like praying you can do beforehand. 
+And you know like your day will be busy and packed up but you have control before it
+even when starts. 
+So I guess my only option well sorry my only suggestion and how I
+@cipto.hartanto 30:06
+I've been dealing with this is by having some extra hours before I start my day.
+@cipto.hartanto 30:13
+And
+@cipto.hartanto 30:15
+of course like we talked earlier like we make mistakes and never hide them. 
+So if you know
+there are things that you don't know or like things you might have missed in your work like just a minutes and
+learned from it and basically
+@cipto.hartanto 30:36
+ah
+@cipto.hartanto 30:37
+improve and show to your company or your friends or to your department that
+yes I did make mistakes but I learnt from it and now I'm a new person. 
+Yeah
+@AlanGDavalos 30:52
+yeah I think that that applies like not only for languages but pretty much for everything. 
+I guess just a mistake is not the end of the world. 
+You just keep working to make it better
+@cipto.hartanto 31:04
+Well failure is actually when we actually stop doing what we feel like we have to do than it's a failure.
+So mistakes are something or they're just like part of our success stories.
+@cipto.hartanto 31:21
+No problem. Just go ahead.
+@cipto.hartanto 31:23
+Yeah. Yeah
+@AlanGDavalos 31:26
+that's a great suggestion
+@cipto.hartanto 31:29
+what about you though? What about you? Do you have an any maybe tips to spill on this?
+@AlanGDavalos 31:35
+I mean I think like you said a lot of great stuff right now. 
+And I mean I personally
+in that kind of of situation like like you say like especially
+in those kinds of situations is when you have to be more confident I guess because if you start losing control of yourself
+@AlanGDavalos 31:56
+you're just going to end up like staying nonsense. 
+so yeah. Like it's like try to stay calm and
+and just do the best you can in the moment. 
+And if you mess up then just learn from it. 
+Thing
+I keep working on it because I think especially with languages like
+@AlanGDavalos 32:18
+I think you never stop learning like even your native one but especially when it's not your native language you never stop learning. 
+So it's just keeping up
+a lile trying to learn at new stuff and just getting better every very every time you can.
+@cipto.hartanto 32:36
+Yeah I agree with that Alan we just keep improving and keep trying because we have time.
+We still have time. 
+Yeah
+@AlanGDavalos 32:47
+yeah exactly. So. Well. 
+Cipto do you have any final parts you want to share?
+@cipto.hartanto 32:56
+I actually I have a few questions but I guess I'll just ask one of the most interesting ones to you.
+So you work in Japan and a lot of people well especially people from outside of Japan especially me here.
+@cipto.hartanto 33:13
+I feel like working in there is pretty exhausting. 
+I'm not sure if that's true or not. 
+But in your case how you do you manage? Maybe your time
+@cipto.hartanto 33:27
+like how you work with people in this well known like we environment where maybe people are
+super.
+I don't know lie maybe we can say like super effective. 
+So they have like schedules and like pretty much like they have like a lot of processes defined before they start. 
+So
+@cipto.hartanto 33:47
+I don't know do you have any any tips for or maybe like from your experience like how you manage all of those coolness
+to work in japan
+@AlanGDavalos 33:58
+yeah. I mean I think the image people tend to have from Japan like might not completely apply to my case particularly because like
+and like probably like the culture inside the LINE is not like
+the thing people imagine when they imagine like a Japanese company to be honest like it's pretty
+@AlanGDavalos 34:20
+I should I say that it has some of the good things about like Japanese companies with
+like some of the good things of lie foreign companies from Japan's perspective. 
+So I think in that sense like it's
+Not super tight and like in the way you're forced to work in a certain way. 
+Sometimes
+@AlanGDavalos 34:40
+obviously we do have a lot of processes but I think it's not so different from what you might be experiencing for example in the Taiwanese office of LINE. 
+Like
+I think in general the culture is pretty chill in a way. 
+I mean obviously we have objectives and we have deadlines and we have to work. 
+But
+@AlanGDavalos 34:59
+it's most more mostly I think about like yeah you had to
+it's like you have an objective and as long as you do that in the allocated time it's pretty much okay. 
+So yeah that basically so in that way I don't think it's super different. 
+I guess to your experience maybe
+@cipto.hartanto 35:17
+that's cool. So working in Japan especially LINE Japan lie if you want to work in any of the offices of LINE Japan
+sounds were very attractive. 
+Because like I said
+@cipto.hartanto 35:32
+ai feel like working in Japan can be very exhausting. 
+Especially like the overtime cultures and like people really work hard and like the I don't know they seem like
+they please their bosses like a lot. 
+So the I don't know. 
+But if that
+@cipto.hartanto 35:51
+is true like I guess a lot of people might be considering working with LINE Japan. 
+Because besides
+besides the more modern cultures maybe like ore I don't know like startup cultures I guess. 
+So people have more time
+to work on their stuff and maybe still have objectives but not as
+@cipto.hartanto 36:16
+it's like you said as tight as the normal Japanese work cultures. 
+Well that's cool.
+@AlanGDavalos 36:21
+Yeah yeah. And actually like that's a good segway into one of the things
+I'm going to be talk in the closing things but yeah basically that's mostly how it is. 
+So
+yeah in case anyone's interested like we are hiring
+@cipto.hartanto 36:39
+that sounds very appealing
+@AlanGDavalos 36:44
+but theI might be biased
+Nah, nah, It's okay. We're a great place to work.
+@cipto.hartanto 36:49
+Hahaha
+@AlanGDavalos 36:51
+so I guess that's it for today so let's start finishing this up.
+@cipto.hartanto 36:57
+Okay
+@AlanGDavalos 37:02
+well today we talked about overcoming language barriers plus a couple other things. 
+And
+as mentioned before we will be releasing new episodes in English in addition to the usual Japanese episode. 
+So please look forward to those.
+@AlanGDavalos 37:18
+And as a last note as I just mentioned. 
+So line is currently hiring and you can find some of our open positions especially for the UIT department in the episodes show now. 
+So please take a look
+and thanks for listening. 
+We hope to see you again.
+@cipto.hartanto 37:33
+Bye bye see you guys again bye bye
