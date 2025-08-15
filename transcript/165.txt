@@ -1,0 +1,1734 @@
+@TheoSteiner 0:00
+Hey there, my name is Theo Steiner and you are listening to UIT Inside, our weekly podcast
+@TheoSteiner 0:13
+for front-end developers who love user interfaces and technologies.
+@TheoSteiner 0:17
+You might be wondering why I am speaking in English and not Japanese as usual.
+@TheoSteiner 0:21
+The reason is, we have a special guest on the show today, and I am very excited for you to meet him today.
+@TheoSteiner 0:27
+Eduardo, could you give us a brief self-introduction?
+@posva 0:57
+Yes, sure.
+@posva 0:58
+Last week.
+@posva 0:59
+How was it?
+@posva 1:00
+It was great.
+@TheoSteiner 1:01
+Honestly, it's such a nice conference.
+@posva 1:04
+To me, it's crazy.
+@TheoSteiner 1:05
+As someone who has organized conferences before, it's crazy how dedicated the team is, how
+@TheoSteiner 1:11
+many they are, like 60.
+@TheoSteiner 1:13
+I think there were 60.
+@TheoSteiner 1:15
+And the organization, the coordination, the level of detail is impressive.
+@TheoSteiner 1:21
+I don't think we go that deep, at least in France.
+@TheoSteiner 1:24
+You know, the conferences I helped.
+@posva 1:26
+So for some reason, I was like, oh, I'm going to do this.
+@TheoSteiner 1:27
+For people who are just doing that for free, I think it's really amazing.
+@posva 1:31
+It's really impressive.
+@Speaker_2 1:32
+I respect it.
+@TheoSteiner 1:33
+Yeah, it was also my first Vue Fest, and I was super blown away.
+@TheoSteiner 1:36
+So like, I'm usually more active in the Svelte community, and we can only dream of having
+@posva 1:41
+a conference this big in Japan.
+@TheoSteiner 1:43
+I mean, I'm trying my best, but so far, yeah, nowhere near that level of professionality.
+@TheoSteiner 1:50
+And you actually, you did a talk at the Vue Fest Japan.
+@TheoSteiner 1:54
+We're going to dive into that later.
+@TheoSteiner 1:57
+But first, how did you get to be a core contributor on Vue?
+@TheoSteiner 2:01
+Like, what's your history in the Vue community?
+@TheoSteiner 2:03
+So my history with Vue started, I think it's eight years now.
+@TheoSteiner 2:08
+I didn't really know down the year.
+@TheoSteiner 2:10
+Maybe I should at some point, actually look at the date.
+@posva 2:13
+But it's pretty early.
+@TheoSteiner 2:15
+It's pretty early days of Vue.
+@TheoSteiner 2:16
+I started using Vue on version 0.12.
+@posva 2:19
+0.12?
+@TheoSteiner 2:20
+Yeah, it was just released.
+@posva 2:22
+It was right after 0.11.
+@TheoSteiner 2:23
+For example, I know Kazupon, who is also a core team member.
+@posva 2:26
+He's a member of the team.
+@TheoSteiner 2:27
+And was one of the organizers of Vue Fest.
+@TheoSteiner 2:29
+He was there in 0.11, maybe before even.
+@TheoSteiner 2:32
+And so I remember seeing his face already in the issues and pull request.
+@TheoSteiner 2:37
+And so initially, I was working at a company as a consultant.
+@posva 2:41
+So I was really young.
+@TheoSteiner 2:43
+I was right after my studies.
+@TheoSteiner 2:44
+And we were doing a lot of AngularJS.
+@TheoSteiner 2:46
+I don't know which version it was at the time.
+@TheoSteiner 2:49
+I find as I kept using it, I found a lot of issues.
+@TheoSteiner 2:53
+And also the mental model didn't fit the way I like to think.
+@TheoSteiner 2:56
+So I felt like it was getting more in the way.
+@TheoSteiner 2:59
+I would check up documentation more often than not.
+@TheoSteiner 3:03
+And in the evenings, I would check out all the libraries that were existing.
+@TheoSteiner 3:08
+I think Riot was also one of the libraries at the time.
+@TheoSteiner 3:11
+React, of course, was also there.
+@TheoSteiner 3:13
+And Vue really clicked with me when I started using the documentation.
+@TheoSteiner 3:17
+I started building projects because of the simplicity.
+@TheoSteiner 3:20
+So it was a very different time, honestly.
+@TheoSteiner 3:23
+The whole bundler scene was not there.
+@TheoSteiner 3:26
+We were still using Gulp and Grunt.
+@TheoSteiner 3:28
+So it was very different.
+@TheoSteiner 3:30
+The kind of performance, not performance, but things were not as fast when building,
+@posva 3:34
+right?
+@TheoSteiner 3:35
+So we have other interests in other things.
+@TheoSteiner 3:36
+And it was more in the API and how simple it made to communicate between I have this
+@TheoSteiner 3:43
+mental model of data I want to display and I want to base that as a source of truth.
+@TheoSteiner 3:48
+And I want it to render always and to always be updated.
+@posva 3:51
+That was the main, main issue, the most important one.
+@posva 3:53
+I think nowadays we forget about that a lot.
+@posva 3:55
+Yeah.
+@TheoSteiner 3:56
+I think it was a lot, but in those days it was very important.
+@posva 3:58
+So I started using it a lot.
+@TheoSteiner 3:59
+I started diving a lot in the issues, commenting here and there, sometimes helping out with
+@TheoSteiner 4:04
+triaging mostly, I think.
+@TheoSteiner 4:06
+So I would help people, help people with their issues to see if there were bugs or not.
+@TheoSteiner 4:12
+So I will tell them, oh, you're just doing this, but you should be doing that.
+@TheoSteiner 4:15
+When I look back, back at my comments, I can see that there is a lot of, at least I improved
+@posva 4:19
+a lot.
+@TheoSteiner 4:20
+It wasn't that great back then helping people.
+@TheoSteiner 4:22
+Also English is obviously not my first language.
+@TheoSteiner 4:25
+Although I'm fluent, I think a few years ago, I would definitely have a different
+@posva 4:29
+tone with speaking.
+@TheoSteiner 4:30
+So maybe more direct, or I would just not have the same level of subtlety when speaking,
+@TheoSteiner 4:35
+which is fine in open source, I think.
+@TheoSteiner 4:37
+So at some point Evan also asked for a core team to be formed and to reach out to him
+@TheoSteiner 4:42
+via form maybe, I think, in order to more formally, more formally, more formality, more
+@TheoSteiner 4:49
+of a formality to create a team, have a Slack, and we could discuss about things a little
+@TheoSteiner 4:55
+bit more organized.
+@TheoSteiner 4:56
+And so that's how I really got into the Vue core team.
+@TheoSteiner 4:59
+I think, so Kazubong was also there, and we were like 20, a bit less.
+@TheoSteiner 5:04
+A lot of the people from the initial team has disappeared, not disappeared, but they
+@posva 5:09
+are not there anymore.
+@TheoSteiner 5:10
+Maybe they passed on to something else.
+@TheoSteiner 5:12
+In the end, it's always difficult, I think, to contribute to open source and have a full
+@TheoSteiner 5:16
+time job.
+@TheoSteiner 5:18
+Definitely something you cannot do at all ages.
+@TheoSteiner 5:20
+I think the window is actually very short.
+@Speaker_3 5:22
+Yeah.
+@posva 5:23
+Or you have...
+@TheoSteiner 5:24
+You have a life where you have a lot of freedom, which is not something everybody can afford.
+@TheoSteiner 5:29
+And as again, with age comes more issues, even with health or anything, you have more,
+@posva 5:33
+you're more likely to have issues.
+@TheoSteiner 5:34
+If you want to have a family, then that's another thing.
+@posva 5:36
+You have more responsibility.
+@TheoSteiner 5:37
+So yeah, there is a small window, I think, in developer's life where you have these opportunities
+@TheoSteiner 5:42
+to join some kind of community and try to be part of it in different ways.
+@TheoSteiner 5:48
+And once that time window has passed, you can not join in the same way.
+@TheoSteiner 5:54
+Or because you cannot, you won't be able to find yourself.
+@TheoSteiner 5:57
+So if you get the opportunity, you have to grab it.
+@TheoSteiner 6:00
+I'm already wanting to go off script because you said you started with Vue version zero
+@TheoSteiner 6:06
+and I only started with version three.
+@TheoSteiner 6:10
+So I'm really interested in what the API looked like at version zero.
+@TheoSteiner 6:14
+It was honestly the biggest difference is options API.
+@TheoSteiner 6:16
+At the beginning, it was really based on options.
+@TheoSteiner 6:19
+So we have separations of type of things.
+@posva 6:22
+We have data methods.
+@posva 6:23
+We have a lot of things.
+@posva 6:24
+We have computed.
+@TheoSteiner 6:26
+There was a compiler.
+@TheoSteiner 6:27
+Where is it?
+@TheoSteiner 6:29
+I think there was no compiler in the beginning.
+@posva 6:32
+Compiler is V1 or V2.
+@TheoSteiner 6:33
+Maybe V2 actually.
+@TheoSteiner 6:34
+So it was more of modifications to have done directly.
+@TheoSteiner 6:39
+But I think Angular would also like that.
+@TheoSteiner 6:41
+And the main idea was there and it hasn't changed.
+@TheoSteiner 6:44
+The fundamental idea of having a source of truth and you write your template and you
+@TheoSteiner 6:49
+have some syntax on top of HTML that is still valid in HTML was there.
+@TheoSteiner 6:54
+Also, you had a lot of and this was a big strength back then.
+@TheoSteiner 7:00
+It's not a big strength that more than much anymore, but it's still something that only
+@TheoSteiner 7:04
+Vue has compared to any other framework in front end.
+@TheoSteiner 7:07
+It's that you can still have an HTML.
+@TheoSteiner 7:10
+You have your page with HTML and you have these extra things that are Vue.js specific
+@TheoSteiner 7:15
+and you add JS on top for the Vue and it will re like not hydrate because it's not SSR.
+@posva 7:21
+It's not the right term, but it will rebuild the HTML.
+@posva 7:23
+So it's not a big deal.
+@TheoSteiner 7:24
+So you don't need a build phase.
+@posva 7:26
+Essentially, that's the point.
+@TheoSteiner 7:27
+You don't need a build phase to actually use Vue.
+@TheoSteiner 7:29
+And some projects I did in a consultancy, which now use Nuxt, if I'm not mistaken, but
+@TheoSteiner 7:34
+I haven't been there for many years.
+@TheoSteiner 7:37
+They started using Vue 1 and Vue 1 with templates and in the back end, it was like symphony.
+@TheoSteiner 7:42
+So PHP and Vue helped us have a more maintainable front end code than using jQuery.
+@TheoSteiner 7:49
+So it really it really was a better replacement for jQuery.
+@TheoSteiner 7:52
+It helped to have this concept of components also, which hasn't changed.
+@posva 7:57
+The concept of components has been the same.
+@posva 7:59
+So yeah, that was the big thing.
+@TheoSteiner 8:00
+No build phase and only options API.
+@TheoSteiner 8:03
+Yeah, everything has changed a lot with composition API, but you can still write option API today
+@posva 8:09
+and it still works, which is yeah, the backwards compatibility of Vue is great, I think.
+@TheoSteiner 8:14
+So you're a very proficient open source library author.
+@posva 8:17
+Yes.
+@TheoSteiner 8:18
+And as you said earlier, maybe best known for Pinia and Vue.js.
+@posva 8:21
+Yeah.
+@TheoSteiner 8:22
+I'm a router or router, however you say it.
+@posva 8:25
+American.
+@TheoSteiner 8:26
+So let's dive maybe a bit into Pinia.
+@TheoSteiner 8:30
+So Pinia is a state management library.
+@TheoSteiner 8:33
+We use it actually here at Line Yahoo Corporation.
+@TheoSteiner 8:36
+And thank you for that.
+@TheoSteiner 8:37
+So what does Pinia enable?
+@TheoSteiner 8:40
+So Pinia, it doesn't enable that much.
+@TheoSteiner 8:43
+And that's the good thing about Pinia.
+@TheoSteiner 8:45
+And it really is about global state management and having a centralized solution that is
+@TheoSteiner 8:50
+safe and is compatible to use.
+@TheoSteiner 8:52
+So it's the official state management solution.
+@TheoSteiner 8:55
+You don't need to use it in other projects.
+@TheoSteiner 8:57
+And you could get away by having like global, even global refs in some projects.
+@TheoSteiner 9:02
+It's more about the some standards it introduces.
+@TheoSteiner 9:05
+So people when going from a project to another, they will still be able to use the Pinia functions.
+@TheoSteiner 9:10
+The API honestly is very small.
+@TheoSteiner 9:12
+In the end, the surface API is really small.
+@TheoSteiner 9:14
+The idea really is to be able to define global state in a way that looks like Vue.
+@posva 9:20
+So Pinia is very, very simple.
+@posva 9:21
+It's a very simple, very easy to use.
+@posva 9:22
+It's a very simple, very easy to use.
+@posva 9:23
+And it's very, very easy to use.
+@posva 9:24
+So for example, you have two types of store.
+@TheoSteiner 9:25
+You have option stores, which are going to look more like options API.
+@TheoSteiner 9:28
+So you also have state, you have getters and actions, which basically is the equivalent
+@TheoSteiner 9:32
+of a component data computed and methods.
+@posva 9:36
+It's pretty much the same.
+@TheoSteiner 9:37
+So you can also see the store as a component without a template that is always there, that
+@TheoSteiner 9:41
+is outside of the tree of components.
+@TheoSteiner 9:44
+And then you have setup stores, which are like composition, so composables, which are
+@TheoSteiner 9:48
+functions that use the composition API.
+@posva 9:50
+So you can see the store as a component.
+@TheoSteiner 9:51
+You have the function API to encapsulate logic.
+@TheoSteiner 9:53
+And so these offers a very low level of granularity.
+@TheoSteiner 9:57
+You can really split up things, organize the code, the data, the functions the way you
+@posva 10:03
+want.
+@TheoSteiner 10:04
+And so Pinia allows to define a global composable, kind of like a singleton.
+@TheoSteiner 10:08
+And it works with SSR, it has dev tools as well.
+@TheoSteiner 10:11
+So it really tries to make things as close as Vue for state management.
+@TheoSteiner 10:16
+And it was also a way to migrate more easily from Vuex.
+@posva 10:20
+Because Vuex is not only a state management tool, but it's also a way to migrate more easily from Vuex because Vuex is a state management tool.
+@posva 10:21
+And so Pinia is a very good example of this.
+@TheoSteiner 10:22
+It's at the time of Vue 3, even Vue 2 has a poor TypeScript support.
+@TheoSteiner 10:26
+And this is also inherent to the way the API is created and the way you interact with the
+@Speaker_4 10:32
+store.
+@TheoSteiner 10:33
+We would have what we call magic strings.
+@TheoSteiner 10:36
+So we would access the store via these in components, dot dollar store, for example.
+@posva 10:41
+We have dollar something.
+@TheoSteiner 10:43
+And so there is no way to infer, I mean, you can infer with some manual code now in TypeScript,
+@posva 10:49
+but not any of the time.
+@posva 10:50
+It wasn't that easy in the time.
+@TheoSteiner 10:51
+And it has other issues like you always have a big store with everything inside, even if
+@TheoSteiner 10:57
+you create modules or you have to do dynamic modules.
+@TheoSteiner 11:00
+But it's still it requires some extra code.
+@TheoSteiner 11:02
+So Pinia has been engineered in a way that it doesn't get in your way.
+@posva 11:06
+All these things, you get them for free is inherent to the API.
+@TheoSteiner 11:09
+So I think I'm really happy with that part of things that it's mostly people don't don't
+@TheoSteiner 11:13
+really see them because you don't need to.
+@posva 11:15
+And I think that's the best kind of API when it's invisible.
+@posva 11:17
+Yeah, that's true.
+@posva 11:18
+It's a very lightweight API.
+@Speaker_5 11:19
+And I love your work.
+@Speaker_5 11:20
+I love your work.
+@TheoSteiner 11:21
+I love your explanation of it basically being a component that is shared between other components,
+@TheoSteiner 11:26
+but it doesn't have a template.
+@TheoSteiner 11:27
+And that's like, especially true since you can use the composition API and the option
+@posva 11:31
+API.
+@TheoSteiner 11:32
+So it's, it's almost like a view component without a template.
+@TheoSteiner 11:36
+Yeah, as I said, so a question regarding the the way you author Pinia stores is the composition
+@TheoSteiner 11:43
+API is it like recommended to use it over the options API?
+@TheoSteiner 11:47
+There is no like recommended.
+@TheoSteiner 11:50
+Because it depends what you mean by recommended, right?
+@TheoSteiner 11:53
+For me personally, yeah, I prefer to just you always use composition API, just to have
+@TheoSteiner 11:59
+a more coherent writing of stores.
+@TheoSteiner 12:02
+The reason is, there are things you cannot do with options, option stores simply, because
+@TheoSteiner 12:07
+you are limited to are organizing things by type.
+@TheoSteiner 12:10
+If you want to go have, what is the word in English, if you want to live it up your your
+@posva 12:15
+your game and the way you organize code, you will have to go to a lower level.
+@posva 12:16
+So you can't do that.
+@posva 12:17
+You can't do that.
+@Speaker_6 12:18
+You can't do that.
+@Speaker_6 12:19
+You can't do that.
+@posva 12:20
+You can't do that.
+@Speaker_7 12:20
+You can't do that.
+@posva 12:21
+You can't do that.
+@Speaker_7 12:22
+You can't do that.
+@posva 12:23
+So you have to go into a lower level in terms, sorry, you will have to go into a lower level
+@TheoSteiner 12:24
+of code organization, which means that you are exposed to more risk, but you also have
+@posva 12:28
+more control.
+@TheoSteiner 12:29
+And this is where you should learn and grow.
+@TheoSteiner 12:32
+And this is where you can create actually better code organic organization than just
+@posva 12:37
+having a type organization.
+@TheoSteiner 12:39
+So because of this, personally, I will recommend to use the setup stores whenever possible.
+@TheoSteiner 12:44
+But some people are still not there, they are learning, and the option stores are there
+@posva 12:49
+for them too.
+@TheoSteiner 12:50
+I think this is also a good point to show that for people starting view was also a great
+@TheoSteiner 12:55
+choice because of this because of the options API.
+@TheoSteiner 12:57
+So when people are starting, they feel so much more comfortable not having to think
+@TheoSteiner 13:01
+about where to put things.
+@TheoSteiner 13:04
+Because the they are organizing by type is like having a I forgot the word where you
+@TheoSteiner 13:09
+put your socket like a structure, not a structure, but in your clothes closet, where you put
+@TheoSteiner 13:14
+your your clothes, you usually like a drawer.
+@posva 13:18
+Exactly.
+@posva 13:19
+Thank you.
+@TheoSteiner 13:20
+So you can organize each kind of things, right?
+@TheoSteiner 13:21
+Most people organize them by kind of thing.
+@TheoSteiner 13:24
+So I have t shirts, you have pants, you have socket socks, you have underwear, right?
+@posva 13:29
+So this is very easy to do.
+@TheoSteiner 13:30
+I think mentally, we are used to this kind of mental model.
+@TheoSteiner 13:33
+That's why it's also very easy for people to get started with view and why it was so
+@TheoSteiner 13:37
+attractive for people in the first place, especially in view v1 and stuff, because people
+@TheoSteiner 13:43
+just will look at a view code and be like, Oh, I understand right this right away, because
+@TheoSteiner 13:47
+they can see data, they can see methods.
+@TheoSteiner 13:49
+Now, when it gets complicated, the component is not easy, right?
+@TheoSteiner 13:52
+So that's why the composition API helps.
+@TheoSteiner 13:54
+Very interesting view as a drawer for your mind, or like the options API as a drawer
+@TheoSteiner 13:59
+for to organize your code.
+@TheoSteiner 14:01
+Okay, so that's Pinia.
+@TheoSteiner 14:04
+And you're also known for another very, very big library, you've router, how did you come
+@posva 14:10
+to write view router?
+@TheoSteiner 14:12
+I think it's like the most common router API and not router, the most common router library
+@posva 14:17
+in view.
+@posva 14:18
+So how did it come to that?
+@TheoSteiner 14:19
+So in view, we have official solutions.
+@TheoSteiner 14:22
+So the idea is we gather feedback, we consider also a lot of backward compatibility things.
+@TheoSteiner 14:28
+And we try to move fast when we need to move fast, and then we move slow to not break things.
+@TheoSteiner 14:34
+So I think I applied this well to your router, because I slowed down on the parts where I
+@TheoSteiner 14:39
+could break API's.
+@TheoSteiner 14:40
+And I went fast when I needed to, but I still took the time it needed to develop.
+@TheoSteiner 14:44
+I got into it very early on my journey with view, I think.
+@TheoSteiner 14:48
+And I wrote the v4 version.
+@TheoSteiner 14:51
+So there was a lot of things to take into account.
+@TheoSteiner 14:54
+The v4 version of your router is for view three.
+@TheoSteiner 14:57
+And routers are very interesting topic.
+@TheoSteiner 15:00
+Everybody takes them for granted, but they're very complex.
+@TheoSteiner 15:03
+And their responsibility spans all over the application code.
+@TheoSteiner 15:07
+So it's it's a really hard piece of software to design property.
+@TheoSteiner 15:11
+And sometimes it's better not to over design it.
+@TheoSteiner 15:14
+So by that, I mean, not creating too many API's.
+@posva 15:16
+But rather exposing lower level API's.
+@posva 15:17
+So that's the first thing.
+@posva 15:18
+And then the second thing is, I think, is the user experience.
+@TheoSteiner 15:19
+Because people have opinions, and people want to use their own abstractions for some stuff.
+@TheoSteiner 15:24
+So it's better to not over commit in an API that might end up not being useful in many
+@TheoSteiner 15:31
+cases, but still adding to the bundle.
+@TheoSteiner 15:34
+And ViewRouter is one of the most powerful routers out there, actually, when you in terms
+@TheoSteiner 15:38
+of features, it has been way more powerful than any other in many years.
+@TheoSteiner 15:44
+Now we have a lot of typed routes and typing like parameters.
+@posva 15:47
+Yeah.
+@TheoSteiner 15:48
+And there are a few features now that I'm still adding back to the router.
+@TheoSteiner 15:53
+But even though it was one of the pioneers, I think, in typed route in typed pages and
+@TheoSteiner 15:59
+type safety in ViewRouter, we have these for two years now.
+@posva 16:02
+And there are other concepts that were not there.
+@TheoSteiner 16:05
+So for me, it was a very interesting topic, but very time demanding.
+@TheoSteiner 16:09
+And it's a big challenge because people don't really take a look too much into the router
+@posva 16:14
+or it's like, yeah, it's just there.
+@posva 16:15
+Also maybe a marketing issue on my side, to be honest.
+@TheoSteiner 16:17
+I recently dove into your ViewUnplugin router, the one that has like full type safety and
+@posva 16:25
+file based routing.
+@TheoSteiner 16:27
+And I have to say that it's like a new way of doing routing because it's like end to
+@posva 16:31
+end type safe.
+@posva 16:33
+And I don't think we had that before in the view world.
+@posva 16:35
+No, no.
+@TheoSteiner 16:36
+I mean, oh, actually, yes, we did have some things that were so there was something in
+@TheoSteiner 16:40
+the Nuxt ecosystem that was similar.
+@TheoSteiner 16:43
+And I think I talked to the author of the library.
+@posva 16:46
+And I think I talked to the author of the library.
+@TheoSteiner 16:47
+And I'm not completely sure.
+@TheoSteiner 16:49
+I'm trying to roll back to rewind in my memory.
+@TheoSteiner 16:53
+So they had something similar.
+@TheoSteiner 16:55
+They were using a different approach because they were only for Nuxt, right?
+@posva 16:58
+It was specifically for Nuxt.
+@TheoSteiner 16:59
+So you already had the file based routing.
+@TheoSteiner 17:02
+It's a little bit different, but the idea is still the same.
+@TheoSteiner 17:05
+Based on the file structure, you can infer the types of the routes.
+@TheoSteiner 17:10
+And the way you do it in ViewUnplugin router is really cool with the like you create virtual
+@posva 17:15
+modules.
+@posva 17:16
+Yes, yes.
+@TheoSteiner 17:17
+And then you import types from the virtual modules.
+@TheoSteiner 17:19
+That's like as a as a techie.
+@posva 17:21
+I just like that.
+@TheoSteiner 17:22
+When I saw that, I was like, Oh, this is so cool.
+@TheoSteiner 17:24
+It was a big headache with the with TypeScript.
+@TheoSteiner 17:29
+Sometimes he's I can imagine he doesn't work and you don't know where to debug because
+@TheoSteiner 17:33
+it's mostly the augmentation.
+@posva 17:35
+You have to solve the type.
+@TheoSteiner 17:36
+Yeah, you have to you remove stuff.
+@TheoSteiner 17:38
+You comment stuff out and you're like, Oh, now it works.
+@posva 17:40
+I comment this out.
+@posva 17:41
+Now it doesn't work.
+@posva 17:42
+You start tweaking things.
+@posva 17:44
+Yeah.
+@posva 17:45
+Type augmentation is can be a pain.
+@posva 17:46
+Yeah.
+@TheoSteiner 17:47
+It's a pain to debug for sure.
+@TheoSteiner 17:49
+So the ViewUnplugin router brings us to the next section of our episode.
+@TheoSteiner 17:56
+You actually had a talk at the ViewFest Japan, an amazing talk.
+@posva 18:00
+I really enjoyed it.
+@TheoSteiner 18:02
+And it was titled Async State Management with ViewRouter.
+@TheoSteiner 18:06
+So what what is up with that?
+@TheoSteiner 18:08
+What is async state management with view?
+@TheoSteiner 18:11
+State management is so when something funny is people usually when they hear async state
+@TheoSteiner 18:16
+management, they hear async and then state management.
+@TheoSteiner 18:20
+But the real split is async state management.
+@TheoSteiner 18:23
+And it's just a differentiation from state management or global state management.
+@TheoSteiner 18:27
+When we say state management, it can be both.
+@TheoSteiner 18:29
+Async state management, it's just a very generic word to say we handle the async state.
+@TheoSteiner 18:35
+So that means is the operation running?
+@posva 18:37
+Do we have an error?
+@posva 18:38
+Do we have the data back?
+@posva 18:39
+Can we refresh it?
+@TheoSteiner 18:40
+So there is a lot of things around that and we can add things like cache, persistence,
+@posva 18:44
+refreshing.
+@TheoSteiner 18:45
+So by not refreshing, but rehydrating from the persistence, pausing, resuming.
+@TheoSteiner 18:50
+There is a lot of things you can go really, really far.
+@TheoSteiner 18:52
+So most of the time, this means data fetching in web applications.
+@TheoSteiner 18:55
+We're not going to lie to ourselves.
+@TheoSteiner 18:58
+The truth is that it still goes a little bit further.
+@TheoSteiner 19:02
+The truth is that it still goes a little bit further because you can also integrate other
+@posva 19:06
+kinds of async state management.
+@TheoSteiner 19:07
+So you could have WebSockets and other more complex operations.
+@TheoSteiner 19:11
+But data fetching is going to be the main topic.
+@TheoSteiner 19:13
+So I'm going to limit to talking to data fetching.
+@TheoSteiner 19:15
+Because it should be what most people are familiar with.
+@TheoSteiner 19:17
+It means that so the talk was really about combining these data fetching that is not
+@TheoSteiner 19:23
+always in the router to the router and the benefits of doing so.
+@TheoSteiner 19:27
+The most of the time when you do data fetching or async state management in general, you
+@TheoSteiner 19:32
+have some kind of solution that handles that.
+@posva 19:34
+Is it loading?
+@TheoSteiner 19:35
+Did we have an error?
+@TheoSteiner 19:37
+Otherwise if you write the code by yourself, which you can, it's a lot of boilerplate.
+@TheoSteiner 19:41
+So you end up abstracting it and then you keep adding features.
+@posva 19:44
+And then it becomes a bit of a mess.
+@TheoSteiner 19:45
+And you may end up writing your own library like like that's the query swear or not have
+@posva 19:51
+their own implementation.
+@TheoSteiner 19:53
+So the talk is more about is really about combining these solutions with the router
+@TheoSteiner 19:57
+to bring also the benefits of being able to integrate data fetching into the navigation.
+@TheoSteiner 20:03
+Because well, there is a lot of some of the benefits that are talked about in the in the
+@posva 20:07
+talk.
+@TheoSteiner 20:08
+But there can be easily summarizing to you want to be able to control the navigation.
+@posva 20:12
+This means redirecting to a page.
+@TheoSteiner 20:14
+If the user has no access, display the page with an error, maybe if it's a 404, when you
+@TheoSteiner 20:19
+want to display the detail of a of a document in the database, but also having a better
+@TheoSteiner 20:25
+analysis knowledge of what is going on in your page.
+@TheoSteiner 20:29
+So if you just load the data synchronously on when the component mounts, your navigations
+@TheoSteiner 20:34
+are going to be instant, and you will not have any metrics on what are the pages that
+@TheoSteiner 20:39
+take the longer to load from our client side perspective.
+@posva 20:43
+Because if you have service and rendering.
+@TheoSteiner 20:44
+As long as you load the data on the server, you can see how that so it's more of a realistic
+@TheoSteiner 20:49
+point of view on what is fast, what isn't fast in your application, integrating into
+@TheoSteiner 20:53
+the navigation allows you to know how long take on the client side some of the pages.
+@TheoSteiner 20:59
+So analytics wise, this is very nice too.
+@posva 21:01
+And so this is that's it.
+@TheoSteiner 21:02
+That's the that's the point, right is having these benefits, but without giving up all
+@TheoSteiner 21:07
+the benefits of using a full fledged as in state management library, and this is the
+@Speaker_8 21:12
+data loader, basically, or loader.
+@TheoSteiner 21:13
+The name is not really sexy, but I don't think it requires to be that.
+@TheoSteiner 21:19
+It's just it's loads something.
+@posva 21:21
+That's it.
+@TheoSteiner 21:22
+So my understanding is that data loaders are implemented on top of route guards or route
+@TheoSteiner 21:28
+guards like the before enter route.
+@Speaker_8 21:30
+Yes.
+@TheoSteiner 21:31
+Yeah, route guards or middlewares, you can call them whatever you want.
+@TheoSteiner 21:33
+The concept is the same is a function that runs before the navigation is confirmed, and
+@TheoSteiner 21:37
+allows to control the navigation outcome.
+@TheoSteiner 21:40
+By control, I mean cancel.
+@TheoSteiner 21:42
+So abort redirect.
+@posva 21:43
+And also delay.
+@posva 21:44
+It's a synchronous.
+@TheoSteiner 21:45
+Yeah, I think that really gives you a lot of flexibility because you can get the data
+@TheoSteiner 21:50
+and look into the data and decide based on the data you got where you redirect the user
+@TheoSteiner 21:55
+to or if you have to cancel or do something else.
+@TheoSteiner 21:58
+It's a really beautiful pattern, I think.
+@TheoSteiner 22:00
+Did you have like, any any sort of inspiration for this pattern?
+@posva 22:03
+Yeah, definitely.
+@TheoSteiner 22:04
+So I try to when I come with these ideas, I mean, the loading into a navigation guard,
+@TheoSteiner 22:10
+that's something that has been has existed for a long time.
+@TheoSteiner 22:13
+But I wanted to have an API that allow me to collocate the code that is relevant to
+@TheoSteiner 22:17
+data fetching to the code that displays that results.
+@TheoSteiner 22:22
+So usually this means page components.
+@TheoSteiner 22:24
+In page components, I want to be able to define loaders without being limited to it.
+@posva 22:28
+This is also the important part.
+@TheoSteiner 22:30
+I don't want to be limited by this collocation.
+@TheoSteiner 22:32
+And I want to be able to use it right away underneath.
+@TheoSteiner 22:34
+When you have the navigation guards, you really are away from the component because it's a
+@posva 22:39
+global thing.
+@posva 22:40
+It's in the router.
+@posva 22:41
+So I did look at what the navigation guards are.
+@TheoSteiner 22:42
+I did look at what other frameworks were doing with loaders in general, because every single
+@TheoSteiner 22:46
+framework had their own version of loader.
+@TheoSteiner 22:49
+And they are mostly doing a very simple version compared to the version I'm doing.
+@TheoSteiner 22:53
+So I wasn't really satisfied with the inspiration I got.
+@TheoSteiner 22:56
+But it was still great to see that other people were going in a similar direction, because
+@TheoSteiner 23:00
+I've been trying to advocate for the navigation in navigation data fetching for a long while.
+@TheoSteiner 23:04
+And some of them do not really integrate into the navigation because they only do it on
+@TheoSteiner 23:08
+server side, but not on client side.
+@posva 23:11
+And so data loaders are basically the same.
+@TheoSteiner 23:12
+They're both server and client side.
+@TheoSteiner 23:14
+They're really hooked into the navigation itself.
+@TheoSteiner 23:16
+And so the reason I say that some of the frameworks have a more simplified version is because
+@TheoSteiner 23:20
+they don't allow, sometimes they don't allow multiple loaders, for example.
+@TheoSteiner 23:24
+They don't allow nesting loaders, which is something I didn't talk about in the talk.
+@TheoSteiner 23:27
+But you can nest loaders and have serial, by default is parallel, which I didn't even
+@TheoSteiner 23:33
+say, but because I think it should be granted, like take it for granted.
+@TheoSteiner 23:37
+Your navigation should maximize the parallelization of loading.
+@posva 23:41
+As well.
+@TheoSteiner 23:42
+So you can do the best, as much as it could.
+@TheoSteiner 23:43
+And so the data loaders do this and you don't even need to worry about it, but you don't
+@TheoSteiner 23:47
+need to have one loader per route.
+@Speaker_4 23:49
+You can have multiple ones.
+@TheoSteiner 23:50
+So you don't even think you need that and you don't even need to think about it.
+@TheoSteiner 23:54
+And then you can also combine it with the full fledged libraries that bring all the
+@TheoSteiner 23:59
+features like cache, persistence, as I was saying before, or just do the basic one.
+@TheoSteiner 24:04
+So that's definitely something that no other framework has, right?
+@TheoSteiner 24:07
+Having a loader that can be augmented like a spec.
+@posva 24:11
+Yeah.
+@TheoSteiner 24:12
+It's maybe a level lower than other frameworks.
+@Speaker_9 24:15
+Yeah.
+@TheoSteiner 24:16
+If I, for example, think of Remix or SvelteKit, which have a similar loading pattern, but
+@TheoSteiner 24:21
+then it's not as composable because you don't have the loader itself that you can freely
+@posva 24:26
+pass around.
+@posva 24:27
+Exactly.
+@posva 24:28
+Yeah.
+@TheoSteiner 24:29
+You can still, for example, in Svelte, you could use the loader that is in your layout
+@TheoSteiner 24:33
+and await it or something, but it's not as composable and low level as the data loaders
+@TheoSteiner 24:38
+in Vue Router, which I think are really nice.
+@TheoSteiner 24:42
+They're really cool, but they don't have this general, like a standard pattern.
+@TheoSteiner 24:45
+And what I especially love about them is that there is not one data loader.
+@TheoSteiner 24:49
+Like in your talk you were like, actually I lied to you.
+@TheoSteiner 24:53
+There's no data loaders because data loaders are just a spec.
+@TheoSteiner 24:57
+And for example, one that comes default with Vue Router is the basic.
+@TheoSteiner 25:02
+Yeah, you have two defaults.
+@TheoSteiner 25:04
+So like two official implementations in a way is the basic, as you were saying.
+@posva 25:10
+So you can rename it.
+@TheoSteiner 25:11
+bother too much with the naming is like define define basic loader and this is just takes a
+@TheoSteiner 25:15
+function that returns a promise that's it and then the sorry and the colada there is the define colada
+@TheoSteiner 25:20
+loader so this one is based on pinia colada and pinia colada is is a layer on top of pinia so you
+@TheoSteiner 25:28
+can call it whatever you want is it uses pinia to so more specifically the stores to handle the
+@TheoSteiner 25:34
+the data the global data the global state management and it adds sprinkles on top the
+@TheoSteiner 25:41
+all the goodies for cache sync state and invalidation optimistic updates a lot of things
+@TheoSteiner 25:48
+that are really useful and it makes it also in a way that is really progressive which is something
+@TheoSteiner 25:53
+we really like in Vue so it should be simple to get started it should be simple to go further
+@TheoSteiner 25:57
+away by adding things so you shouldn't be rewriting your whole code when you need to
+@posva 26:03
+make things more complex
+@posva 26:04
+you shouldn't be rewriting your whole code when you need to make things more complex
+@TheoSteiner 26:04
+most of the time you should be able to just add things to the to the code you already have
+@TheoSteiner 26:08
+and still stay simple i want to dive into pinia colada a bit further later on but like other than
+@TheoSteiner 26:15
+the two basic loaders um you provide by default what what kind of loaders could be implemented
+@TheoSteiner 26:20
+what like why is it a spec yeah it's a spec because i didn't want to lock in my users into
+@TheoSteiner 26:26
+some specific implementation so the basic loader doesn't use any other library right it doesn't
+@TheoSteiner 26:34
+have any other implementation so it only has data error loading state and you can refresh the data
+@TheoSteiner 26:39
+without navigating that's pretty much pretty much it error management loading state data and
+@TheoSteiner 26:45
+refreshing and any any implementation can add their set of features so like pinia colada does add the
+@TheoSteiner 26:51
+cache and persistent annotation invalidations this is handled by an external library which is
+@TheoSteiner 26:57
+independent to the router it works by itself right so we have some glue code you can you can even
+@TheoSteiner 27:02
+think about the define uh the loaders as a whole but i'm not sure if we can get a lot of validation
+@TheoSteiner 27:03
+loaders as glue code.
+@TheoSteiner 27:05
+And then you could have something with other libraries
+@TheoSteiner 27:07
+that other people use.
+@posva 27:09
+So it could be TanStackQuery, which
+@TheoSteiner 27:11
+is a very popular solution for async state management.
+@posva 27:13
+And Pina Colada actually has an API
+@TheoSteiner 27:15
+that looks a lot like TanStackQuery.
+@TheoSteiner 27:17
+It's obviously on purpose to be able to seem familiar to people.
+@posva 27:20
+And you can also do ViewFire.
+@TheoSteiner 27:22
+So ViewFire would have the, what would be special about ViewFire
+@TheoSteiner 27:25
+is that you will wait for the initial data to be ready,
+@TheoSteiner 27:28
+and then it will become real time, something like that.
+@TheoSteiner 27:31
+And so WebSockets, you could imagine something similar.
+@TheoSteiner 27:33
+You wait for the WebSocket to be set up and the connection
+@TheoSteiner 27:37
+to be ready, and then it's just alive.
+@posva 27:39
+It's just there.
+@TheoSteiner 27:40
+Of course, you still need to handle
+@TheoSteiner 27:41
+some of the intrinsic behaviors of WebSockets,
+@TheoSteiner 27:44
+like disconnecting and stuff like that.
+@TheoSteiner 27:46
+That's a whole different story.
+@TheoSteiner 27:48
+So you could imagine any loader that
+@TheoSteiner 27:50
+integrates with any other technology, library
+@TheoSteiner 27:52
+or technology, and that brings their own very special set
+@TheoSteiner 27:56
+of features that is not specific to data loaders.
+@TheoSteiner 27:59
+Because the idea is really, as long
+@TheoSteiner 28:01
+as you implement these internal, like,
+@posva 28:03
+I mean, low level API that the router relies on
+@TheoSteiner 28:07
+for the navigation guard to run and to get data, it will work.
+@TheoSteiner 28:11
+And it has a lot of features that are actually
+@posva 28:13
+more complex to implement that it looks like,
+@TheoSteiner 28:15
+like the ability to have consistent updates.
+@TheoSteiner 28:17
+So the loaders are meant to delay updating the data
+@TheoSteiner 28:21
+until navigation is validated, which is very abstract concept.
+@TheoSteiner 28:26
+But when you have client side loading based on the routes,
+@posva 28:31
+if you navigate to a different route,
+@TheoSteiner 28:33
+and you have multiple parts of the application that
+@posva 28:36
+have different fetches, you may end up
+@TheoSteiner 28:38
+with data that arrives at different times.
+@TheoSteiner 28:41
+And so, for example, you have profile information,
+@posva 28:43
+which is the demo that I showed.
+@TheoSteiner 28:44
+You might have some information that takes longer to load.
+@TheoSteiner 28:47
+And you will have the information of the user
+@TheoSteiner 28:49
+be displayed with different user information, actually.
+@TheoSteiner 28:52
+But it looks like you're looking at one person.
+@TheoSteiner 28:54
+So you have, like, this Frankenstein of information.
+@posva 28:57
+So data loaders also are meant to fix that.
+@TheoSteiner 28:59
+And no matter what library you use,
+@TheoSteiner 29:02
+of course, you need to implement it
+@TheoSteiner 29:03
+and I have a big suit of tests that you need to pass in order
+@TheoSteiner 29:08
+to say, OK, this is a compatible data loader, but it's there.
+@posva 29:11
+It's .
+@posva 29:12
+That's really cool that you're trying
+@TheoSteiner 29:14
+to verify that the community provides are actually
+@TheoSteiner 29:18
+functional data loaders.
+@TheoSteiner 29:19
+So given you can use Pina Colada or something like Vue
+@TheoSteiner 29:23
+Query inside the data loaders, I wonder how they make data
+@TheoSteiner 29:28
+loading, I think declarative is the key word here,
+@posva 29:31
+where you define the dependencies.
+@TheoSteiner 29:33
+So you can use the same thing for a set of data
+@TheoSteiner 29:37
+and you refetch the data whenever the dependencies change.
+@TheoSteiner 29:41
+How does it work if I put the declaration inside the loader?
+@TheoSteiner 29:45
+Like, does the loader need to know about the state?
+@TheoSteiner 29:48
+What do you mean by declaration?
+@TheoSteiner 29:49
+Like, what are you putting inside?
+@TheoSteiner 29:51
+Like, for example, if I put the use query inside the
+@TheoSteiner 29:54
+You mean to create your own version of the query?
+@posva 29:56
+Oh, sorry, of the loader?
+@Speaker_9 29:57
+Yes.
+@TheoSteiner 29:58
+No, it's a bit more complicated than that.
+@TheoSteiner 30:00
+You need to create some custom defined, a query loader, for example,
+@TheoSteiner 30:03
+a Tansy query loader that will at some point call use query
+@Speaker_3 30:07
+instead of its code.
+@posva 30:08
+Oh, OK.
+@posva 30:09
+So I see.
+@TheoSteiner 30:10
+So it's not as easy as just putting the loader into the query
+@posva 30:13
+into the loader.
+@TheoSteiner 30:14
+The reason it requires some, it's definitely not easy.
+@TheoSteiner 30:17
+Also, because some of the features that I have on the loaders
+@TheoSteiner 30:20
+are a bit complex.
+@TheoSteiner 30:22
+So if you look at the implementation for the basic loader,
+@posva 30:24
+it's a bit shorter.
+@TheoSteiner 30:26
+The loader is a bit longer because of the extra features it had.
+@TheoSteiner 30:30
+And they can serve as a starting point as well.
+@TheoSteiner 30:33
+The reason is I tend to move a lot of the complexity
+@TheoSteiner 30:37
+from the user code to the library code as much as possible.
+@TheoSteiner 30:41
+I really believe that a good API should be very easy in 80%.
+@TheoSteiner 30:46
+It's difficult to explain without the words,
+@TheoSteiner 30:48
+but I have another talk where they explain this,
+@TheoSteiner 30:50
+what is a good design, a good API design.
+@TheoSteiner 30:53
+So for 80% of the use cases, it should be very easy.
+@TheoSteiner 30:56
+And then it should get exponentially harder
+@TheoSteiner 30:58
+to get things done.
+@TheoSteiner 31:00
+So you're sacrificing the real hard work
+@TheoSteiner 31:03
+and the real uncommon use cases for a more complex code,
+@TheoSteiner 31:06
+but making extremely easy to get what most people need to do.
+@TheoSteiner 31:10
+So you have a kind of curve.
+@TheoSteiner 31:12
+What was the curve?
+@TheoSteiner 31:14
+If you have the complexity.
+@TheoSteiner 31:17
+Yeah, how common it is.
+@TheoSteiner 31:19
+So on the original act, it goes like, is this very common?
+@TheoSteiner 31:23
+And then the vertical acts will be the difficulty.
+@TheoSteiner 31:25
+And so it should be something like it goes very low,
+@posva 31:28
+and then it goes up really quick.
+@TheoSteiner 31:30
+It's like it's, OK.
+@posva 31:32
+So it should be.
+@posva 31:33
+OK.
+@TheoSteiner 31:33
+It's like an inverted logarithmic curve.
+@posva 31:35
+Yes.
+@TheoSteiner 31:36
+I haven't done a lot of math of this kind for a long time,
+@posva 31:39
+so I don't want to say anything.
+@TheoSteiner 31:42
+There is some exponential in there.
+@posva 31:43
+Yeah, yeah, yeah.
+@TheoSteiner 31:44
+So you optimize for the most common use cases
+@TheoSteiner 31:48
+and sacrifice the very complex use cases.
+@posva 31:52
+I mean, you don't sacrifice them.
+@TheoSteiner 31:54
+You just make it a bit harder to implement them.
+@Speaker_2 31:56
+Yeah, it's hard.
+@TheoSteiner 31:57
+Sacrifice the API, I would say.
+@TheoSteiner 32:00
+So the API is not adapted for those cases.
+@posva 32:03
+This is very abstract.
+@TheoSteiner 32:04
+But the idea is only very, very extremely personalized use
+@posva 32:08
+cases.
+@TheoSteiner 32:08
+It should be a little bit hard.
+@TheoSteiner 32:10
+It should be harder to do, but not impossible.
+@posva 32:12
+Not impossible at all.
+@TheoSteiner 32:12
+It's just that you roll back to the lower level of the API,
+@posva 32:15
+so you have to implement some other things yourself.
+@TheoSteiner 32:17
+And so it requires way more work than having a linear API, which
+@posva 32:21
+I think is really bad API design.
+@TheoSteiner 32:23
+So you said earlier that the Vue community strives to always
+@TheoSteiner 32:27
+have one solution for one problem.
+@TheoSteiner 32:30
+Is there a similar effort with data loaders?
+@posva 32:32
+Yes.
+@TheoSteiner 32:36
+OK, so what I mean is, what I said is more,
+@TheoSteiner 32:39
+we have official solutions for the,
+@posva 32:41
+so we have official solutions.
+@posva 32:42
+That's the short version.
+@TheoSteiner 32:43
+It means that anything that is really needed in applications,
+@TheoSteiner 32:47
+like the core foundation of, the core foundation should be,
+@posva 32:51
+we have official solutions.
+@TheoSteiner 32:52
+So that's the router and state management alongside Vue.
+@posva 32:55
+And then we have things like ESLint.
+@posva 32:57
+And there are other things that right now,
+@TheoSteiner 33:00
+I don't have any other testing abstraction as well.
+@TheoSteiner 33:02
+So we try as much as we can to have official solutions
+@TheoSteiner 33:05
+for the things that are important, DevTools as well.
+@TheoSteiner 33:08
+And then other specific solutions are created by the community,
+@TheoSteiner 33:12
+right, contributed by the community.
+@TheoSteiner 33:14
+Next, in the end, is still a community project in a way.
+@TheoSteiner 33:18
+Internationalization, it's also a community project, and so on.
+@TheoSteiner 33:22
+So data loaders, similar to Pinia,
+@posva 33:25
+I like to start projects on the side.
+@TheoSteiner 33:27
+That way I can iterate a bit faster on the ideas that are not leveled as,
+@posva 33:32
+as official.
+@posva 33:33
+And once they get leveled as official,
+@TheoSteiner 33:35
+you get a lot more of users that have different, more different,
+@TheoSteiner 33:38
+a more, a different demographic, right?
+@TheoSteiner 33:41
+So you have people who have different levels of knowledge,
+@TheoSteiner 33:44
+and it takes a lot more effort to adapt the documentation,
+@TheoSteiner 33:49
+some of the warnings, some of the APIs as well,
+@TheoSteiner 33:51
+to match the same level of quality that we have in Vue, I would say.
+@TheoSteiner 33:56
+So it's easier to iterate faster during this period with less documentation,
+@posva 34:01
+simplified API.
+@TheoSteiner 34:02
+So you only have users who are actually quite good.
+@TheoSteiner 34:06
+They are, they are more experienced developers, more seasoned developers.
+@TheoSteiner 34:10
+And so they're able to give you interesting feedback,
+@TheoSteiner 34:13
+which is not the case for some of the beginners developers.
+@posva 34:16
+But then once you get official,
+@TheoSteiner 34:17
+you need to be able to be easy for beginners as well.
+@TheoSteiner 34:19
+And this is way harder than it looks like.
+@TheoSteiner 34:21
+So actually, the reason I'm asking is on the Vue Unplugged in Router repository,
+@TheoSteiner 34:27
+I looked through the issues and there are quite a few issues from like Vue,
+@TheoSteiner 34:31
+Nuxt maintainers.
+@TheoSteiner 34:33
+And I wondered, is there maybe a future where Nuxt uses the next generation Vue router under the hood?
+@TheoSteiner 34:39
+So it already uses, this is why there are some issues with that.
+@TheoSteiner 34:43
+It already uses, but only for the types.
+@posva 34:46
+Okay.
+@TheoSteiner 34:46
+So in the future, I mean, I talked to Daniel and Sebastian and I'm close to the team anyway.
+@TheoSteiner 34:53
+So I try to ensure that there is nothing breaking for them.
+@TheoSteiner 34:57
+In the future, it will be better if it could be completely integrated.
+@TheoSteiner 35:01
+So for that, I only need to make sure that every piece of API is open enough for Nuxt to work with it.
+@TheoSteiner 35:06
+Right now, they don't use the parsing of the file system.
+@TheoSteiner 35:10
+So some of the APIs I expose them only for them.
+@TheoSteiner 35:15
+So they can actually generate the types based on a structure.
+@TheoSteiner 35:19
+And they can build a structure themselves.
+@posva 35:21
+I think something like that.
+@TheoSteiner 35:22
+So for example, you have an experimental type pages like on Nuxt config that you can set to true.
+@TheoSteiner 35:28
+You have type routes, but you don't have the data.
+@TheoSteiner 35:31
+You have data loaders and all the features.
+@TheoSteiner 35:33
+So I need to build, which is one of the things that I do right now is build the modules to make that easy.
+@TheoSteiner 35:39
+But there's still, because they don't use the Vite plugin, there is no parsing on the code.
+@TheoSteiner 35:43
+And some of the things happen at build time to make just your life a little bit easier.
+@TheoSteiner 35:48
+Like you can even remove the export of the data loaders and stuff like that.
+@posva 35:52
+And it will still work.
+@TheoSteiner 35:53
+So these are still not working on Nuxt unfortunately.
+@posva 35:56
+Actually, a little fun side fact.
+@TheoSteiner 35:58
+My team uses a Vue Unplugin router.
+@TheoSteiner 36:00
+And I use Vue Unplugin router internally.
+@posva 36:02
+And I needed to convince my boss before.
+@TheoSteiner 36:04
+Because we were building this SBA and it has been around for a long time.
+@posva 36:08
+And it's built on Vue router.
+@TheoSteiner 36:10
+And I wanted to like introduce loaders.
+@TheoSteiner 36:12
+And I didn't want to like write my own, roll my own version on top of before entry route hooks.
+@TheoSteiner 36:18
+So I looked into your library and I was like, oh, this is beautiful.
+@TheoSteiner 36:22
+But it had this like small little experimental label on it.
+@TheoSteiner 36:25
+So I showed it to my boss and he was like, experimental.
+@TheoSteiner 36:28
+That might be a hard, a hard thing.
+@TheoSteiner 36:30
+It might change after, after.
+@posva 36:32
+So I looked who is using it.
+@TheoSteiner 36:34
+And I found it inside the Nuxt dependencies.
+@TheoSteiner 36:37
+So I was like, I went to my boss and I was like, look, Nuxt is depending on it.
+@posva 36:41
+There's not going to be so much breaking change.
+@TheoSteiner 36:44
+But yeah, of course, we knew it was a high risk adventure.
+@TheoSteiner 36:47
+But it was better than the opportunity, which was like hand rolling our own stack.
+@TheoSteiner 36:52
+No one knows Vue router better than you.
+@TheoSteiner 36:54
+So who else to implement it?
+@posva 36:56
+Thanks.
+@TheoSteiner 36:57
+And most of the API, yeah, it's, it's been good.
+@TheoSteiner 37:00
+It's been pretty much stable.
+@TheoSteiner 37:02
+Like most of the changes are, are small.
+@TheoSteiner 37:05
+The whole structure, like if you use file based routing, the whole file based routing has been pretty much stable from the beginning because it was supposed to be mapped to what Nuxt could do.
+@TheoSteiner 37:16
+I didn't want to buy shed too much on the syntax.
+@TheoSteiner 37:19
+So there are a few things that do not exist in Nuxt.
+@TheoSteiner 37:22
+Well, I mean, just one mainly named named views.
+@posva 37:25
+So I had to introduce a syntax for that.
+@TheoSteiner 37:27
+And I will probably introduce syntax.
+@TheoSteiner 37:29
+Similar to SvelteKit or Nuxt, I think, where you have a page or route with a plus in the front or a dollar or whatever.
+@TheoSteiner 37:37
+And these allows you to define sometimes information that are relative to the route.
+@posva 37:43
+But you don't have a page.
+@posva 37:45
+So you can have nesting of information like meta properties and stuff like that.
+@posva 37:50
+And there are a few things that can change, but minor breaking changes.
+@posva 37:54
+Most of the APIs, if they are exposed, they are unlikely to change too much.
+@posva 37:58
+And everything.
+@posva 37:59
+So things that are actually experimental, they are marked experimental again inside of the package.
+@posva 38:05
+This is experimental, could change because I'm still having confirm.
+@posva 38:08
+I think it's mostly the editable tree, editable route tree or something like that, which is it's a bit too much.
+@posva 38:15
+You have to it's supposed to allow users to map to a route array.
+@posva 38:20
+So you're able to edit the tree in a way that is similar to how you edited routes array, which is something people used to do a lot.
+@posva 38:27
+But.
+@posva 38:28
+Because it's done at build time, it gives the type safety.
+@posva 38:31
+And so this part of being edited at build time also includes also add sorry limitations like you cannot add a random code into the functions.
+@posva 38:40
+For example, anything that is not so realizable cannot be added to the tree.
+@posva 38:44
+They have these limitations that you have to overcome in runtime.
+@posva 38:47
+But people already already did that.
+@posva 38:49
+So they should be able to copy paste that code anyway.
+@posva 38:52
+Very interesting.
+@posva 38:53
+And for data loaders, I believe they are like one of the more stable.
+@posva 38:57
+Parts of the experimental view, which are sweet.
+@posva 39:01
+Do you have like an estimate for when they might make it to the official viewer to the official view router?
+@posva 39:06
+I don't know.
+@posva 39:07
+It's true that in the future I would imagine integrating the unplugging view router or maybe just a VEET plugin.
+@posva 39:14
+I know I'm not sure yet of how to integrate everything because I have issues that I can only fix issues with HHMR.
+@posva 39:22
+So hot module replacement that can only be fixed for VEET.
+@posva 39:26
+And I just don't have the capacity to write the code for how many bundlers do we have like six?
+@posva 39:32
+It's just too much.
+@posva 39:33
+So Webpack and VEET usually they work pretty much the same.
+@posva 39:36
+And as long as people have the same API as VEET, it should be fine.
+@posva 39:39
+My goal is probably to include this in view router package at some point.
+@posva 39:43
+Not in the package in the repository.
+@posva 39:45
+It will still be a separate package that you install, I think, because it's important to keep the separation for major version is just easier.
+@posva 39:52
+It's not far from having a stable version.
+@posva 39:54
+I think I have a few.
+@posva 39:56
+This is just more personal.
+@posva 39:58
+I take a lot of time to mark a version as stable way more than other people.
+@posva 40:03
+And it's more that with personal life.
+@posva 40:06
+I have delayed this a lot, but it's not far from having a stable release that I have like few small changes.
+@posva 40:14
+I want to add to loaders improvements, which should not even be breaking changes.
+@posva 40:19
+But just in case I have to wait, I have the naming the default naming because you can configure the naming of the routes anyway.
+@posva 40:26
+So I wanted to change the default naming maybe to be easy to differentiate from a string path.
+@posva 40:33
+So I still need to think a little bit about it.
+@posva 40:35
+See what other people are doing.
+@posva 40:36
+See if somebody has a better idea.
+@posva 40:39
+And maybe sometimes it helps you see things from a different perspective.
+@posva 40:43
+And apart from that, I think it's all features and it hasn't had any.
+@posva 40:47
+It hasn't had many breaking changes.
+@posva 40:49
+I mean, I still had nine breaking changes, right?
+@posva 40:51
+Technically, because I had version 10.
+@posva 40:53
+I mean, 0.10.
+@posva 40:54
+So I do breaking changes.
+@posva 40:55
+Since I'm still on 0. something, the breaking changes happens on the minor.
+@posva 41:00
+So any minor version is a breaking change, at least sometimes small ones.
+@posva 41:04
+To give a comment from a user perspective, the breaking changes have not been very big.
+@posva 41:10
+It was very easy to adjust to them.
+@posva 41:12
+I'm glad.
+@posva 41:13
+I don't even remember anymore what were.
+@posva 41:15
+The dialogs did have a breaking change.
+@posva 41:17
+They were quite big, but it was necessary because I discovered a big flaw.
+@posva 41:22
+I'm trying to check.
+@posva 41:23
+What did I have?
+@posva 41:24
+I have a breaking change.
+@posva 41:25
+It requires your router for 0.4.
+@posva 41:27
+Okay.
+@posva 41:28
+Okay.
+@posva 41:29
+Create router now requires the explicit router.
+@posva 41:30
+So it was for TypeScript.
+@posva 41:31
+Yeah, it was like I discovered flows and I was like, okay, I need to fix this.
+@posva 41:35
+And then eight was a lot of data loaders.
+@posva 41:37
+Yeah, it was changing types.
+@posva 41:39
+Honestly, the whole type was I felt like it was so fragile at the beginning and also did
+@posva 41:44
+relying on the virtual files on V has been a little bit of a roller coaster sometimes
+@posva 41:48
+through no longer relative to routes folder.
+@posva 41:50
+So this was more like a fix.
+@posva 41:52
+Yeah.
+@posva 41:53
+I mean, it's not that our fixes technically, but it's like, oh, I could break people.
+@posva 41:55
+So let's just, oh, actually, no, there are another many breaking changes because before
+@posva 42:00
+I was just doing it for features sometimes.
+@posva 42:01
+There are a few like rename five pattern to five patterns because it's, I was an array.
+@posva 42:06
+Yeah.
+@posva 42:07
+These are small, small changes, but hopefully, yeah, it hasn't had big change, big, big breaking
+@posva 42:11
+change for a while.
+@posva 42:12
+I think it's June.
+@posva 42:13
+No, may, may was the last one.
+@posva 42:15
+The big last one.
+@posva 42:16
+So I think like, this is probably all the time we've got for today.
+@posva 42:21
+Mr.
+@posva 42:22
+I guess I can always look myself as if your company uses, uses the sponge, the open source.
+@posva 42:31
+I do consider reaching out or for sponsorships.
+@posva 42:34
+I'm still looking to find a balance between the open source and freelancing.
+@posva 42:39
+And I have very nice options for companies to have a direct connection.
+@posva 42:44
+I can direct being able to just talk to me about the issue, the issues they have.
+@posva 42:47
+So they can, the developers are usually really happy with these because they can ask very
+@posva 42:51
+technical questions or again,
+@posva 42:52
+I can help them debug bugs and it saves them hours.
+@posva 42:55
+So it's really just worth the money, which is just sponsoring.
+@posva 42:58
+You also have courses, right?
+@posva 43:00
+Yeah.
+@posva 43:01
+I have a mastering Pina course, which is named after Pina, but in reality is very, it's about
+@posva 43:05
+stores.
+@posva 43:06
+So it helps you out.
+@posva 43:07
+It helps you learn a lot about view itself, the composition API.
+@posva 43:11
+And yeah, it's very recent.
+@posva 43:12
+It has only one year old.
+@posva 43:14
+So it's still very, very, very, uh, what's the term not up to date, but relevant.
+@posva 43:17
+Yeah.
+@posva 43:18
+It's relevant.
+@posva 43:19
+No, it's relevant for the currency.
+@posva 43:20
+Yeah.
+@posva 43:21
+So it's been very, very good.
+@posva 43:23
+Like people are like, yeah, I learned so much.
+@posva 43:25
+None of these, I never thought about these, never saw these API anywhere else.
+@posva 43:29
+And now I can use it for some, some of my features and it simplifies my code so much.@posva 43:34
+Yeah.
+@posva 43:35
+Really happy about it.
+@posva 43:36
+It's also really fun.
+@posva 43:37
+A lot of exercises.
+@posva 43:38
+Fantastic.
+@posva 43:39
+And where can people go to follow you?
+@posva 43:40
+Uh, on Twitter on so X or GitHub as posva.
+@posva 43:44
+That's where I hang out most of the time.
+@posva 43:47
+Okay.
+@posva 43:48
+Thank you so much for coming on today.
+@posva 43:49
+It was a pleasure.
+@posva 43:50
+Thank you.
+@posva 43:51
+Bye.
+@posva 43:52
+Bye.
+@posva 43:53
+.
+
