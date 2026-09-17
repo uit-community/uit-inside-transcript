@@ -1,0 +1,875 @@
+@TheoSteiner 0:08
+So, I'm not used to doing this introduction in English because usually this podcast is in Japanese. So, bear with me if it's a lot of ums and errs, but this is the UIT Inside podcast. UIT is the front-end organization at LY Corporation, which is a Japanese company, and our major products are the LINE Messenger, which is the leading messenger in Japan, and Yahoo Japan, which is the Japanese version of the Yahoo search engine. And today I'm really excited because we have the most amazing guest ever on. We have Dan Abramov on the podcast. Dan, can you introduce yourself?
+
+@TheoSteiner 0:08
+えっと、普段このポッドキャストは日本語なので、英語でのイントロは慣れてないんですが、お付き合いください。これはUIT Insideポッドキャストです。UITはLY Corporationのフロントエンド組織で、LYは日本の会社です。主なプロダクトは、日本で一番使われているLINE Messengerと、Yahoo! JAPANという日本版Yahoo検索エンジンです。今日は本当にすごいゲストをお迎えしています。Dan Abramovさんです。Dan、自己紹介をお願いします。
+
+@danabra.mov 0:49
+Hi, thank you. My name is Dan. I guess I used to work on React, so that's how you might have seen my avatar on GitHub sometimes. And then I used to work at Bluesky. And now I'm working part-time on the Next.js team at Vercel.
+
+@danabra.mov 0:49
+こんにちは、ありがとう。Danです。以前はReactの開発に関わっていたので、GitHubで僕のアバターを見たことがあるかもしれません。その後はBlueskyで働いていました。今はVercelのNext.jsチームでパートタイムで働いています。
+
+@TheoSteiner 1:07
+And you work for Vercel Japan, is that right?
+
+@TheoSteiner 1:07
+そして今はVercel Japanで働いているんですよね？
+
+@danabra.mov 1:10
+That's the plan. So currently I'm still in the UK, but I submitted the visa documents. So we'll see how that comes through, but the plan is to relocate to Japan, possibly at the end of the—
+
+@danabra.mov 1:10
+その予定です。今はまだイギリスにいますが、ビザの書類は提出しました。どうなるかはこれからですが、年末あたりに日本に移住する計画です。
+
+@TheoSteiner 1:25
+That would be so cool. And you're always welcome at our office.
+
+@TheoSteiner 1:25
+それはすごく楽しみですね。うちのオフィスはいつでも歓迎ですよ。
+
+@danabra.mov 1:28
+Thank you.
+
+@danabra.mov 1:28
+ありがとうございます。
+
+@TheoSteiner 1:28
+By the way, the visa documents can take quite some time. I applied for permanent residency in Japan 16 months ago... so.
+
+@TheoSteiner 1:28
+ちなみに、ビザの手続きは結構時間かかりますよ。僕は日本の永住権を16ヶ月前に申請したんですが…まだです。
+
+@danabra.mov 1:38
+Okay. That's—haha. Yeah.
+
+@danabra.mov 1:38
+なるほど、はは。そうなんですね。
+
+@TheoSteiner 1:39
+But I hope you can get fast-tracked.
+
+@TheoSteiner 1:39
+でも、Danは早く進むといいですね。
+
+@danabra.mov 1:42
+I hope so.
+
+@danabra.mov 1:42
+そうだといいな。
+
+@TheoSteiner 1:42
+Yeah. And obviously I had you introduce yourself, but you don't really need an introduction. When I told my colleagues that you were going to come on the show, they were all so excited. So, you're not just famous in the English-speaking world, but every Japanese front-end developer also knows you.
+
+@TheoSteiner 1:42
+まあ、自己紹介してもらいましたが、正直言って紹介は必要ないですよね。Danが出るって同僚に伝えたら、みんなめちゃくちゃ盛り上がってました。英語圏だけじゃなくて、日本のフロントエンドエンジニアもみんなDanのこと知ってますよ。
+
+@danabra.mov 2:00
+Oh, interesting. Because I thought people already kind of... because I disappeared a little bit from the scene. I think there's a new generation who... I haven't really talked too much.
+
+@danabra.mov 2:00
+へえ、そうなんだ。もう自分はちょっと表舞台から消えたと思ってたから。新しい世代もいるし…あまり最近は話してないんですよね。
+
+@TheoSteiner 2:11
+Yeah, I guess there's a new generation as well, but you're still the legend, I guess.
+
+@TheoSteiner 2:11
+たしかに新しい世代もいますけど、やっぱりDanはレジェンドですよ。
+
+@danabra.mov 2:16
+Yeah.
+
+@danabra.mov 2:16
+そうなんですね。
+
+@TheoSteiner 2:16
+So we had a meeting last Thursday, and I was like, "Yeah, Dan is coming on." And they all spammed the chat with emojis because they were so excited. And I've never had that happen with a guest coming on before.
+
+@TheoSteiner 2:16
+先週の木曜日にミーティングがあって、「Danが来るよ」って言ったら、みんなチャットで絵文字を連打して大盛り上がりでした。ゲストでこんなこと初めてです。
+
+@danabra.mov 2:29
+Oh, cool. Well, appreciate it.
+
+@danabra.mov 2:29
+それは嬉しいですね。ありがとうございます。
+
+@TheoSteiner 2:32
+But today we're not talking about React. We're actually here to talk about something completely different, which is the ATProto protocol. So, ATProto—what does ATProto even stand for?
+
+@TheoSteiner 2:32
+でも今日はReactの話じゃないんです。今日は全然違うテーマ、ATProtoプロトコルについて話します。ATProtoって、そもそも何の略なんですか？
+
+@danabra.mov 2:45
+Ah, ATProto. It's like "AT Protocol," and "AT" supposedly stands for "Authenticated Transfer." So I think that's kind of the formal name. I think really the reason is because it looks like the @ symbol that you use in usernames, and it's a protocol that has to do with identity. So it's kind of like when you say my Instagram handle is @whatever, except it's an internet protocol instead of something specific to a company.
+
+@danabra.mov 2:45
+ああ、ATProtoは「AT Protocol」の略で、「AT」は一応「Authenticated Transfer」の意味らしいです。正式名称はそうみたいですね。でも本当の理由は、ユーザー名で使う@マークに似てるからだと思います。ATProtoはアイデンティティに関するプロトコルなので、Instagramのハンドルが@〜みたいな感じですが、これは企業固有じゃなくてインターネットプロトコルなんです。
+
+@TheoSteiner 3:15
+Okay. So you and I are both on Bluesky, so I think we have quite a bit of contact with the AT Protocol. But the majority of Japanese developers are still stuck on Twitter or X, and they might have never heard of AT Protocol.
+
+@TheoSteiner 3:15
+なるほど。僕たちはBlueskyを使ってるからAT Protocolに結構触れてるけど、日本の多くの開発者はまだTwitterやXにいて、AT Protocolのことを聞いたことがない人も多いと思うんだ。
+
+@danabra.mov 3:29
+Mhm.
+
+@danabra.mov 3:29
+うん。
+
+@TheoSteiner 3:29
+Can you just give us the 100-foot bird's-eye view of the protocol? What is that?
+
+@TheoSteiner 3:29
+じゃあ、そのプロトコルについてざっくり説明してもらえる？どんなものなの？
+
+@danabra.mov 3:36
+Yeah, it's very tricky to answer because a good protocol stays invisible. It's a way to build social apps—not necessarily social, but I guess that's an easier area to focus on. It's a new way to build social apps that was originally developed by Bluesky, the company that you might know as a Twitter clone product. But really, originally they were supposed to do that with Twitter itself. It's just that Twitter broke the contract with them. But the thing they originally wanted to build is a generic, universal internet protocol. I've tried to describe it in different ways. I don't know which one resonates. Different audiences understand it differently. One way I would describe it to web developers is that it tries to extract an identity layer for the web. So each app has its own login, and for social apps you can create different kinds of things in the app, but they stay within that app, right? Like if I write an answer on Stack Overflow, it's kind of stuck inside Stack Overflow. If I write a comment on GitHub, it's kind of stuck inside GitHub, in the sense that these companies own what I made using their products. And then if these companies start changing in ways that you don't like, maybe you can abandon them, but you've invested so much effort and so much content into these closed spaces that they control. And the idea of AT Protocol, or shorter, ATProto, is to kind of lift that out so that everything works more like files. So when I post on Bluesky, I'm not actually putting stuff into the Bluesky app. Although it looks like this, right? If you just use it, it kind of looks like Twitter. Or if you use Tangled, which is ATProto's GitHub alternative, it kind of looks like GitHub. But what happens behind the scenes is actually it's almost like I have a folder somewhere in the cloud that has data from all of these apps as JSON. So everything is stored as JSON in this new layer of the web that is app agnostic. It's not controlled by one company necessarily, right? You can host this folder with different providers. You can host it yourself. It is really cheap. But it's app agnostic, and as a result anyone can start a competitor to one of these services or one of these apps with all existing data already there and already interoperable with existing apps. So if somebody wants to start a competitor to Bluesky—and this actually happened—there's Blacksky, which has different moderation policies and so on, but it's completely interoperable with the Bluesky app even though it doesn't use the Bluesky API. So that is the big thing. Every app on ATProto shares a common API where you don't need to provide an API as the app author because all apps just write to this JSON. It's a common way for apps to, in a sense, talk to each other—or show content from each other and augment each other—without actually talking to each other. So without exposing an API, because the protocol itself is the API. There's a few other ways I like to explain it, but I think that's the big idea: freeing the stuff that we create, lifting it out of apps, and making it live on an independent layer that we actually control as users, so that everything we create is more like files under the hood, but with the same normal user experience for the app user.
+
+@danabra.mov 3:36
+うーん、説明が難しいんだけど、良いプロトコルって基本的に目立たないものなんだよね。ソーシャルアプリを作るための仕組みで、必ずしもソーシャルに限らないけど、そこが一番イメージしやすいかな。これはBlueskyが最初に開発した新しいソーシャルアプリの作り方なんだ。BlueskyってTwitterのクローンみたいなサービスで有名だけど、もともとはTwitterと一緒にやる予定だったんだよ。でもTwitter側が契約を破棄しちゃった。でも彼らが本当に作りたかったのは、汎用的でユニバーサルなインターネットプロトコルなんだ。いろんな説明の仕方を試してきたけど、聞く人によって響き方が違うんだよね。ウェブ開発者向けに言うと、ウェブのためのアイデンティティレイヤーを切り出そうとしてる感じ。今はアプリごとにログインが必要で、ソーシャルアプリだといろんなものを作れるけど、その中に閉じてるよね。例えばStack Overflowで回答を書いても、その中に閉じ込められてるし、GitHubでコメントしてもGitHubの中だけ。つまり、作ったものはそのサービスの会社が持ってる状態なんだ。で、もしその会社が自分の好みに合わない方向に変わっても、もうたくさんの努力やコンテンツをそのクローズドな空間に投資しちゃってるから、簡単には離れられない。AT Protocol、略してATProtoのアイデアは、それをファイルみたいな形に引き上げることなんだ。だからBlueskyで投稿しても、実際にはBlueskyアプリにデータを入れてるわけじゃない。見た目はTwitterっぽいし、Tangled（ATProto版GitHub）を使えばGitHubっぽいけどね。でも裏側では、クラウド上のどこかにフォルダがあって、いろんなアプリのデータが全部JSONで入ってるようなイメージなんだ。つまり、すべてがJSONとして保存されていて、この新しいウェブのレイヤーはアプリ非依存。特定の会社がコントロールしてるわけじゃなくて、いろんなプロバイダーでホストできるし、自分でホストもできる。しかもコストも安い。アプリ非依存だから、誰でも既存データを使って新しいサービスやアプリを作れるし、既存アプリともすぐに連携できる。例えばBlueskyの競合を作りたい人がいたら、実際にBlackskyっていうのがあって、モデレーションポリシーも違うけど、Bluesky APIを使わなくてもBlueskyアプリと完全に相互運用できるんだ。これが大きな特徴で、ATProto上のすべてのアプリは共通のAPIを持ってる。アプリ開発者がAPIを用意しなくても、全部このJSONに書き込むだけでいい。つまり、アプリ同士が直接やり取りしなくても、コンテンツを見せ合ったり拡張し合ったりできる共通の仕組み。APIを公開しなくても、プロトコル自体がAPIになってるんだ。他にも説明の仕方はいろいろあるけど、一番大事なのは、僕たちが作ったものをアプリから解放して、ユーザー自身がコントロールできる独立したレイヤーに載せること。中身はファイルっぽいけど、ユーザー体験は今まで通りのアプリって感じ。
+
+@TheoSteiner 7:54
+And you actually have a great blog post on this. You have "A Social File System" on your blog, Overreacted, and it talks about what you just did the perfect summary of.
+
+@TheoSteiner 7:54
+しかもこの話、あなたのブログ「Overreacted」の記事『A Social File System』でもすごく分かりやすくまとめてるよね。
+
+@danabra.mov 8:08
+Yeah.
+
+@danabra.mov 8:08
+そうだね。
+
+@TheoSteiner 8:08
+Actually, we can just end the podcast here. But I think we want to dive a bit deeper, and since this podcast is mostly for web developers, I actually prepared a little ambush for you. So, ATProto is a protocol, and web developers are usually familiar with the HTTP protocol. So I sort of wanted to go up the stack layer by layer and see where they differ, what ATProto offers on top of HTTP, and how they even build on each other.
+
+@TheoSteiner 8:08
+実は、ここでポッドキャストを終わってもいいかもしれませんね。でも、もう少し深掘りしたいですし、このポッドキャストは主にウェブ開発者向けなので、実はちょっとしたサプライズを用意してきました。ATProtoはプロトコルですが、ウェブ開発者ならHTTPプロトコルには馴染みがありますよね。なので、レイヤーごとに積み上げていって、どこが違うのか、ATProtoがHTTPの上で何を提供しているのか、どうやって組み合わさっているのかを見ていきたいと思います。
+
+@danabra.mov 8:42
+Yeah.
+
+@danabra.mov 8:42
+そうですね。
+
+@TheoSteiner 8:43
+And this might feel like a check of your HTTP knowledge, but we'll keep it real simple and easy. So, layer zero of HTTP is: what is HTTP even for? It would be a communication standard between clients and servers. And you already hinted at this, but what is layer zero behind the ATProto protocol?
+
+@TheoSteiner 8:43
+これはHTTPの知識チェックみたいに感じるかもしれませんが、すごくシンプルに進めます。じゃあ、HTTPのレイヤーゼロは何のためにあるのか？クライアントとサーバー間の通信標準ですよね。すでに少し触れてくれましたが、ATProtoのレイヤーゼロは何でしょう？
+
+@danabra.mov 9:11
+Yeah. ATProto kind of builds on top of multiple things. It builds on top of HTTP, DNS, JSON, WebSockets, CBOR, and I think maybe these are the ones that I know. I'm sure there are other things, but it's HTTP or WebSockets as the transport, and then CBOR as encoding, I think, for JSON, and then DNS for a bunch of...
+
+@danabra.mov 9:11
+そうですね。ATProtoはいろんなものの上に成り立っています。HTTP、DNS、JSON、WebSocket、CBORとか、そのあたりが僕の知っている範囲です。他にもあると思いますが、HTTPやWebSocketがトランスポートで、CBORがエンコーディング、JSON用ですね。それからDNSもいろいろ使われています。
+
+@TheoSteiner 9:40
+So it doesn't really try to reinvent anything about how the internet works.
+
+@TheoSteiner 9:40
+つまり、インターネットの仕組み自体を新しく作り直そうとはしていないんですね。
+
+@danabra.mov 9:46
+Right.
+
+@danabra.mov 9:46
+その通りです。
+
+@TheoSteiner 9:46
+It sort of builds on top of the existing transport layer of the internet.
+
+@TheoSteiner 9:46
+既存のインターネットのトランスポートレイヤーの上に構築されている感じですね。
+
+@danabra.mov 9:51
+Yeah. And I guess it has a few of its own inventions. There's something called Lexicon, which is a JSON type definition. They did not go with RDF or JSON-LD or JSON Schema. They made their own because none of these things quite fit what they wanted. So there are some custom pieces, but where appropriate it tries to reuse existing primitives. For example, domains as handles is one example. Instead of inventing its own handle system, it's like, well, it has to be centralized in some sense, because somebody has to determine the top-level mappings, like who owns this username. And they decided, well, this already exists on the internet. It's called domains. So we're just going to use this existing system for this. I think there's a lot of that in the design. And then there's also cryptography. In addition to all of this stuff, there's cryptography—not in the sense of crypto, blockchain, or whatever, even though there is one element that's maybe reminiscent of that. We can get to that if we want to. But overall it's much more like the web. There are cryptographic signatures and public-key/private-key cryptography.
+
+@danabra.mov 9:51
+そうですね。あと、独自の仕組みもいくつかあります。たとえばLexiconというJSON型定義があります。RDFやJSON-LD、JSON Schemaは使わず、どれも要件に合わなかったので独自に作ったんです。なのでカスタムな部分もありますが、使えるところは既存のプリミティブを再利用しています。例えば、ドメインをハンドルとして使うのもその一例です。独自のハンドルシステムを作るのではなく、誰がどのユーザー名を持つか決めるために、既存のドメインシステムをそのまま利用しています。そういう設計が多いと思います。それから暗号技術もあります。いわゆる暗号資産やブロックチェーン的なものではなくて、ちょっと似ている要素もあるけど、必要なら後で話しましょう。でも全体的にはウェブに近いです。暗号署名や公開鍵・秘密鍵の暗号技術が使われています。
+
+@TheoSteiner 11:26
+The math part of cryptography.
+
+@TheoSteiner 11:26
+数学的な意味での暗号ですね。
+
+@danabra.mov 11:28
+Yeah.
+
+@danabra.mov 11:28
+そうです。
+
+@TheoSteiner 11:28
+Yeah.
+
+@TheoSteiner 11:28
+ですね。
+
+@danabra.mov 11:29
+Yeah.
+
+@danabra.mov 11:29
+そうですね。
+
+@TheoSteiner 11:30
+So whereas HTTP—HTTP and ATProto both have URIs. For HTTP, everyone in the web world knows URLs. You have a domain that maps to a server, and DNS helps resolve the path to the server. But in the ATProto world, what is the common URI? What is in there?
+
+@TheoSteiner 11:30
+HTTPもATProtoもURIを持っていますよね。HTTPの場合、ウェブの世界ではみんなURLを知っています。ドメインがサーバーに紐づいていて、DNSがそのサーバーへの経路を解決してくれます。でもATProtoの世界では、共通のURIって何なんでしょう？中身はどうなってるんですか？
+
+@danabra.mov 11:55
+So in ATProto, all AT URIs... First, it's worth talking about the AT URI itself. It's `at://`, and then what goes after it? I think the first question is: what does it point to? An HTTP URI points at a song, an image, an HTML page, or something like this. Maybe that HTML page has more links. In ATProto, all AT URIs point at records. And a record is a piece of JSON with a typed schema. Essentially, every AT URI points at some JSON. For example, a Bluesky post is a piece of JSON. Or Tangled—the GitHub alternative—a star is also a piece of JSON. A Bluesky follow is a piece of JSON that says you follow this person. So it's the stuff that you create: these documents, or records, through the apps. These records can link to each other. For example, if I comment on your post, each of us has a folder, or a repo, where all of our stuff lives. The important part is that you have yours and I have mine. Each of us owns our own data. Sure, maybe we use some hosting behind the scenes. When I sign up for Bluesky, I don't think about where it lives. But I actually moved my hosting, so you can move it over time. All my stuff is in my repo, and all your stuff is in your repo. Actually, I'm going to give you a test to see if you understand it. If 10,000 people follow you, where do these follow records live? Are they in your repo, or are they somewhere else?
+
+@danabra.mov 11:55
+ATProtoでは、すべてのAT URIは...まず、AT URI自体について話しておきたいです。`at://`から始まって、その後に何が続くのか？最初の疑問は「それは何を指しているのか？」ですね。HTTP URIは曲や画像、HTMLページなどを指しますよね。そのHTMLページにさらにリンクがあるかもしれません。ATProtoでは、すべてのAT URIはrecordを指します。recordは型付きスキーマのJSONデータです。つまり、AT URIは基本的に何らかのJSONを指しているんです。例えば、Blueskyの投稿もJSONですし、Tangled（GitHubの代替）のスターもJSONです。Blueskyのフォローも「この人をフォローしている」というJSONになっています。つまり、アプリを通じて自分が作るドキュメントやrecordがそれです。これらのrecord同士はリンクすることもできます。例えば、僕があなたの投稿にコメントした場合、お互いに自分のフォルダやリポジトリがあって、そこに自分のデータが全部入っています。大事なのは、あなたのものはあなたのリポジトリ、僕のものは僕のリポジトリにあるということです。つまり、みんな自分のデータを自分で所有しているんです。もちろん、裏側でホスティングを使っているかもしれません。Blueskyに登録したとき、どこにデータがあるかなんて意識しませんよね。でも実際、僕はホスティングを移したことがあって、後から移行もできるんです。僕のデータは全部僕のリポジトリに、あなたのデータは全部あなたのリポジトリに入っています。じゃあ、ちゃんと理解できてるかテストしてみますね。もし1万人があなたをフォローした場合、そのフォローのrecordはどこに保存されているでしょう？それはあなたのリポジトリにあるのか、それとも別の場所なんでしょうか？
+
+@TheoSteiner 14:05
+I would say they are distributed across 10,000 users, right?
+
+@TheoSteiner 14:05
+それぞれ1万人のユーザーに分散されている、って感じですよね？
+
+@danabra.mov 14:10
+Yeah.
+
+@danabra.mov 14:10
+そうですね。
+
+@TheoSteiner 14:10
+Because everyone holds their own follow.
+
+@TheoSteiner 14:10
+みんな自分のフォロー情報を持ってるからです。
+
+@danabra.mov 14:13
+Yeah, exactly. So if you have a million followers, they're not actually yours. There's one follow record per person who follows you. But if you follow a million people, that's a million records in your repo, because it was your choice to follow them. So now that we understand your stuff lives in your repo and my stuff lives in mine, if I comment on your posts, that's a comment record in my repo that has a link to posts in your repo. And that's where AT URIs come in. I need a way to link to something that exists in your repo—to some piece of JSON. So we have this web of JSON where, instead of HTML pages with links, we have JSON with links. That's where the need for a separate protocol comes up. If we just used HTTP, imagine there's some server hosting your data at `hosting-company.com/you/post`, and I link to that from my repo. That means you can never change the hosting company without breaking the link. We have the domain system, which lets whoever hosts the content change where it's hosted—change the IP address—but it doesn't let you move away from that hosting company without breaking the links, because it's still hosted by `hosting-company.com`. From a product-design perspective, that is the big reason why everything went wrong. We put stuff into these apps, into these boxes, and then it stays there because they have power over us. So coming back to your question: what is in the AT Protocol link? It also starts with a domain authority. You may see something like `at://dabra.ms/...`. But the important part is that the first thing is not where it's hosted. It's not the physical server. It's not the domain for the physical server. It's my username, in a sense. So there is an extra resolution step where we find out, okay, for this username, where is the current server where this is hosted? Then it goes to HTTP to fetch it. So it's one indirection that puts usernames before the physical storage. That lets me change where my actual hosting is over time, and none of the links will break. That's the big motivation for why it's done this way.
+
+@danabra.mov 14:13
+まさにその通りです。例えばフォロワーが100万人いても、その人たちが自分でフォロー記録を持ってるだけで、実際は自分のものじゃないんです。逆に自分が100万人をフォローしたら、それは自分のリポジトリに100万件のレコードができる。自分がフォローを選んだからです。だから、自分のデータは自分のリポジトリ、あなたのデータはあなたのリポジトリにあるって理解できたら、例えば僕があなたの投稿にコメントした場合、それは僕のリポジトリにコメントレコードができて、あなたのリポジトリの投稿にリンクされる形になります。そこでAT URIの出番です。あなたのリポジトリにある何か、つまりJSONデータにリンクする方法が必要なんです。つまり、HTMLページのリンクの代わりに、リンクを持ったJSON同士がつながるウェブができるわけです。そこで別のプロトコルが必要になる理由が出てきます。もしHTTPだけを使っていたら、例えば`hosting-company.com/you/post`みたいなサーバーにあなたのデータがあって、僕のリポジトリからそこにリンクした場合、ホスティング会社を変えたらリンクが切れてしまいます。ドメインシステムは、コンテンツのホスト先をIPアドレスで変えられるけど、結局`hosting-company.com`に依存しているから、ホスティング会社を変えるとリンクが壊れてしまうんです。プロダクトデザインの観点から見ると、これがすべてがうまくいかなかった大きな理由です。僕たちはデータをアプリや箱の中に入れてしまって、その中に閉じ込められてしまう。なぜなら、その運営側が権力を持っているからです。それで、あなたの質問に戻ると、AT Protocolのリンクには何が入っているのか？これもドメインの権威から始まります。例えば`at://dabra.ms/...`のようなものを目にするかもしれません。でも重要なのは、最初の部分が「どこでホストされているか」じゃないということです。物理サーバーでもないし、そのサーバーのドメインでもない。ある意味、僕のユーザー名なんです。だから、追加の解決ステップがあって、「このユーザー名のデータは今どのサーバーにあるのか？」を調べる必要があります。その後、HTTPでデータを取得しにいきます。つまり、ユーザー名を物理的なストレージよりも前に持ってくる一段階の間接化があるってことです。これによって、実際のホスティング先を後から変えてもリンクが切れないんですよ。これがこの仕組みにした大きな理由ですね。
+
+@TheoSteiner 17:23
+So if I rephrase this in my own words: the issue with HTTP is that it uses URLs, and URLs point at locations. The issue is that those locations can change—they're sort of ephemeral. But ATProto says we somehow need this to never change. We need some resource identifier that will always point at your repo.
+
+@TheoSteiner 17:23
+じゃあ僕なりに言い換えると、HTTPの問題はURLを使っていて、そのURLが場所を指していることですよね。でもその場所は変わる可能性があって、一時的なものなんです。でもATProtoは「絶対に変わらないものが必要だ」と言ってる。常に自分のrepoを指し示すリソース識別子が必要なんですね。
+
+@danabra.mov 17:52
+Yeah. Or you could say that it literally puts people first. In a URL, the authority part is the physical host of the location. In an AT URI—and there's a whole tangent about whether it should technically be called a URI—but essentially the authority part is the user themselves. So it's not like `bluesky.com/danabra...`; it's `dabra.ms/...`. It inverts the relationship so that the user comes first. There's one nuance I wanted to flag. When we talk about the username, that's the friendly way to write an AT URI. But it's actually unstable because you can change your username over time. The full form of the URI starts with something called a DID, which is a permanent identifier that never changes. So this is the thing that's forever immutable, as long as you're in control of your identity.
+
+@danabra.mov 17:52
+そうですね。ある意味、本当に「人」を最優先にしてるとも言えます。URLだと、authority部分は物理的なホストを指します。AT URIの場合――技術的にURIと呼ぶべきかは議論があるんですが――authority部分はユーザー自身になるんです。だから `bluesky.com/danabra...` じゃなくて、`dabra.ms/...` みたいになるんですよ。この仕組みで、ユーザーが先に来る関係性に逆転してるんです。ひとつ注意したいニュアンスがあります。ユーザー名って話をするとき、それはAT URIを分かりやすく書く方法なんです。でも実はこれは不安定で、ユーザー名は後から変えられるんですよ。URIの完全な形はDIDという、絶対に変わらない恒久的な識別子から始まります。これが、自分のアイデンティティを管理している限り、永遠に不変なものなんです。
+
+@TheoSteiner 18:59
+Okay, I want to come back to the DID part because I think it's really important. I didn't know it was pronounced "did"—no pun intended. So to get this back to the HTTP discussion: in HTTP you have a domain. You could perhaps lose access to your domain, and the domain sort of allows you to obfuscate where your data actually lives. But you could lose the domain, and that's the issue. And to solve that, the AT Protocol adds a different layer that says, "No, the domain, or your server, is not what we're looking for. The identity is what we're looking for. And if we have your identity, we can resolve that to where you host in HTTP."
+
+@TheoSteiner 18:59
+なるほど、DIDの話に戻りたいですね。これすごく重要だと思うし、「ディド」って読むの知らなかったです――ダジャレじゃないですよ。HTTPの話に戻すと、HTTPではドメインがありますよね。でもそのドメインを失うこともあるし、ドメインによって実際のデータの場所を隠せる。でもドメインを失うリスクがあるのが問題です。それを解決するために、AT Protocolは別のレイヤーを追加して「ドメインやサーバーじゃなくて、アイデンティティが重要だ」と言ってるんです。そしてアイデンティティがあれば、それをHTTP上のホスティング先に解決できる。
+
+@danabra.mov 19:46
+Yes. I wouldn't say it's because you can lose it, although certainly you can lose a domain. I think it's more about... if we're talking about something like a tweet, it's not going to live on your domain anyway. It lives on Twitter. So if we try to design this thing with HTTP, then the HTTP URI would be something like `twitter.com` or `twitter-data-storage.com`, or whatever. But then the problem is you can't walk away from Twitter and use a different app. You can't get rid of Twitter without breaking all these links. It's more about how, when each of us had our own site, we were directly connected to how the internet works. If we don't like the hosting, we just change our hosting. Our users don't need to know—it still resolves. But when we moved into social spaces like Facebook, Twitter, or Stack Overflow, we're now one step disconnected from how the internet actually works because we can't change our hosting. You can't change your hosting when you're using Twitter. Twitter couples the app and the hosting. And so the idea here is: let's still make your content live in a different world where you can change the hosting, it's app agnostic, and the app is just one of the consumers of this layer of the internet. In that sense, I like to think about it as similar to RSS and Google Reader. You control your RSS. You can move where you host it, and then you can consume all of the RSS you're interested in from apps such as Google Reader. But they actually have no sway on the underlying system. If Google Reader disappears, somebody else can make an RSS client that reads from all of them. So it's really about avoiding lock-in. It's about removing the power from the apps to keep you locked down.
+
+@danabra.mov 19:46
+そうですね。ドメインを失う可能性があるからというより、実際に失うこともあるけど、という感じです。例えばツイートみたいなものだと、自分のドメインに存在するわけじゃなくて、結局Twitter上にあるんだよね。もしこれをHTTPで設計しようとすると、HTTPのURIは `twitter.com` や `twitter-data-storage.com` みたいな感じになる。でも問題は、Twitterから離れて別のアプリを使いたくても、それができないこと。Twitterをやめると全部のリンクが切れちゃう。昔は自分のサイトを持っていて、インターネットの仕組みに直接つながってた。ホスティングが気に入らなければ変えればいいし、ユーザーは何も気にしなくていい。ちゃんとアクセスできるから。でもFacebookやTwitter、Stack Overflowみたいなソーシャルサービスに移ったことで、インターネットの本来の仕組みから一歩離れてしまった。もう自分でホスティングを変えられないから。Twitterを使ってると、ホスティングを自分で変えることはできない。Twitterはアプリとホスティングが一体化してるんだ。だから、ここでのアイデアは、コンテンツを別の世界に置いて、ホスティングを自由に変えられて、アプリに依存しない仕組みにしようってこと。アプリはそのレイヤーの一つの利用者になるだけ。そういう意味で、RSSとGoogle Readerの関係に近いイメージだと思う。自分のRSSは自分で管理できるし、ホスティングも自由に移せる。その上で、Google Readerみたいなアプリで好きなRSSを読める。でも、Google Reader自体はその仕組みに影響を与えない。もしGoogle Readerがなくなっても、誰かが新しいRSSクライアントを作れば全部読める。つまり、本質的にはロックインを避けるため。アプリ側がユーザーを囲い込む力をなくすことが目的なんだ。
+
+@TheoSteiner 21:54
+That's a really nice way of putting it. And now that we know the promise of the AT Protocol, I kind of want to dive into how it works. So you said there's this DID that can be resolved to your identity. For HTTP, the domain would be resolved to your location via DNS. You do a DNS lookup and you get the IP address. How is the DID resolved to you?
+
+@TheoSteiner 21:54
+すごく分かりやすい説明ですね。じゃあ、AT Protocolの可能性が分かったところで、仕組みについてもう少し深掘りしたいです。DIDがあって、それが自分のアイデンティティに紐づくって話でしたよね。HTTPの場合は、ドメインがDNSで自分の場所に解決される。DNSルックアップをしてIPアドレスを取得する感じ。じゃあ、DIDはどうやって自分に解決されるんですか？
+
+@danabra.mov 22:22
+Yeah. So let's first start with what a DID is. This is a W3C standard. They tried to reuse this part. It's kind of a meta-standard in the sense that it doesn't actually specify how to resolve a DID. It's more like a DID is a format where first it says `did:`, and then there's something called the DID method. This can be three letters—or maybe more—but the method specifies how to find a certain thing: a piece of JSON that's your identity. From that point, the rest is just an identifier for this method. So it's almost like DID is just a universal umbrella for many identity systems. ATProto picks two DID systems supported by the DID standard because they satisfy certain properties. One property is that they have to be fast to resolve. Something like "download the whole blockchain" is already a non-starter. It has to be something that's easily resolvable. I don't remember the exact properties, but they basically picked two things. One is the one they invented. There are two DID methods supported by ATProto. One is called `did:plc`, which initially stood for "placeholder" because they thought they were going to replace it. Then they decided, "Actually, it's quite good. We're going to keep it." Now it's supposedly "Public Ledger of Credentials."
+
+@danabra.mov 22:22
+そうだね。まずDIDが何かから説明しようか。これはW3Cの標準で、その部分を再利用しようとしてるんだ。DIDは、実際にどうやって解決するかまでは決めていない、いわばメタ標準なんだよ。DIDは、まず`did:`というフォーマットがあって、その後にDIDメソッドというものが続く感じです。このメソッドは3文字だったりもっと長かったりしますが、どのようにして自分のアイデンティティとなるJSONを見つけるかを指定します。その後ろは、このメソッド用の識別子になっています。つまり、DIDは色んなアイデンティティシステムをまとめる共通の仕組みみたいなものですね。ATProtoは、DID標準でサポートされている2つのDIDシステムを選んでいます。これは特定の条件を満たしているからです。その条件の一つは、解決が速いことです。例えば「ブロックチェーン全体をダウンロードする」とかは論外ですね。簡単に解決できる仕組みである必要があります。正確な条件は覚えていませんが、基本的に2つを選んだということです。そのうちの一つは、彼らが作ったものです。ATProtoがサポートしているDIDメソッドは2つあります。一つは`did:plc`で、最初は「placeholder」の略でした。最初は置き換えるつもりだったけど、「意外と良いじゃん」となってそのまま使うことにしたそうです。今は「Public Ledger of Credentials」という意味になっています。
+
+@TheoSteiner 24:02
+Okay, that's a crypto-like ledger.
+
+@TheoSteiner 24:02
+なるほど、それは暗号系の台帳っぽいですね。
+
+@danabra.mov 24:07
+Yeah. I think that is an influence from that world. But it's actually not distributed. This is the centralized part. It's kind of like an npm registry. The other DID method is `did:web`, which uses a normal domain lookup. So these are two ways this can work. In both cases, the goal is to resolve to a piece of JSON that is called your DID document, which I kind of like to think of as a passport. It's a piece of JSON that says three things. One is where your stuff currently lives—your HTTP hosting. Another is your handle—your domain username. It can be completely different from where it's hosted. The third thing is your public key. So if somebody wants to verify some record, what is the public key that they verify against? These are the two methods. The difference between them is that one is more centralized. Legally, they're spinning it off into an independent Swiss organization. The goal is for it to evolve similarly to how the root DNS has evolved with ICANN, with some neutral organization managing it. Being centralized is kind of the point, because that is the authoritative place to say what's under this identity. But they came up with a bunch of things that make it less of a problem that it's centralized. For example, it's entirely open source. There is no private state in it. It's fully replayable based on public data. You can audit it. There's an audit log. You can inspect every transaction. It's highly auditable. That's the usual way. If you sign up on Bluesky, you're going to get a `did:plc` identity. PLC is the thing that holds your DID document. But if you hate the idea of anything centralized, there's `did:web`, where the identifier is literally a domain instead of a hash. With `did:plc` you get a hash. With `did:web` you get a domain. But if you lose the domain, you can't control your identity anymore—it effectively dies. So that's kind of the choice for hardcore decentralizers.
+
+@danabra.mov 24:07
+そうですね。その世界観の影響があると思います。でも実際は分散型じゃないんです。ここが中央集権的な部分です。npmのレジストリみたいな感じですね。もう一つのDIDメソッドは`did:web`で、普通のドメイン検索を使います。つまり、この2つの方法で動作するということです。どちらの場合も、最終的にDID documentと呼ばれるJSONデータにたどり着くのが目的です。僕はこれをパスポートみたいなものだと思っています。これは3つの情報を持つJSONです。1つ目は、あなたのデータが今どこにあるか、つまりHTTPホスティング先です。2つ目は、あなたのハンドル、つまりドメインのユーザー名です。これはホスティング先と全く違っていてもOKです。3つ目は、あなたの公開鍵です。つまり、誰かがレコードを検証したいときに、どの公開鍵で検証するかという情報ですね。これが2つの方式です。違いは、一方がより中央集権的だということです。法的には、これを独立したスイスの組織として切り離す予定です。目標は、ルートDNSがICANNによって管理されているように、中立的な組織が運営する形に進化させることです。中央集権的であること自体がポイントで、そのIDの下に何があるかを決定する権威的な場所なんです。でも、中央集権であることの問題を緩和するための仕組みもいろいろ考えられています。例えば、完全にオープンソースです。プライベートな状態は一切ありません。公開データだけで完全にリプレイ可能です。監査もできます。監査ログもあります。すべてのトランザクションを確認できます。監査性がとても高いんです。それが一般的なやり方ですね。Blueskyにサインアップすると、`did:plc`のIDが発行されます。PLCはあなたのDID documentを保持しているものです。でも、中央集権が嫌なら`did:web`もあって、こちらはハッシュじゃなくてドメイン自体がIDになります。`did:plc`だとハッシュが割り当てられます。`did:web`だとドメインがIDになります。でもドメインを失うと、もう自分のIDをコントロールできなくなって、実質的に消滅します。だから、これは本当に分散化を求める人向けの選択肢ですね。
+
+@TheoSteiner 26:31
+So the PLC directory is a centralized place to look up DIDs that use the PLC method. And "Public Ledger" sort of implies that there's a way I can look up the ledger. I can see what happened on the ledger, and "public" means probably everyone can look it up. Can I just do an HTTP request somewhere and get information about my ID?
+
+@TheoSteiner 26:31
+つまり、PLC directoryはPLC方式のDIDを検索できる中央集権的な場所なんですね。それに「Public Ledger」って名前から、台帳を誰でも見られる仕組みがあるってことですよね。台帳で何が起きたか確認できて、「public」だからみんなが見られるってことですね。どこかにHTTPリクエストを送れば、自分のID情報を取得できるんですか？
+
+@danabra.mov 26:58
+Yeah. There is something called the PLC directory. It's a website. It has an example where DID resolution can be as simple as: `curl https://plc.directory/<did>` and that gives you your JSON. So there's an API. There's also an API for retrieving past versions. You can see, for every DID document, what it says now and what it said in the past. You can verify that each change is signed by the public key from the previous version of the DID document. So you can independently verify that the DID document could not have been tampered with, because it's signed by the user's private key, which the PLC directory doesn't have. And then the first version of the DID document, when hashed, that hash is your identifier on PLC. So you can verify that the first version is also correct because it has the signature. It's a hash of the signed version of the first document. So you can recursively verify, for every user, the entire chain of changes to their identity, including changes to hosting, the key pair, and the username.
+
+@danabra.mov 26:58
+そうです。PLC directoryというものがあります。それはウェブサイトです。DIDの解決はこんな感じで簡単にできます。`curl https://plc.directory/<did>`これで自分のJSONが取得できます。つまりAPIが用意されています。過去バージョンを取得するAPIもありますよ。各DID documentについて、今どうなっているか、過去にどうだったかも確認できます。それぞれの変更が、前のDID documentの公開鍵で署名されていることも検証できます。つまり、DID documentが改ざんされていないことを独立して検証できるんです。なぜなら署名はユーザーの秘密鍵でされていて、PLC directoryはそれを持っていません。そして、最初のDID documentをハッシュ化したものが、PLC上でのあなたの識別子になります。最初のバージョンも署名があるので、正しいことを検証できます。それは、最初の署名済みドキュメントのハッシュです。だから、ユーザーごとに、ホスティングや鍵ペア、ユーザー名の変更も含めて、IDの変更履歴全体を再帰的に検証できます。
+
+@TheoSteiner 28:23
+So it's a cryptographically verifiable chain of events of what happened to your passport, so to say, with no loose ends, because the first entry is the DID itself—the identifier itself.
+
+@TheoSteiner 28:23
+つまり、パスポートに何が起きたかを暗号的に検証できるイベントの連鎖になっていて、最初のエントリがDID自体、つまり識別子そのものなので、抜けがないんですね。
+
+@danabra.mov 28:37
+Yes.
+
+@danabra.mov 28:37
+そうです。
+
+@TheoSteiner 28:37
+Okay.
+
+@TheoSteiner 28:37
+なるほど。
+
+@danabra.mov 28:37
+Yeah.
+
+@danabra.mov 28:37
+うん。
+
+@TheoSteiner 28:37
+Very cool. And you said there are three parts living in there.
+
+@TheoSteiner 28:37
+すごいですね。それで、中には3つの要素があるって言ってましたよね。
+
+@danabra.mov 28:41
+Yeah.
+
+@danabra.mov 28:41
+そうです。
+
+@TheoSteiner 28:41
+There's your alias, there's where your data lives...
+
+@TheoSteiner 28:41
+エイリアスがあって、データの保存場所があって…
+
+@danabra.mov 28:48
+Mhm.
+
+@danabra.mov 28:48
+うん。
+
+@TheoSteiner 28:48
+...and then what was the last part?
+
+@TheoSteiner 28:48
+…で、最後の要素は何でしたっけ？
+
+@danabra.mov 28:50
+The public key.
+
+@danabra.mov 28:50
+公開鍵です。
+
+@TheoSteiner 28:52
+The public key. Okay. So people can verify that it's actually what it claims to be. So where does the data actually live? What would be in my DID document?
+
+@TheoSteiner 28:52
+公開鍵ですね。なるほど。だから、それが本物かどうかみんなが検証できるんですね。じゃあ、実際にデータはどこに保存されてるの？DID documentには何が入ってるの？
+
+@danabra.mov 29:03
+So it depends on how you made your ATProto account. We call this layer above the web the "atmosphere." So having an atmosphere account is kind of like having a Google account, except it's the web. I think that's part of the idea—that we all just have these web accounts instead of many accounts tied to a specific provider like Google. If you follow the DID document, it will say... For example, if I sign up for ATProto through the Bluesky app, it has to create hosting for me because I don't already have ATProto hosting. Bluesky is actually two different things. There's Bluesky hosting under the hood, and there's the Bluesky app. They're completely independent. I actually changed my hosting to a different provider. You can also self-host. You can run a server yourself. It's really cheap. If you sign up through Bluesky, it's going to point to something like `*.host.bsky.network` or whatever. This is the server that hosts your JSON, contains your private key, and is able to serve your data. If apps want to know what you've posted, it can serve your posts and all the other information from other atmosphere apps. It also provides a WebSocket connection for notifying about changes. That's why this whole thing works in real time. It's not just pull. Apps subscribe to your hosting, and they're notified when something changes so they can immediately ingest it and put it into their databases.
+
+@danabra.mov 29:03
+それはATProtoアカウントをどう作ったかによるね。僕たちはウェブの上のこのレイヤーを「アトモスフィア」って呼んでるんだ。アトモスフィアのアカウントを持つのは、Googleアカウントを持つのと似てるけど、ウェブ全体のアカウントって感じ。それがアイデアの一部だと思う。つまり、Googleみたいな特定のプロバイダーに縛られず、みんながウェブアカウントを持つってこと。DID documentをたどると、こう書いてあるんだ...例えばBlueskyアプリからATProtoに登録すると、ATProtoのホスティングをまだ持ってないから、ホスティングを作ってくれるんだ。Blueskyって実は2つのものがあるんだ。裏側のBlueskyホスティングと、Blueskyアプリがあって、それぞれ完全に独立してる。実は僕もホスティングを別のプロバイダーに変えたんだ。自分でホスティングすることもできるよ。自分でサーバーを立てるのもすごく安い。Bluesky経由で登録すると、`*.host.bsky.network`みたいなものを指すようになるんだ。これは君のJSONをホストして、秘密鍵も持ってて、データを配信できるサーバーだよ。アプリが君の投稿を知りたければ、そのサーバーが投稿や他のアトモスフィアアプリの情報も配信できる。さらに、変更があったときに通知するためのWebSocket接続も提供してる。だからこれ全体がリアルタイムで動くんだ。単なるプル型じゃないんだよ。アプリは君のホスティングにサブスクライブして、何か変化があればすぐ通知されて、データベースに取り込める。
+
+@TheoSteiner 31:05
+So for the traditional web, this would be, for example, the Twitter server. I want to post something to Twitter, and it goes to the Twitter server. But in ATProto, this is the PDS part, right? The Personal Data Server.
+
+@TheoSteiner 31:05
+従来のウェブだと、例えばTwitterのサーバーがそれにあたる感じだよね。例えばTwitterに投稿したいときは、そのままTwitterのサーバーに送られますよね。でもATProtoだと、ここがPDS、つまりPersonal Data Serverの部分なんですよね。
+
+@danabra.mov 31:23
+Yeah. Yes.
+
+@danabra.mov 31:23
+そうそう。はい。
+
+@TheoSteiner 31:24
+And my data only lives on one server. So it's like a one-to-one mapping between my DID document and the PDS.
+
+@TheoSteiner 31:24
+そして自分のデータは1つのサーバーにしか存在しません。だから、自分のDID documentとPDSが1対1で紐づいてる感じですね。
+
+@danabra.mov 31:34
+Yeah. Your data always points to one. I mean, one server can serve many users' data, right? It scales, but your own stuff only lives in one place. At least the source of truth. Of course, apps consume it and have their own local caches or databases, but the source of truth is your PDS.
+
+@danabra.mov 31:34
+そう。自分のデータは必ず1つの場所を指しています。まあ、1つのサーバーが複数ユーザーのデータを扱うこともできますよね？スケールはするけど、自分のデータ自体は1ヶ所にしかありません。少なくとも、正しい情報の元はそこです。もちろんアプリ側でローカルキャッシュやDBを持つこともあるけど、正のソースは自分のPDSです。
+
+@TheoSteiner 32:00
+So I think I'm actually on the same PDS as you. I'm German, and I moved to eurosky.social.
+
+@TheoSteiner 32:00
+たぶん僕、あなたと同じPDSを使ってると思います。僕はドイツ人で、eurosky.socialに移動しました。
+
+@danabra.mov 32:06
+Mhm. Yeah.
+
+@danabra.mov 32:06
+うん、そうだね。
+
+@TheoSteiner 32:07
+I think that's the PDS.
+
+@TheoSteiner 32:07
+それがPDSだと思います。
+
+@danabra.mov 32:09
+Yeah.
+
+@danabra.mov 32:09
+そうだね。
+
+@TheoSteiner 32:09
+And I did a migration and everything.
+
+@TheoSteiner 32:09
+で、マイグレーションも全部やりました。
+
+@danabra.mov 32:11
+Yeah.
+
+@danabra.mov 32:11
+うん。
+
+@TheoSteiner 32:11
+I think that's the interesting part you talked about earlier. Since your identity stays in one place, you can switch where your data lives and everything follows it around. So I had a Bluesky account. Initially, signing up left me with the default Bluesky PDS. Then I made a bunch of posts, a bunch of likes, followed, of course, Dan Abramov on Bluesky... And then at some point I wanted to move that to Europe. What happened behind the scenes when I did the migration?
+
+@TheoSteiner 32:11
+それがさっき話してた面白いポイントだと思います。アイデンティティは1ヶ所に固定されてるから、データの置き場所を変えても全部ついてきます。だから僕もBlueskyアカウントを持ってました。最初にサインアップしたときは、デフォルトのBluesky PDSが割り当てられました。それから、たくさん投稿したり、いいねしたり、もちろんBlueskyでDan Abramovをフォローしたりしました。そして、ある時点でそれをヨーロッパに移したくなったんです。その移行の裏側で何が起きていたんでしょうか？
+
+@danabra.mov 32:48
+Yeah. The first thing that happened is that your entire repository—all of your JSON—was copied. If you're familiar with Git, it's kind of like pushing Git to a different remote. Your repository has been pushed to another place. You also had to migrate your media. Currently that's a little wonky. You have to use a separate tool to migrate all the image files. I think they're planning to improve this so the migration goes server-to-server. Currently it goes server-to-client-to-server, which is why it's a little strange. Ideally it would be much faster and a smoother process. Once that repository appears on the other server, the last thing that happens is you submit a change to the PLC directory. There's a request that says, "Update my passport—my DID document—to say this is now my hosting." This is now the HTTP endpoint where my content actually lives. That's the last step. That change is then broadcast from the PLC directory. I think the dominant model is that apps cache identities for something like five minutes or an hour. So the next time they resolve your DID they'll see, "Okay, the content is hosted somewhere else." But for most apps they don't even need to do anything because they've already cached all the data by its AT URI. The AT URIs didn't change. If they ever need to refetch something, they can simply go to your new server. So for apps it barely matters because most apps just cache the data.
+
+@danabra.mov 32:48
+そうですね。まず最初に起きるのは、あなたのリポジトリ全体、つまりすべてのJSONがコピーされることです。Gitに慣れていれば、別のリモートにGitをプッシュする感じに近いですね。あなたのリポジトリが別の場所にプッシュされるわけです。メディアも移行しないといけません。今のところ、そこはちょっと不便です。画像ファイルを全部移行するには、別のツールを使う必要があります。今後はサーバー間で直接移行できるように改善される予定だと思います。現状はサーバーからクライアント、そしてまたサーバーへという流れなので、ちょっと変なんです。理想的には、もっと速くてスムーズなプロセスになるはずです。リポジトリが新しいサーバーに現れたら、最後にPLC directoryに変更を申請します。「自分のパスポート、つまりDID documentを更新して、今はこのサーバーがホスティング先だ」とリクエストするんです。これが自分のコンテンツが実際に存在するHTTPエンドポイントになります。それが最後のステップです。その変更がPLC directoryからブロードキャストされます。一般的なモデルとしては、アプリがID情報を5分とか1時間くらいキャッシュする形ですね。次にDIDが解決されると、「ああ、コンテンツは別の場所にホストされてるんだな」って分かるんだ。でもほとんどのアプリは何もしなくてよくて、AT URIごとにすでにデータをキャッシュしてるからね。AT URI自体は変わってないよ。もし何かを再取得したいときは、新しいサーバーにアクセスすればいいだけ。だからアプリ側としてはほとんど気にしなくてよくて、基本的にデータをキャッシュしてるからね。
+
+@TheoSteiner 34:52
+So basically what I did was... I had a repo with all my data. It was on GitHub. Then I did a Git push to GitLab instead, deleted the old repo on GitHub, and updated my passport to say, "Hey, my data now lives over here."
+
+@TheoSteiner 34:52
+つまり僕がやったことは……すべてのデータが入ったリポジトリを持ってたんだ。それはGitHub上にあった。それでGitLabにGit pushして、GitHubの古いリポジトリは削除して、パスポートを更新して「今はこっちにデータがあるよ」って伝えたんだ。
+
+@danabra.mov 35:10
+Yeah. That's basically how it works.
+
+@danabra.mov 35:10
+うん、基本的にはそんな感じで動くよ。
+
+@TheoSteiner 35:12
+And in this repo—you said there's a bunch of JSON living in it—but what kinds of JSON are there?
+
+@TheoSteiner 35:12
+で、そのリポジトリにはJSONがたくさん入ってるって言ってたけど、どんな種類のJSONがあるの？
+
+@danabra.mov 35:22
+There's actually a great tool to inspect it. It's called **pds.ls**. If you literally type "PDS" as in Personal Data Server, and "ls" as in the Unix `ls` utility for listing files, it'll give you a page where you can input any ATProto handle. You can input your domain if you have an ATProto account associated with it, and it'll show you the whole repository. You'll see collections, which are kind of like folders. If you search for yourself, it'll resolve the DID, resolve the host, and you'll see it says **eurosky.social**. So it resolves where your hosting actually lives. Then these collections are kind of like folders. They're grouped by type. These are all different types of JSON. They're app-specific. The Bluesky app has its own types. npmx has its own types. Every app developer can come up with their own. Nobody is policing them. They're sorted by reverse domain, which naturally gives them unique prefixes. If you work on some app, you just put your app's domain there. It's kind of like a namespace. Almost like scoped packages on npm. And then if you go into any folder, you're going to see a list of JSON files, or records, in that folder that all have the same type. And it's just normal JSON. A like would be a JSON object that says which post was liked, for example. These are going to be links. So if you click into a like, or any specific piece of JSON, there's going to be a specific... For example, this is a like for a certain post. And if you follow the link to the post, you might end up on a different person's repository with the actual post.
+
+@danabra.mov 35:22
+実はそれを調べるのに便利なツールがあるんだ。pds.lsっていうツールだよ。「PDS」はPersonal Data Serverの略で、「ls」はUnixのファイル一覧コマンドのls、そのまま入力すると、ATProtoのハンドルを入力できるページが出てくる。ドメインにATProtoアカウントを紐付けていれば、そのドメインを入力するだけでリポジトリ全体が見られるよ。コレクションが表示されるんだけど、これはフォルダみたいなものだね。自分で検索してみると、DIDが解決されて、ホストも解決されて、eurosky.socialって表示されるよ。つまり、実際にどこでホスティングされているかが分かるんだ。で、これらのコレクションはフォルダみたいなものなんだ。タイプごとにグループ化されてるよ。これらは全部、異なる種類のJSONです。アプリごとに固有なんです。Blueskyアプリには独自の型があります。npmxにも独自の型があります。どのアプリ開発者も自分で型を作れます。誰かが管理しているわけじゃありません。逆ドメインで並べられているので、自然とユニークなプレフィックスになります。何かアプリを作るなら、そのアプリのドメインをそこに入れるだけです。いわば名前空間みたいなものですね。npmのスコープ付きパッケージみたいな感じです。それで、どのフォルダに入っても、そのフォルダ内に同じ型のJSONファイルやレコードのリストが見つかります。ただの普通のJSONです。例えば「いいね」は、どの投稿にいいねしたかを示すJSONオブジェクトです。これらはリンクになります。なので、いいねや特定のJSONをクリックすると、そこに特定の…例えば、これは特定の投稿へのいいねです。そのリンクをたどると、実際の投稿がある別の人のリポジトリに行くかもしれません。
+
+@TheoSteiner 37:26
+Okay, so for the people listening to this podcast, I just navigated to **pds.ls**, and then I put my alias—so my domain, **yoshana.de**—on there and sort of did the DID lookup. Is that what you call it?
+
+@TheoSteiner 37:26
+このポッドキャストを聴いている人向けに説明すると、今pds.lsにアクセスして、自分のエイリアス、つまり自分のドメインyoshana.deを入力して、DID lookupをやってみました。これって、そう呼ぶんですか？
+
+@danabra.mov 37:43
+Yeah.
+
+@danabra.mov 37:43
+そうです。
+
+@TheoSteiner 37:43
+The PLC lookup. And it found my PDS, which in this case is **eurosky.social**. Below that, we had a bunch of records—no, wait, a bunch of collections. The collections are all of a certain type, I'd say. And the type is a reverse-domain identifier. So for Bluesky likes it is `app.bsky.feed.like`. If I click on that, I get all the likes I ever did on Bluesky. And if I click even deeper into that, I get the actual JSON. Here it says it has a timestamp, or `createdAt`, and then it has a subject, which I assume is the target of my like.
+
+@TheoSteiner 37:43
+PLC lookupですね。そして、僕のPDS、今回はeurosky.socialを見つけてくれました。その下にはたくさんのレコードが…いや、コレクションが並んでました。コレクションは全部、ある種のタイプでまとめられてます。そのタイプはリバースドメインの識別子ですね。例えばBlueskyの「いいね」だと、`app.bsky.feed.like`になります。それをクリックすると、Blueskyで自分が付けた全ての「いいね」が見れます。さらに深くクリックすると、実際のJSONが表示されます。ここにはタイムスタンプ、つまり`createdAt`があって、subjectもあります。これは多分、僕が「いいね」した対象ですね。
+
+@danabra.mov 38:29
+That's the post.
+
+@danabra.mov 38:29
+それが投稿です。
+
+@TheoSteiner 38:30
+Why does it have a URI and a CID?
+
+@TheoSteiner 38:30
+じゃあ、なんでURIとCIDが両方あるんですか？
+
+@danabra.mov 38:33
+Yeah, that's the post you liked.
+
+@danabra.mov 38:33
+うん、それが君が「いいね」した投稿だよ。
+
+@TheoSteiner 38:33
+So URI is the thing we talked about earlier. This will resolve to somebody else's DID document, and from there we can get the PDS, and from there we can get the collection, and from there we can get the entry—the post in the collection. But what is the CID here?
+
+@TheoSteiner 38:33
+URIはさっき話したやつですね。これで他の人のDID documentにたどり着いて、そこからPDS、さらにコレクション、そしてその中のエントリー、つまり投稿まで取得できます。でも、このCIDって何ですか？
+
+@danabra.mov 38:49
+Yeah. So there are two types of links in ATProto. One is a weak link, or I think it's called the ref, which is just a normal AT URI. And then another one is called a strong link, which is URI and CID. CID is just a hash of the linked record. The idea is that for some links, you maybe want apps to be able to tell: is the thing that it relates to the same as it was? For example, for the like, if the post was edited, does that still count? I think the Bluesky app actually doesn't... I don't know. I don't think it reflects edits. I'm not sure. Maybe it doesn't. So this is an application choice to disregard edits, or it's a product decision. But if they ever allowed edits, this would allow you to say, "Was your like on the version that's there now, or has it changed since the like?"
+
+@danabra.mov 38:49
+そう、ATProtoには2種類のリンクがあります。ひとつはウィークリンク、たぶんrefって呼ばれてるやつで、普通のAT URIです。もうひとつはストロングリンクで、これはURIとCIDのセットです。CIDはリンク先レコードのハッシュですね。一部のリンクでは、アプリが「関連してるものが同じものかどうか」を判定できるようにしたい、という考え方です。例えば「いいね」の場合、投稿が編集されたら、それでも「いいね」としてカウントされるのか？みたいな。たぶんBlueskyアプリは…どうだろう。編集は反映されてない気がする。よく分からないけど、たぶん反映されてないかも。これは編集を無視するというアプリ側の選択、もしくはプロダクトの判断ですね。でももし編集が許可されたら、「今あるバージョンにいいねしたのか、それともいいねした後に内容が変わったのか」を判別できるようになります。
+
+@TheoSteiner 39:55
+Okay. So if, for example, I liked a post that said tabs are better than spaces, and then at some point the poster—the author of the post—went back and said spaces are better than tabs, I can point at this record and say no, because the hash changed. Back when I liked it, it was a different post.
+
+@TheoSteiner 39:55
+なるほど。例えば「タブの方がスペースよりいい」って投稿にいいねしたとして、その後で投稿者が「スペースの方がタブよりいい」に編集した場合、このレコードを見れば「いや、ハッシュが変わってるから、いいねした時は別の内容だった」って証明できるんですね。
+
+@danabra.mov 40:16
+Yeah.
+
+@danabra.mov 40:16
+そうです。
+
+@TheoSteiner 40:17
+Okay.
+
+@TheoSteiner 40:17
+なるほど。
+
+@danabra.mov 40:17
+Yeah.
+
+@danabra.mov 40:17
+そうですね。
+
+@TheoSteiner 40:17
+And what is the `$type` field here in the JSON?
+
+@TheoSteiner 40:17
+それで、このJSONの`$type`フィールドは何ですか？
+
+@danabra.mov 40:21
+Yeah. So this is the name of the collection it's in. It's a convention that it's always going to be there. So it lets you tell just from the record what kind of record it is without even knowing the URI. It's just the folder name, basically.
+
+@danabra.mov 40:21
+これは、そのレコードが属しているcollectionの名前です。これは常に入っているという決まりになっています。だからURIを知らなくても、レコードだけでどんな種類か分かるようになっています。ざっくり言うと、フォルダ名みたいなものですね。
+
+@TheoSteiner 40:39
+So a like would have a very different data structure to, let's say, a post. How does Bluesky know how to parse those records?
+
+@TheoSteiner 40:39
+じゃあ、いいねと投稿ではデータ構造が全然違うんですね。Blueskyはどうやってそれぞれのレコードをパースしてるんですか？
+
+@danabra.mov 40:50
+Yeah. So this is an interesting question. There are these things called lexicons, which are kind of like type definitions. I really think of them as a lexicon. For each of these types—Bluesky like, Bluesky post, Tangled repo, npmx follow, whatever—each of these things has a schema associated with it, written as JSON. The funny thing is, you don't have to publish them. They're useful for apps because there's tooling that generates actual parsing code and validation, or Zod validation, so that you can safely read it into a typed form in any language. There's JavaScript, Swift, Go, and so on. There are codegen libraries that do this from lexicons. But you can also publish lexicons, and the funny thing is the way you publish them is they're also records.
+
+@danabra.mov 40:50
+いい質問ですね。Lexiconというものがあって、型定義みたいな役割をしています。僕は本当にLexiconだと思ってます。例えばBlueskyのいいね、Blueskyの投稿、Tangledのrepo、npmxのフォローなど、それぞれにJSONで書かれたスキーマが紐づいています。面白いのは、それを公開する必要はないってことです。アプリにとっては便利で、実際のパースコードやバリデーション、Zodバリデーションを自動生成できるので、どの言語でも型付きで安全に読み込めます。JavaScript、Swift、Goなどいろいろ対応しています。Lexiconからコード生成するライブラリもあります。でも、Lexicon自体も公開できて、面白いのは公開方法もレコードとして扱うことなんです。
+
+@TheoSteiner 41:53
+Mhm. Of course.
+
+@TheoSteiner 41:53
+うん、もちろん。
+
+@danabra.mov 41:53
+So you can publish a record with the type definition. And actually, in **pds.ls**, if the type is published, you can click on it as a link and it will show the record. So on the screen you were showing, where you had the like record and it says `$type: app.bsky.feed.like`, if you press on it, there's a lexicon resolution mechanism which says how to find the record that has the schema for this type. And **pds.ls** actually displays it nicely, almost like documentation.
+
+@danabra.mov 41:53
+つまり、型定義を含んだレコードを公開できるんです。実際、pds.lsでは型が公開されていれば、それをリンクとしてクリックするとレコードが表示されます。さっき見せてくれた画面で、likeレコードに`$type: app.bsky.feed.like`って書いてあったと思うんですが、それを押すと、その型のスキーマを持つレコードを探すためのLexicon解決メカニズムが動きます。そしてpds.lsはそれをドキュメントみたいにきれいに表示してくれます。
+
+@TheoSteiner 42:31
+That's pretty cool. So this is how they allow storing arbitrary data, because there's a way to define how data is structured, and every app gets to define this themselves.
+
+@TheoSteiner 42:31
+それ、めっちゃいいですね。こうやって任意のデータを保存できるんですね。データ構造を定義する方法があって、各アプリが自分で定義できるから。
+
+@danabra.mov 42:43
+Yes. Although it's even more interesting. I think that is the starting point: as a developer, you choose your own formats. But you can also choose to reuse existing ones. You can decide that you're making, maybe, a plugin for Bluesky and then use Bluesky follows as a format for your thing. Or maybe you're making some kind of annotation, like a Community Notes feature or something like this. In that case, maybe it would make sense for Bluesky to do it. But maybe you're making some kind of annotation thing, and then you could allow the target of your annotation to be Bluesky posts, Tangled repos, or anything. You can link to anything. So in that sense, you can use other apps' formats. You can link to them, or you can literally use them as your own format. It's the same as with file formats, right? Many apps use the same format. There's actually been precedent. There are three blogging platforms on ATProto. One is called Leaflet, another Offprint, and another is called pckt.blog. At some point they worked together on a single lexicon because they wanted it to be more interoperable, so that subscriptions from one show up in the other, and so on. They agreed on the format for a publication or a follow. This is called **standard.site**. It's become a bigger thing than this. It's kind of like RSS on ATProto in a sense. The funny thing is now you can also adopt standard.site for your own blog that's not hosted on any of these platforms, and create records describing your post, your publication, and your brand colors in the publication. And links to any standard.site posts in the Bluesky app will be shown with a special treatment, with a box that has the branding color of your site. So this is an example where three different blogging platforms decided to share a lexicon, and then the Bluesky app decided to read that lexicon and use the information from it. In that sense, it's a much more dynamic ecosystem where some things get standardized, in a sense, but completely community-driven.
+
+@danabra.mov 42:43
+そうです。でも、もっと面白いこともあります。まず開発者として、自分の好きなフォーマットを選べるのが出発点ですね。でも既存のフォーマットを再利用することもできます。例えばBluesky用のプラグインを作るなら、Blueskyのfollowsフォーマットをそのまま使うこともできます。あるいは、Community Notesみたいな注釈機能を作る場合も同じです。その場合はBlueskyがそれをやるのも自然かもしれません。でも、注釈系の何かを作るとして、その対象をBlueskyの投稿やTangledのリポジトリ、他にも何でもリンクできるようにできます。そういう意味で、他のアプリのフォーマットも使えるんです。リンクするだけじゃなくて、自分のフォーマットとしてそのまま使うこともできます。ファイルフォーマットと同じ感覚ですね。多くのアプリが同じフォーマットを使っています。実は前例もあります。ATProto上には3つのブログプラットフォームがあります。ひとつはLeaflet、もうひとつはOffprint、そしてpckt.blogというものもあります。ある時点で、より相互運用性を高めるために1つのLexiconで協力し始めました。たとえば、あるサービスの購読が他でも表示されるように、という感じです。彼らは公開やフォローのフォーマットに合意しました。これが「standard.site」と呼ばれています。これはさらに大きなものになりました。ある意味、ATProto上のRSSみたいな存在です。面白いのは、今では自分のブログがこれらのプラットフォーム上になくてもstandard.siteを採用できて、投稿や公開、ブランドカラーなどを記述したレコードを作れることです。そしてBlueskyアプリでstandard.siteの投稿リンクは、あなたのサイトのブランドカラーが使われた特別なボックスで表示されます。これは、3つの異なるブログプラットフォームがLexiconを共有し、BlueskyアプリがそのLexiconを読み取って情報を活用する例です。そういう意味で、これはもっとダイナミックなエコシステムで、いくつかのものが標準化されつつも、完全にコミュニティ主導です。
+
+@TheoSteiner 45:24
+This is kind of wild. This is like I built my own app, and to kickstart it, I let my users post from my app to Instagram. I let them post pictures to Instagram, and I can also display every picture they posted to Instagram. Yeah, this is the moment where it kind of clicks.
+
+@TheoSteiner 45:24
+これはちょっとすごいですね。まるで自分でアプリを作って、最初はユーザーが自分のアプリからInstagramに投稿できるようにした感じですね。ユーザーがInstagramに写真を投稿できるし、投稿した写真も全部表示できる、みたいな。うん、ここでなんとなく腑に落ちました。
+
+@danabra.mov 45:43
+Yeah. Well, the other thing is you can index things of different types, right? Of course, indexing all Bluesky posts is crazy in terms of volume, so that's expensive. But you could maybe index something that relates to the user. And then you can do these kinds of mashups. There's another funny example. There's this lexicon—do you know Last.fm, the music tracking thing?
+
+@danabra.mov 45:43
+そうですね。あと、いろんな種類のものをインデックスできるのもポイントです。もちろん、Blueskyの全投稿をインデックスするのは量的に無理があるのでコストがかかります。でも、ユーザーに関連する何かだけをインデックスすることもできます。そうすると、こういうマッシュアップもできるわけです。もうひとつ面白い例があるんだ。それで、Lexiconの話なんだけど——Last.fmって知ってる？音楽の再生履歴を記録するやつ。
+
+@TheoSteiner 46:09
+Yeah, I've heard of that.
+
+@TheoSteiner 46:09
+うん、聞いたことあるよ。
+
+@danabra.mov 46:09
+Yeah. So there's a lexicon called **Teal FM play**. Teal FM was supposed to be something where you track your music usage, but I don't think they've launched yet. It's been in development for a long time, but they're doing it on weekends. So they still haven't launched the actual website or the app. But it doesn't matter because the lexicon exists. They already made tooling to submit what you're listening to, even though there is no app. You're just writing records of this lexicon. And so people have already made third-party apps that display your listening stats on Teal FM, even though Teal FM does not exist. It's kind of funny. You can show aggregations across it, like top listened artists on Teal FM. But again, there's no Teal FM. The way I think about it is: if you had the world's JSON, why not run joins over products? You can do things like top tracks that your follows on Bluesky have been listening to. Or you can ask: what are the trending repositories from your friends? You can combine data from different apps and cross-join it. That feels like the web to me. It's taking the web idea and turning it into a web database. I don't know. It's breaking the boundaries, or blurring the boundaries, between apps, and making it more like there's the web of data, and the apps are just lenses through which we look at the data. And these lenses can be... anyone can create a new one.
+
+@danabra.mov 46:09
+だよね。それで「Teal FM play」っていうLexiconがあるんだ。Teal FMは音楽の再生履歴を記録するサービスになる予定だったんだけど、まだリリースされてないみたい。ずっと開発中で、週末だけ作業してるらしい。だから、実際のWebサイトもアプリもまだ公開されてないんだよね。でも、Lexicon自体はもう存在してるから問題ないんだ。アプリがなくても、今聴いてる曲を投稿できるツールはもう作られてる。つまり、このLexiconのrecordを書き込んでるだけなんだよ。それで、Teal FM自体は存在しないのに、再生履歴を表示するサードパーティ製アプリもすでに作られてる。ちょっと面白いよね。例えば、Teal FM上でよく聴かれてるアーティストの集計とかも表示できる。でも、やっぱりTeal FM自体は存在しないんだよ。僕のイメージだと、もし世界中のJSONがあったら、プロダクトをまたいでjoinできるよねって感じ。例えば、Blueskyで自分がフォローしてる人たちが最近聴いてる曲のランキングとかもできる。あるいは、友達の間で今話題のリポジトリは何か、とかも調べられる。いろんなアプリのデータを組み合わせて、クロスジョインもできるんだ。それって、まさにWebっぽいよね。Webの発想をそのままWebデータベースにした感じ。わからないですね。アプリ同士の境界を壊したり曖昧にしたりして、データのウェブがあって、アプリはそのデータを見るレンズみたいな存在になる、そんな感じですね。そしてこのレンズは誰でも新しく作れるんです。
+
+@TheoSteiner 47:59
+And posting records across products sounds kind of crazy at first, but since it's the AT Protocol—Authenticated Transfer—that means you have authenticated everything that is posted to your repo, and that's why it's safe to post across apps, right?
+
+@TheoSteiner 47:59
+プロダクトをまたいでレコードを投稿するって最初はちょっとクレイジーに聞こえるけど、AT Protocol、つまりAuthenticated Transfer Protocolだから、自分のリポに投稿されたものは全部認証されてる。だからアプリ間で投稿しても安全ってことですよね？
+
+@danabra.mov 48:18
+Yeah. So the way this works is apps can be sure that the content is really yours because they can always resolve it through the AT Protocol. They go to your hosting, and your hosting returns them the thing. It is signed with the key that they can verify is the key in your DID document. And then the other clever thing they do is that you need to somehow scale up the network. You can imagine for each user there is hosting. Of course, a lot of users are going to be on the same hosting. Hosting can range from hosting 100,000 users to maybe a solo user hosting. Both of these are valid. But that's where the data lives. Then you somehow need it to flow into all the apps, right? And it's inconvenient for apps to... You don't want them to smash all the hosting all the time to figure out what happened. So apps maintain caches and subscribe through WebSocket. But then there's a question of: how do you scale it further? You want some shared infrastructure. You want shared caches. You want shared retransmission. Ideally, there should be a way to just subscribe over WebSocket to one event bus that has information about everything that happens on the network, or a subset that's relevant to your app—maybe your app's collection types and so on. The clever thing they did is that you can build retransmitters like this. They're called relays. Bluesky runs one. There are a bunch of community-run relays that let you subscribe over WebSocket to everything that happens on the network. The stream that is passed is a stream of commits. It's a stream of events about commits, identity changes, and so on. And the stream is transmitted with proofs. The stream contains signed commits. So each commit is signed. You actually don't need to trust the retransmitter. That's another big idea. Because cryptography is woven into it, you don't need to trust it. You can build community retransmitters and these nodes, and not have to worry that they're modifying the content as it flows through them. So that's the authenticated part in it.
+
+@danabra.mov 48:18
+そうですね。仕組みとしては、アプリはAT Protocolを通じて常に確認できるので、そのコンテンツが本当にあなたのものだと確信できるんです。アプリはあなたのホスティングにアクセスして、ホスティングがそのデータを返してくれます。それはDID documentにある鍵で署名されていて、その鍵で検証できるんです。もう一つ面白いのは、ネットワークをどうやってスケールさせるかってことですね。各ユーザーごとにホスティングがあるイメージです。もちろん、多くのユーザーが同じホスティングを使うことも多いです。ホスティングは10万人規模から、1人だけのホスティングまで幅広く対応できます。どちらもOKです。データはそこに保存されているんです。そして、そのデータをすべてのアプリに流す必要がありますよね。でもアプリ側からすると、それはちょっと面倒で…毎回全部のホスティングにアクセスして何が起きたか調べるのはやりたくないですよね。だからアプリはキャッシュを持って、WebSocketでサブスクライブするんです。でも、さらにスケールさせるにはどうするかって問題が出てきます。共有インフラが欲しくなりますよね。共有キャッシュや、共有の再送信機能が必要になります。理想的には、WebSocketでネットワーク上のすべての出来事、もしくは自分のアプリに関係あるcollectionタイプなどのサブセットを購読できるイベントバスがあるべきなんだ。彼らが賢いのは、こういう再送信ノードを自分で作れるようにしたことだよ。これがRelayと呼ばれている。BlueskyもRelayを運用しているし、コミュニティ運営のRelayもいくつかあって、WebSocket経由でネットワーク上のすべてのイベントを購読できるんだ。そこで流れるのはコミットのストリームだよ。コミットやID変更などのイベントが流れてくるストリームなんだ。しかも、そのストリームは証明付きで送信される。ストリームには署名済みのコミットが含まれている。つまり、各コミットには署名が付いているんだ。実際、再送信ノード自体を信頼する必要はない。これも大きなアイデアのひとつだね。暗号技術が組み込まれているから、ノード自体を信頼しなくていいんだ。コミュニティで再送信ノードや中継ノードを作っても、途中で内容が改ざんされる心配がない。これがAuthenticatedの部分なんだよ。
+
+@TheoSteiner 50:58
+So if I try to recap this for my understanding: You have a very weird distribution of Personal Data Servers. There are some with millions of users—probably the Bluesky ones—and then there are people who host it in their basement. And to not have every app know every PDS, go there every time, and pull them all the time, you have those relay services. I imagine it's a super beefy server somewhere that somehow knows all PDSs and subscribes to all of them. Then it's just like a huge Apache Kafka, and they pipe the events into the web.
+
+@TheoSteiner 50:58
+じゃあ、僕なりにまとめてみるね。Personal Data Serverの分布がかなり独特なんだよね。何百万人もユーザーがいるPDSもあれば、家の地下室でホストしてる人もいる。たぶんBlueskyのPDSが前者だよね。そして、すべてのアプリが全PDSを毎回知ってアクセスし続けるのは現実的じゃないから、Relayサービスがあるってことだよね。たぶん、どこかに超ハイスペックなサーバーがあって、全PDSを把握して全部に購読してるイメージかな。それって、巨大なApache Kafkaみたいなもので、イベントをウェブに流してる感じだね。
+
+@danabra.mov 51:36
+Yeah. I don't think it needs to be super beefy. I'm not sure, but in terms of cost, I think it's something around 30 bucks a month to run it at the current volume. But yeah, they need to know the PDSs on the network, which is a bit wonky because how do you know? There are a bunch of ways. One is that you can enumerate them. I think there is an endpoint on existing relays to enumerate the ones that they know. That's how you can bootstrap. A PDS can also request to be crawled. So if you put a new PDS online, you can add some known relays to ping them. And then it can also discover it through links. If it sees a link to a PDS it hasn't seen before, and that resolves to a PDS it hasn't seen before, it can decide to crawl it. So it's kind of up to the relay how to do it. And if it wants to just provide an archive or only retransmit and have no archive—because keeping an archive is kind of expensive...
+
+@danabra.mov 51:36
+うん。そんなに高スペックじゃなくても大丈夫だと思う。はっきりとは分からないけど、コスト的には今のトラフィックなら月30ドルくらいで運用できるんじゃないかな。でも、ネットワーク上のPDSを把握する必要があって、それがちょっとややこしいんだよね。どうやって知るのかっていう。方法はいくつかあるよ。ひとつは、PDSを列挙すること。既存のRelayには、知っているPDSを列挙できるエンドポイントがあると思う。それでブートストラップできるんだ。PDS側からクロールをリクエストすることもできる。新しいPDSを立ち上げたら、既知のRelayにpingを送って登録してもらうこともできる。あとはリンク経由で発見することもできる。まだ見たことのないPDSへのリンクを見つけて、それが新しいPDSだったら、クロールするかどうか決められる。だから、そのやり方はRelay次第なんだ。それに、アーカイブを提供するか、単にリトランスミットだけしてアーカイブを持たないかも選べる。アーカイブを維持するのは結構コストがかかるからね…
+
+@TheoSteiner 52:39
+So if I want to build on ATProto, I have this shared data layer, and I have apps that are already quite successful that populate that data layer with users. Those users use those apps and therefore populate it with their own records. And if I want to build on that, I would probably get one of those relays and start downloading data from there, putting it into my own database. Is that how it works? And then I run queries and my app logic on that?
+
+@TheoSteiner 52:39
+じゃあ、ATProtoで何か作りたい場合、共有データレイヤーがあって、すでにユーザーがたくさんいるアプリがそのデータレイヤーを埋めてるってことだよね。そのユーザーたちがアプリを使って、自分のレコードでデータレイヤーを埋めていく。それを活用したいなら、Relayのひとつを使ってデータをダウンロードして、自分のデータベースに入れる感じかな。そういう仕組み？その上でクエリやアプリのロジックを動かすってこと？
+
+@danabra.mov 53:13
+Yeah. So I think the exact way you do it depends on what data your app is going to care about. If it only cares about its own data—if you came up with new record types and that's the stuff that your app displays—then you don't need to backfill it because it doesn't exist. So if you just connect and start listening to a relay, and you filter it down to the stuff that your app cares about, then once records start getting created, you will have all of them. You don't actually need to get anything that existed before. That's the easy path. Then you just have a connection to this thing, and you keep track of where your users are. If you want to do something with existing data, then you have to backfill it. There are really two ways to go about it. The way I'm talking about is: if you want data to be in your own database, then of course you have to somehow get it there. Then the question is: is it from a big app or a small app? Because if it's something like Tangled, you can probably backfill all records from all Tangled users in a reasonable time because there's just not that much. Maybe 50,000 records. I don't know how many, but it's not that much. Or Teal FM. Okay, maybe a lot of records because people do scrobble. It's probably millions now. But essentially, you just need to find all the... I think maybe the relay has an API for this, but there's a way to find out which users or identities have a collection of a certain type. So you can figure out who the users of a particular app are and then just get their stuff. There are tools that do this. There's something called **TAP**, which is their tool for backfill. You tell it which collections to look for, and it will try to synchronize it all and then listen to new events. But there's also a different approach. Especially if you want Bluesky, you probably don't want to download terabytes of all Bluesky posts that ever existed. But maybe you want to build some app on top of Bluesky. Of course, you can use the Bluesky API. That's the traditional way, but I think it's a bit not ATProto-spirited, right? You rely on somebody else's app-specific thing. But there's a tool called **Constellation**. It's community-run. It's a server run by the community that indexes all the records and provides an API for backlinks. So it lets you say, given this post, give me all records that link to it. That means you can get all the likes of a post, all followers of a person, all quotes. It's kind of like going through the primary-foreign-key query. You ask: what are all the things that link to this piece of JSON? This actually lets you build a workable app without a backend, because you can hit the user's hosting if you need something user-specific, and then you can hit Constellation if you need to go one step removed and see all the things that link to this. This is less efficient, but you don't need a backend at all.
+
+@danabra.mov 53:13
+そう。だから、実際にどうやるかはアプリがどのデータを扱いたいかによると思う。もし自分のデータだけ気にするなら――新しいレコードタイプを作って、それだけを表示するアプリなら――バックフィルは不要だよ。そもそも存在しないから。だから、Relayに接続してリッスンを始めて、アプリが必要なものだけフィルタすれば、レコードが作られ始めた時点で全部取得できる。以前に存在していたものを取得する必要は実際にはないんだ。これが一番簡単なやり方だね。あとはこの接続を維持して、ユーザーの状況を追いかけていけばいい。既存データを扱いたい場合は、バックフィルが必要になる。方法は大きく2つある。今話しているのは、自分のデータベースにデータを入れたい場合。もちろん何らかの方法で取得しないといけない。そこで問題になるのは、それが大きなアプリか小さなアプリかってこと。例えばTangledみたいなものなら、Tangledユーザー全員のレコードを全部バックフィルしても、そんなに時間はかからないと思う。多分5万件くらいかな。正確な数は知らないけど、それほど多くはない。あるいはTeal FMとか。まあ、Teal FMはscrobbleがあるからレコード数は多いかも。今は多分数百万件あるね。でも基本的には、全部の…多分RelayにこのためのAPIがあると思うけど、特定のタイプのcollectionを持っているユーザーやIDを探す方法がある。だから、特定アプリのユーザーを特定して、そのデータだけ取得できる。こういうことをやるツールもあるよ。TAPっていうバックフィル用のツールがある。どのcollectionを探すか指定すると、それを全部同期して、新しいイベントもリッスンしてくれる。でも、別のアプローチもあるんだ。特にBlueskyを使いたい場合、全てのBluesky投稿をテラバイト単位でダウンロードしたくはないよね。でも、Blueskyの上に何かアプリを作りたいかもしれない。もちろん、BlueskyのAPIを使うこともできる。それが従来のやり方だけど、ちょっとATProtoらしくない気がするんだよね。他人のアプリ固有の仕組みに依存することになるから。でも、Constellationっていうツールがあるんだ。これはコミュニティ運営だよ。コミュニティが運営しているサーバーで、全てのレコードをインデックスして、バックリンク用のAPIも提供している。だから、例えば「この投稿にリンクしている全てのレコードを教えて」みたいなことができる。つまり、その投稿の全てのいいねや、ある人の全フォロワー、全引用も取得できるってこと。これは、いわゆるプライマリキー・外部キーのクエリみたいな感じだね。「このJSONにリンクしているものは何？」って聞くイメージ。実際これを使えば、バックエンドなしでも動くアプリが作れる。ユーザー固有の情報が欲しいときはそのユーザーのホスティングにアクセスして、もう一段階広げたいときはConstellationを使ってリンクしているもの全部を見る、みたいな感じ。効率はあまり良くないけど、バックエンド自体が不要になる。
+
+@TheoSteiner 56:51
+Yeah. So the more I hear about this, at first I thought AT Protocol was really complicated. But now I understand why it needs to be complicated, because it collapses the stack. My app needs less and less. It doesn't need a data layer necessarily, because every user has their own data layer, and I can use the existing relays and everything to aggregate that. Then it doesn't need an authentication layer, because the user has—is it called an atmosphere account?
+
+@TheoSteiner 56:51
+そうだね。こうやって話を聞けば聞くほど、最初はAT Protocolってすごく複雑だと思ってたんだ。でも今は、なぜ複雑である必要があるのか分かってきた。スタックを一気にまとめてくれるからなんだね。うちのアプリが必要とするものがどんどん減っていく。データレイヤーも必ずしも必要じゃなくて、ユーザーごとに自分のデータレイヤーがあるし、既存のRelayとかを使って全部集約できるんだ。じゃあ認証レイヤーはいらないってことですよね。ユーザーは…これってアトモスフィアアカウントって呼ばれてますか？
+
+@danabra.mov 57:26
+Yeah. So it's kind of funny because it uses OAuth, right? You log in through OAuth, but the OAuth provider is actually your PDS. So in a sense, it's almost like logging into a Google account, except you are Google. It's your hosting. This is why, if you change to **eurosky.social**, when you click "login through atmosphere" in other apps, it's going to show the eurosky.social login page now, because that is now your hosting.
+
+@danabra.mov 57:26
+そうだね。ちょっと面白いのは、OAuthを使ってるんだよね。OAuthでログインするけど、OAuthプロバイダーが実は自分のPDSなんだ。だから、ある意味Googleアカウントにログインするみたいな感じだけど、自分自身がGoogleみたいなものなんだよ。自分のホスティングなんだ。だから、もしeurosky.socialに切り替えたら、他のアプリで「atmosphereでログイン」を押すと、今度はeurosky.socialのログインページが表示される。そこが自分のホスティング先だからね。
+
+@TheoSteiner 57:55
+Yeah, the domain is eurosky.social, and that's where I log in.
+
+@TheoSteiner 57:55
+そう、ドメインはeurosky.socialで、そこでログインするんだよね。
+
+@danabra.mov 57:57
+Yeah.
+
+@danabra.mov 57:57
+そうそう。
+
+@TheoSteiner 57:58
+Super interesting.
+
+@TheoSteiner 57:58
+めっちゃ面白いね。
+
+@danabra.mov 57:59
+Yeah. So it's lifting identity and the data. I think of it as the people-centric data layer for the web.
+
+@danabra.mov 57:59
+だよね。つまり、アイデンティティとデータを持ち上げてる感じ。僕はこれをウェブの「人中心のデータレイヤー」だと思ってる。
+
+@TheoSteiner 58:06
+That also brings its own complexity though, right? For example, let's just take an Instagram competitor. You want to build that app, and it's slow, and you want to debug or improve performance. But the problem could be outside of your product. It could be the user's PDS being really slow or laggy. It could be the relay struggling to aggregate the data. How do people cope with that?
+
+@TheoSteiner 58:06
+でも、それって独自の複雑さも生みますよね？例えば、Instagramの競合アプリを作るとしましょう。そのアプリを作ってて、動作が遅いからデバッグやパフォーマンス改善をしたいとします。でも、その問題は自分のプロダクト外にあるかもしれない。例えば、ユーザーのPDSがすごく遅かったり、ラグがあったりする場合もある。あるいは、Relayがデータ集約で苦戦してる場合もある。そういう時、みんなどうやって対処してるんですか？
+
+@danabra.mov 58:34
+Yeah. I think with hosting itself, the idea is pretty resilient to that. If you want a good app, you just shouldn't really go to hosting much, because you aggregate things as they come in. So the hosting just emits events. You shouldn't blast the hosting with a thousand requests. You serve everything from your database or from the stuff that you've cached. So hosting being a bit wonky is actually fine, as long as it actually emits the events that it should generate. That isn't really a major problem. It's just a server that serves some JSON, so it shouldn't really get laggy. Of course, for users who are on Bluesky, if Bluesky is having scaling issues, then that does reflect in the app. Some events might struggle to come through. The relay might struggle. This is something you just kind of live with. Your app is more webby, so there are more things that could go wrong. The relay itself—again, if you rely on the one run by Bluesky, it's mostly working fine. I think there have been incidents, but it's mostly working fine. If you don't trust it, you can definitely run your own, and that is how you completely isolate yourself from problems upstream. There were also cases where other apps that run their own relays or used the community relay were up when the Bluesky app was not working, because there was some relay problem. I think with time... Right now it's the early adopter stage, where you run it because you believe there is a better way to do web products. I think of it as open source in the 90s. People would tell you you're crazy, or Microsoft says it's cancer, and then 10 years later Microsoft is actually running on open source. So I think right now we're at that stage where people tell you you're crazy. These are early adopter pains. But because it's a standard, everything that benefits some apps can benefit others because they speak the same language. There's shared infrastructure, shared libraries, shared tools, different kinds of things you can do with it. As that infrastructure grows and becomes more reusable, the network will become more resilient in general. There will be more relay options. It'll be easier to backfill. There will be archives for rehydrating everything if you lose some data. So I think we'll see more of that.
+
+@danabra.mov 58:34
+うん。ホスティング自体については、そのアイデアは結構強いと思う。いいアプリを作りたいなら、ホスティングに頼りすぎない方がいい。データは受信時に集約するからね。だからホスティングはイベントを発行するだけ。ホスティングに一気に千件もリクエスト送るのはやめた方がいい。すべては自分のデータベースやキャッシュから配信すればいい。だからホスティングがちょっと不安定でも、必要なイベントさえ発行してくれれば問題ない。それは大きな問題じゃない。ただのJSONを返すサーバーだから、そんなに重くなるはずがない。もちろん、Blueskyユーザーの場合、Bluesky側でスケーリングの問題が起きたらアプリにも影響する。一部のイベントが届きにくくなることもある。Relay自体が不安定になることもある。これはもう、そういうものだと思って使うしかない。君のアプリはよりウェブっぽいから、トラブルの可能性も増える。Relay自体も、Blueskyが運用しているものに依存していれば、基本的には問題なく動いている。たまにトラブルはあるけど、ほとんどは大丈夫。信用できないなら自分でRelayを立てればいいし、それで上流の問題から完全に切り離せる。実際、他のアプリが自前のRelayやコミュニティRelayを使っていて、Blueskyアプリが落ちている時でも動いていたことがあった。時間が経てば……今はまだアーリーアダプターの段階で、ウェブプロダクトの新しいやり方を信じて運用している感じだね。90年代のオープンソースみたいなものだと思ってる。当時は「そんなの無理だ」とか、Microsoftが『オープンソースは癌だ』なんて言ってたけど、10年後にはMicrosoft自身がオープンソースで動いてるんだよね。今はまさに『そんなの無理だ』って言われる段階だと思う。これはアーリーアダプターの苦労だよ。でも標準化されてるから、あるアプリに役立つものは他のアプリにも役立つ。同じ言語でやりとりできるからね。インフラやライブラリ、ツールも共有できるし、いろんなことができる。そういうインフラが成長して再利用しやすくなれば、ネットワーク全体がもっと強くなるはず。Relayの選択肢も増えていくよ。バックフィルも簡単になる。データを失っても復元できるように、アーカイブも用意されるだろうね。そういう流れが今後もっと増えていくと思う。
+
+@TheoSteiner 61:50
+Yeah. I actually just thought of a really interesting problem concerning sustainability. You talked about Bluesky being both the app layer and the PDS layer. For Bluesky, I can clearly see a path to monetization. They have the app layer, and it would be quite easy for them to monetize that. Let's say display ads or premium accounts. But there are PDSs that don't have an app layer, and I'd say they bear most of the cost because they have the egress and hosting costs. Is there a way for apps to give back to the PDSs, or somehow shift the weight of that cost structure?
+
+@TheoSteiner 61:50
+そうですね。実は今、持続可能性について面白い問題を思いつきました。Blueskyがアプリ層とPDS層の両方を持っているって話がありましたよね。Blueskyならマネタイズの道筋がはっきり見えます。アプリ層があるので、そこから収益化するのは簡単そうです。例えば広告表示やプレミアムアカウントとか。でもアプリ層を持たないPDSもあって、そういうところは通信やホスティングのコストを一番負担してると思うんです。アプリ側からPDSに還元したり、コスト構造の負担を分散する方法ってあるんでしょうか？
+
+@danabra.mov 62:42
+Yeah. I'm not sure. I think running an app is many times more expensive than running hosting. I'm not 100% sure, but first, the app serves the users. If you have a million daily users, that's the load that goes into the app. The hosting serves the apps. So that's actually much more distributed already. Especially if there are different hosts. If you self-host, you really only serve your own data. Compared to something like Mastodon, where if your post goes viral, all the instances are going to hammer your instance. Here it doesn't really matter that much because the app shields you. The other thing is that I think hosting is still such a novel concept. Usually you have hosting if you have a website or a company. But as part of your internet experience, even if you log in with a Google account, that's kind of the relationship you have to Google. The idea is that we can lift this up and make it transferable. I think it's kind of new. There's a Dropbox with all your social data. That's kind of a new idea. I don't think it's even recognized by mainstream users at this moment. Maybe in five years, or maybe in ten years, it will be. But hosting can also offer services. I'd actually pay for safe backups. I'd really want my hosting provider to periodically back up all my data without me thinking about it. That could be one thing. Some people might want more storage, maybe for videos and things like that. But in general, I think it's actually the app that's much more expensive. Things like CDNs, video transcoding, serving lots of video—all of that is way more expensive than serving JSON. That's where I think a lot of the costs actually go.
+
+@danabra.mov 62:42
+そうですね。ちょっと分からないですね。アプリを運用する方が、ホスティングよりも何倍もコストがかかると思います。100%確信はないですが、まずアプリはユーザーにサービスを提供します。もし毎日100万人のユーザーがいれば、その負荷はアプリにかかります。ホスティングはアプリにサービスを提供します。だから、実際にはすでにかなり分散されています。特にホストが複数ある場合はそうですね。セルフホストの場合は、自分のデータだけを提供することになります。Mastodonみたいに、投稿がバズると全インスタンスが自分のインスタンスにアクセスしてくるのとは違います。ここでは、アプリが守ってくれるので、そこまで気にしなくていいです。もう一つは、ホスティング自体がまだ新しい概念だと思います。普通はウェブサイトや会社を持っている場合にホスティングを使いますよね。でも、ネットの利用体験の一部として、Googleアカウントでログインする場合も、それがGoogleとの関係性みたいなものです。この仕組みをもっと広げて、移行可能にできるというのがアイデアです。これは結構新しい発想だと思います。すべてのソーシャルデータが入ったDropboxみたいなものです。それも新しいアイデアですね。今の時点では、一般ユーザーにはまだ認識されていないと思います。5年後、もしくは10年後には認識されるかもしれません。でも、ホスティングはサービスも提供できます。安全なバックアップならお金払ってもいいですね。ホスティングプロバイダーには、何も考えずに定期的に全データをバックアップしてほしいです。それが一つのポイントかもしれません。他の人は、動画とかのためにもっとストレージが欲しいかもしれませんね。でも基本的には、アプリ側の方がコストが高いと思います。CDNや動画のトランスコーディング、大量の動画配信とか、そういうのはJSON配信よりずっと高コストです。実際、コストの多くはそこにかかってると思います。
+
+@TheoSteiner 65:15
+So you're saying that in order to run a stable app, you want to shield the PDSs from your app layer anyway. And shielding the PDSs will take most of the load off the PDSs and onto your app layer. So it's sort of a self-restraining system.
+
+@TheoSteiner 65:15
+つまり、安定したアプリを動かすには、PDSをアプリ層から切り離したいってことですね。そしてPDSを切り離すことで、PDSの負荷がアプリ層に移るわけですね。ある意味、自己制御的な仕組みですね。
+
+@danabra.mov 65:35
+Yeah. Because you want it to be reliable. If a PDS is misbehaving, you don't want that to reflect in the app. Past a certain level of product complexity, you just have to have a database. Or you can hit community caches, but they're shielding you. If you hit Constellation, that also shields hosting because Constellation has a cache of everything that it has indexed.
+
+@danabra.mov 65:35
+そうですね。やっぱり信頼性が大事ですから。PDSの調子が悪くても、それがアプリに影響しないようにしたいです。プロダクトがある程度複雑になると、結局データベースが必要になります。もしくはコミュニティキャッシュを使うこともできますが、それも結局守ってくれてますよね。Constellationを使えば、そこにもキャッシュがあるのでホスティングの負荷も減ります。Constellationはインデックスしたもの全部キャッシュしてますから。
+
+@TheoSteiner 66:06
+Interesting. So what would you say is currently still missing from the AT Protocol? Is there something that's not here yet?
+
+@TheoSteiner 66:06
+面白いですね。じゃあ、AT Protocolで今まだ足りてないものって何だと思いますか？まだ実装されてないものはありますか？
+
+@danabra.mov 66:15
+Yeah. There are a lot of rough edges in terms of developer experience, or what the right way to do something is. People are still experimenting. But I think the big thing the team is currently working on is permissioned data. Right now, ATProto is fully focused on public data, which I think was the right focus. If you start with private data, that's a much smaller scale. You don't know that you're going to scale up to public. Whereas if you scale up to public, you have to figure out aggregation and all these things efficiently. Then you can scale down to permissioned data. So they're working on extending the protocol—or maybe having a sibling protocol—for stuff that isn't meant for public retransmission. Things like groups. Not messaging, because for that you really want end-to-end encryption, and that's an entirely separate thing. You could still use part of the identity layer, but it's a separate problem. Whereas things that are gated by membership aren't completely private, because any app that has been granted access still needs to see them in order to display them. So they're working on this permissioned-data extension to the protocol. Right now, if you want something private or group-private, you can do it with your own database. Which is also okay. ATProto is pragmatic in the sense that you can adopt just the parts that make sense to you. You can use only the identity layer and keep everything else in your own database. Ideally you'd move towards "ATProto-ing" it a bit more. But then you run into the wall where group-level stuff, user preferences, and things like that have to live somewhere. There's a hacky thing where I think you can store some of it in Bluesky preferences. But anyway, there's no good API for private or protected data. That's what they're working on. I think that's the biggest gap. There's currently no protocol-native way to do that.
+
+@danabra.mov 66:15
+ありますね。開発者体験や、正しいやり方についてはまだまだ粗削りな部分が多いですね。みんなまだ試行錯誤している段階です。でも今チームが大きく取り組んでいるのは、パーミッション付きデータの対応ですね。現時点では、ATProtoは完全にパブリックデータにフォーカスしていて、それは正しい選択だったと思います。最初からプライベートデータを扱うと、スケールがかなり小さくなりますから。そこからパブリックにスケールできるかは分からないですし。一方で、パブリックにスケールする場合は、集約とか色々なことを効率的に考えないといけません。その上で、パーミッション付きデータにスケールダウンすることもできます。だから今は、プロトコルを拡張したり、もしくは兄弟プロトコルを作ったりして、パブリック再配信を想定しないデータにも対応しようとしています。例えばグループ機能とかですね。メッセージングは別で、そっちはエンドツーエンド暗号化が必要なので、全く別の話になります。アイデンティティレイヤーの一部は使えるかもしれませんが、それはまた別の課題です。一方で、メンバーシップで制限されているものは完全なプライベートではなく、アクセス権を持つアプリは表示のために見る必要があります。なので、今はパーミッション付きデータのプロトコル拡張に取り組んでいます。現状、プライベートやグループ限定のデータが欲しい場合は、自分のデータベースで管理できます。それでも全然問題ないです。ATProtoは、必要な部分だけ取り入れられるという意味で実用的なんですよ。アイデンティティレイヤーだけ使って、他は全部自分のデータベースにしてもOKです。理想的には、もう少しATProto的な運用に寄せていきたいところですけどね。でもそうすると、グループ単位のデータやユーザー設定など、どこに置くかという壁にぶつかります。ちょっと裏技っぽいけど、一部はBlueskyの設定に保存できるみたいです。でも、プライベートや保護されたデータ用のちゃんとしたAPIは今のところないですね。そこを今まさに開発中なんです。それが一番大きな課題だと思います。現状、それをプロトコルレベルで実現する方法はありません。
+
+@TheoSteiner 68:42
+So this might be a sacrilege in a podcast with a React core member, but I'm a huge fan of Svelte. In the ATProto world, quite a few apps seem to be built with Svelte. There's someone—or maybe a group of people—trying to build a Discord clone based on ATProto. I think it's called Roomy Chat or something.
+
+@TheoSteiner 68:42
+Reactコアメンバーがいるポッドキャストで言うのはちょっとアレかもしれませんが、僕はSvelteの大ファンなんです。ATProto界隈では、Svelteで作られてるアプリが結構多い印象ですね。誰か、もしくは何人かで、ATProtoベースのDiscordクローンを作ろうとしてる人たちもいます。たしかRoomy Chatとかいう名前だったと思います。
+
+@danabra.mov 69:02
+Yeah. Yes.
+
+@danabra.mov 69:02
+そうですね。はい。
+
+@TheoSteiner 69:02
+And they seem to be stuck on having private servers because they don't have permissioned data yet. Having permissioned data would unlock that for them because they could have data being created behind access controls.
+
+@TheoSteiner 69:02
+でも、まだパーミッション付きデータがないので、プライベートサーバーの実装で詰まってるみたいです。パーミッション付きデータがあれば、アクセス制御の裏でデータを作れるので、その問題も解決できそうですよね。
+
+@danabra.mov 69:18
+Yeah, probably. I think so. Things like chats are just a different modality because they're kind of ephemeral. Maybe for Discord you do want to keep it, but I don't know that you necessarily want every chat message to be a record. I don't know if that makes sense. But having permissioned data would definitely help. Svelte is really popular in that part of the community. I'm not sure why. Maybe it just fits the ethos. It's kind of webby. It has the connotation of being the lighter thing, the newer thing. And React is like Java to these people. Which is okay. I'll take it. Whatever works.
+
+@danabra.mov 69:18
+たぶん、そうですね。そう思います。チャットみたいなものは、ちょっと性質が違ってて、どちらかというと一時的なものなんですよね。Discordみたいな場合は残しておきたいかもしれませんが、すべてのチャットメッセージをrecordにする必要があるかは分からないです。それが理にかなってるかどうかは分かりません。でも、パーミッション付きデータがあれば確実に助かりますね。Svelteはその界隈ですごく人気ですよね。なんでなのかは正直分からないです。たぶん、そのエトスに合ってるんだと思う。なんかウェブっぽいよね。軽くて新しいものっていうイメージがある。Reactは、こういう人たちにとってはJavaみたいな存在だし。それはそれでいいんだけどね。まあ、受け入れるよ。うまくいけば何でもいい。
+
+@TheoSteiner 70:07
+It might just be a function of Svelte adopters being early adopters, and then ATProto also being quite early.
+
+@TheoSteiner 70:07
+Svelteのアーリーアダプターが多いのと、ATProto自体もまだ新しいからかもしれないね。
+
+@danabra.mov 70:16
+Maybe. Yeah. But I think a lot of it is aesthetic. It feels webby, and ATProto is also very webby. So I think there's a match there.
+
+@danabra.mov 70:16
+かもね。うん。でも、結構見た目の雰囲気が大きいと思う。ウェブっぽさがあるし、ATProtoもすごくウェブ的だよね。だから、そこがマッチしてるんだと思う。
+
+@TheoSteiner 70:27
+Okay, I think we covered so much ground in this episode. Is there anything left to say? Anything that we haven't covered yet?
+
+@TheoSteiner 70:27
+いやー、今回かなり幅広く話せたね。他に言い残したことある？まだ触れてない話題とかある？
+
+@danabra.mov 70:36
+I don't know. I would encourage more people to actually try Bluesky for real—for posting the stuff you would normally post on Twitter. One thing I would encourage is to actually... The default feed, I think, is called Discover, and I don't think it's very good. There is a very good custom feed called **For You**, literally like the "For You" feed on Twitter. If you go to the Feeds tab in the Bluesky app and search for it, you'll find it. I highly recommend it. It learns from your likes and from what people who liked the same things as you have also liked. I honestly feel it's about as good as the Twitter algorithm used to be. I always use that feed. The other funny thing is that this feed literally runs from somebody's gaming computer at home. Again, because what is a feed? It's just an HTTP service that returns an array of AT URIs for posts. Everything in the network is identified by an AT URI, so it doesn't matter where it's hosted. You can build these services because they're all talking about the same thing. This For You feed just returns an array of AT URIs, paginates through them, and then the Bluesky app talks to that feed, gets the URIs, and hydrates them from the database into actual posts. It's very cool that you can have userland feeds on Bluesky. I think this is the best one. Especially if you're trying to get people to move over and try Bluesky, just tell them to install the For You feed because it's simply better.
+
+@danabra.mov 70:36
+どうだろうね。もっと多くの人に、実際にBlueskyを使ってみてほしい。普段Twitterに投稿してるような内容を、Blueskyでも投稿してみてほしいな。もう一つおすすめしたいのは……デフォルトのフィードはたしかDiscoverって名前だけど、正直あまり良くないと思う。For Youっていうカスタムフィードがあって、Twitterの「For You」フィードみたいな感じで、すごく良いよ。Blueskyアプリのフィードタブで検索すれば見つかりますよ。これは本当におすすめです。自分の「いいね」や、同じものに「いいね」した人たちの傾向から学習してくれます。正直、昔のTwitterのアルゴリズムと同じくらい良いと感じてます。いつもそのフィードを使ってます。面白いのは、このフィードが実際に誰かの自宅ゲーミングPCで動いてることですね。そもそもフィードって何かというと…単に投稿のAT URI配列を返すHTTPサービスなんですよ。ネットワーク内のすべてはAT URIで識別されてるので、どこでホストされてても関係ないんです。みんな同じものを扱ってるから、こういうサービスが作れるんですよね。このFor YouフィードはAT URIの配列を返してページネーションして、BlueskyアプリがそのフィードにアクセスしてURIを取得し、データベースから実際の投稿に変換して表示します。Blueskyでユーザーランドのフィードが作れるのは本当にクールです。これが一番いいフィードだと思います。特にBlueskyに人を誘いたいなら、「For Youフィードを入れてみて」って言えばいいですよ。単純にこっちの方が優れてますから。
+
+@TheoSteiner 72:29
+I'm also on For You. And it's super funny because sometimes the person who hosts the feed goes down for an hour, and then it comes back up and he posts something like, "Sorry, I had to upgrade my PC. I put more RAM into it."
+
+@TheoSteiner 72:29
+僕もFor You使ってます。しかもすごく面白いのが、たまにフィードのホストしてる人が1時間くらい落ちてて、戻ってきたら「ごめん、PCアップグレードしてた。RAM増設したよ」みたいな投稿があるんですよ。
+
+@danabra.mov 72:44
+Yeah.
+
+@danabra.mov 72:44
+そうそう。
+
+@TheoSteiner 72:44
+It's very hacky-cool.
+
+@TheoSteiner 72:44
+すごくハックっぽくてクールですよね。
+
+@danabra.mov 72:46
+Yeah.
+
+@danabra.mov 72:46
+うん。
+
+@TheoSteiner 72:47
+Okay. I think that's it for today then.
+
+@TheoSteiner 72:47
+なるほど。今日はこのへんで終わりにしましょうか。
+
+@danabra.mov 72:51
+Yeah.
+
+@danabra.mov 72:51
+そうですね。
+
+@TheoSteiner 72:51
+Thank you so much for coming on and talking about ATProto. I mean, you obviously couldn't say it yourself, but probably the best way to learn about ATProto is your blog. You have a whole series of blog posts on ATProto and how it works, using different ways to break it down. I think the file system one is great. Then go on Bluesky and just start following a bunch of people. My personal recommendation would be the Starter Packs. They let you, with just one click, follow everyone in your area of interest.
+
+@TheoSteiner 72:51
+ATProtoについて話してくれて本当にありがとうございました。ご自身では言いにくいかもしれませんが、ATProtoを学ぶ一番いい方法はあなたのブログだと思います。ATProtoの仕組みをいろんな切り口で解説した連載記事がありますよね。ファイルシステムの例えが特に分かりやすかったです。それからBlueskyで、気になる人たちをどんどんフォローしてみてください。個人的なおすすめはStarter Packです。ワンクリックで自分の興味分野の人たちをまとめてフォローできます。
+
+@danabra.mov 73:25
+Yeah.
+
+@danabra.mov 73:25
+そうですね。
+
+@TheoSteiner 73:26
+For example, I assume you'd be in the React Starter Pack, or the Web Dev Starter Pack.
+
+@TheoSteiner 73:26
+例えば、React Starter PackやWeb Dev Starter Packに入ってそうですよね。
+
+@danabra.mov 73:31
+Yeah. Probably, if there is one. There's definitely one for JavaScript.
+
+@danabra.mov 73:31
+たぶん、もしあれば入ってると思います。JavaScript用のも確実にありますよ。
+
+@TheoSteiner 73:35
+I'm in the Svelte Starter Pack, which was really cool because it got me bootstrapped with a whole bunch of likes, which I was really happy about.
+
+@TheoSteiner 73:35
+僕はSvelte Starter Packに入ってて、たくさんいいねももらえてすごく嬉しかったです。
+
+@danabra.mov 73:42
+All right.
+
+@danabra.mov 73:42
+なるほど。
+
+@TheoSteiner 73:43
+And actually, this show is also on Bluesky—or if it isn't yet, I'll make sure it will be after this post. You can always check us on the regular HTTP web. Our domain is **uit-inside.linecorp.com**. Make sure to follow Dan if you don't already. And thank you so much for listening. If you want to listen to other episodes, most of them are in Japanese, but I think there are three or four English episodes out there. So just look for them. Or maybe study Japanese. Or use a tool to translate them. Thank you so much for coming on. Bye-bye.
+
+@TheoSteiner 73:43
+実はこの番組もBlueskyに載せてます——もしまだなら、この投稿のあと必ず載せます。普通のHTTPウェブでもいつでもチェックできますよ。ドメインは「uit-inside.linecorp.com」です。まだフォローしていない方は、ぜひDanもフォローしてくださいね。そして最後まで聴いてくれて本当にありがとうございました。他のエピソードも聴きたい方は、ほとんど日本語ですが、英語回も3〜4本ありますよ。ぜひ探してみてください。もしくは日本語を勉強してみるのもアリですね。あるいは翻訳ツールを使ってもいいかも。今日は来てくれて本当にありがとうございました。それでは、バイバイ。
+
+@danabra.mov 74:22
+Thank you.
+
+@danabra.mov 74:22
+ありがとうございました。
